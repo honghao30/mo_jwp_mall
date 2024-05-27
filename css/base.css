@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/* font */
+/* NotoSans */
+@font-face {
+	font-family: "NotoSans";
+	font-style: normal;
+	font-weight: 300;
+	src: local("NotoSansKR-Light"),
+	url("../font") format("woff2"),
+	
+	url("../font/NotoSansKR-Light.woff2") format("woff2"),
+		url("../font/NotoSansKR-Light.woff") format("woff"),
+		url("../font/NotoSansKR-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: "NotoSans";
+	font-style: normal;
+	font-weight: 400;
+	src: local("NotoSansKR-DemiLight"),
+		url("../font/NotoSansKR-DemiLight.woff2") format("woff2"),
+		url("../font/NotoSansKR-DemiLight.woff") format("woff"),
+		url("../font/NotoSansKR-DemiLight.ttf") format("truetype");
+}
+@font-face {
+	font-family: "NotoSans";
+	font-style: normal;
+	font-weight: 500;
+	src: local("NotoSansKR-Regular"),
+		url("../font/NotoSansKR-Regular.woff2") format("woff2"),
+		url("../font/NotoSansKR-Regular.woff") format("woff"),
+		url("../font/NotoSansKR-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "NotoSans";
+	font-style: normal;
+	font-weight: 600;
+	src: local("NotoSansKR-Medium"),
+		url("../font/NotoSansKR-Medium.woff2") format("woff2"),
+		url("../font/NotoSansKR-Medium.woff") format("woff"),
+		url("../font/NotoSansKR-Medium.ttf") format("truetype");
+}
+@font-face {
+	font-family: "NotoSans";
+	font-style: normal;
+	font-weight: 700;
+	src: local("NotoSansKR-Bold"),
+		url("../font/NotoSansKR-Bold.woff2") format("woff2"),
+		url("../font/NotoSansKR-Bold.woff") format("woff"),
+		url("../font/NotoSansKR-Bold.ttf") format("truetype");
+}
+
+/* reset */
+html { overflow-y: auto; -ms-touch-action: manipulation; touch-action: manipulation;}
+body { min-height: 100%; color: #333; font-size:16px; font-family: 'NotoSans', 'Malgun Gothic', '돋움', 'Dotum', Arial, Sans-serif; letter-spacing: -0.5px; word-break: break-all; word-wrap: break-word; }
+/* html, body { height: 100%; -webkit-overflow-scrolling: touch; } */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, th, td, p, button { margin: 0; padding: 0; -webkit-text-size-adjust: none; }
+fieldset, img, abbr, acronym { border: 0 none; }
+fieldset { min-inline-size: auto; }
+img { max-width: 100%; max-height: 100%; vertical-align: top; }
+legend { position: absolute; height: 0; line-height: 0; font-size: 0; overflow: hidden; margin: 0; padding: 0; }
+address, caption, cite, code, dfn, em, var { font-style: normal; font-weight: normal; }
+ol, ul { list-style: none; }
+q:before, q:after { content:''; }
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+caption { display: table-caption; width: 0; height: 0; line-height: 0; font-size: 0; overflow: hidden; text-align: left; }
+select { min-width: 100px; -webkit-border-radius: 0; }
+select::-ms-expand { display: none; }
+textarea { overflow: auto; resize: none; }
+select:focus,
+input:focus,
+textarea:focus { outline: none; border-color: #0048c0; }
+a:focus,
+button:focus { outline-offset: -2px; }
+a { text-decoration: none; cursor: pointer; color: inherit; }
+a.disabled,
+button.disabled,
+button:disabled { cursor: default; pointer-events: none; }
+button { border: 0 none; background: none; cursor: pointer; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+button, input, select, textarea { font-family: 'NotoSans', 'Malgun Gothic', '돋움', 'Dotum', Arial, Sans-serif; vertical-align: middle; }
+hr { margin: 0; height: 100px; border: 0 none; }
+
+/* common */
+select,
+select:active,
+select:focus {padding:4px 40px 6px 20px;height:40px;border:1px solid #e7e7e7;-webkit-appearance:none; -moz-appearance:none;appearance:none;color:#333;font-size:14px;}
+.ess{font-size:18px;color:#fb5877;padding:0 3px;vertical-align:top;}
+.select_box{position:relative;display:inline-block;vertical-align:middle;}
+.select_box:after{position:absolute;right:20px;top:50%;content:'';width:5px;height:5px;border-top:1px solid #000;border-right:1px solid #000;transform:rotate(135deg);margin-top:-4px;}
+select::-ms-expand {display:none;}
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="file"]{padding:9px 5px;border:1px solid #e7e7e7;font-size:14px;height:40px;}
+input[type="file"]{border:none;}
+input:read-only{border:none;}
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="file"]::placeholder,
+input[type="text"]::-ms-input-placeholder,
+input[type="password"]::-ms-input-placeholder,
+input[type="file"]::-ms-input-placeholder {font-weight:500 !important;color:#999}
+input+.btn{margin-left:12px;}
+
+/* html5 태그*/
+header, footer, article, section, aside, details, figure, figcaption, nav, hgroup { display: block; margin: 0; padding: 0; }
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+/* hidden */
+.hidden { position: absolute !important; margin: -1px !important; padding: 0 !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip-path: polygon(0 0, 0 0, 0 0) !important; }
+
+/* guide */
+.guide{font-size:30px;font-weight:600;padding:20px;color:skyblue;}
+
+/* box-sizing */
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* placeholder color */
+::placeholder { color: #999; opacity: 1; }
+:-ms-input-placeholder { color: #999; opacity: 1; } /* IE 10+ */
+:-moz-placeholder { color: #999; opacity: 1; } /* Firefox 18- */
+::-moz-placeholder { color: #999; opacity: 1; } /* Firefox 19+ */
+::-webkit-input-placeholder { color: #999; opacity: 1; } /* Chrome/Opera/Safari */
+
+/* button */
+a[class*="btn_"], button[class*="btn_"] { display: inline-block; vertical-align: top; }
+
+/* form 관련 (input, select, textarea, checkbox, radiobox) */
+input, select, textarea { width: 100%; background-color: #fff !important; }
+input:disabled, select:disabled, textarea:disabled { width: 100%; background-color: #eee !important; }
+/* select { background: url("../images/icon/icon_select.png") no-repeat top 50% right 15px; } */
+textarea { min-height: 100px; vertical-align: top;padding: 10px 20px;border: 1px solid #e7e7e7 !important;font-size: 14px;}
+.required { display: inline-block; }
+.required:after { content: "*"; display: inline-block; margin-left: 5px; color: #ce0000; vertical-align: middle; }
+.txtarea { padding: 12px 15px; line-height: 24px; font-size: 18px; border: 1px solid #dae1e6; border-radius: 4px; }
+.inp, .slt { padding: 0 15px; height: 52px; color: #222; line-height: 50px; font-size: 18px; border: 1px solid #dae1e6; border-radius: 4px; }
+.inp:focus, .slt:focus { outline: 1px solid #0048c0; outline-offset: -2px; }
+.slt { padding-right: 40px; }
+.chkrdo { display: inline-block; position: relative; vertical-align: middle; }
+.chkrdo input { position: absolute; top: 0; left: 0; opacity: 0; }
+.chkrdo label { display: inline-block; position: relative; padding: 5px 0 5px 32px; min-width: 25px; min-height: 25px; color: #444; line-height: 22px; font-size: 16px; vertical-align: top; cursor: pointer; transition: color 0.1s ease-in 0s; -webkit-transition: color 0.1s ease-in 0s; }
+.chkrdo label:empty { padding: 0 !important; min-width: 25px; min-height: 25px; line-height: 25px; }
+.chkrdo label:empty:before { top: 0; }
+.chkrdo label:before { content: ""; position: absolute; top: 3px; left: 0; width: 25px; height: 25px; background: url("../images/icon/icon_chkrdo.png") no-repeat 0 0; }
+.chkrdo input[type="checkbox"] + label:before { background-position: 0 0; }
+.chkrdo input[type="checkbox"]:checked + label:before { background-position: -25px 0; }
+.chkrdo input[type="radio"] + label:before { background-position: 0 -25px; }
+.chkrdo input[type="radio"]:checked + label:before { background-position: -25px -25px; }
+
+/* 키보드 탭시 영역 */
+/* a:focus-visible,button:focus-visible,
+.type_selet input[type="radio"]:focus-visible+label{outline:2px dotted #222;outline-offset:-2px;} */

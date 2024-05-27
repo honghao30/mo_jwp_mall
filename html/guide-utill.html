@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JWP Mall</title>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- bootstrap-datepicker3 -->
+  <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+  <!-- common css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">  
+
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- datepicker -->
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/bootstrap-datepicker.kr.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+</head>
+<body>
+<div class="wrap">
+  
+  <!-- 가이드 제목 -->
+  <div style="color:red;font-size:30px;font-weight:600;">레이어 팝업</div>
+  <!-- 레이어 버튼 -->
+  <button onclick="modalControl('o','#login_pop');return false" class="btn" style="border:1px solid #222">레이어팝업 호출버튼</button>
+  <!-- 비밀번호 레이어팝업 -->
+  <section class="modal_new modal_overlay" id="login_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap">
+        <div class="modal_n_body" style="width:420px">
+            <div class="pop_cont">
+                <!--  -->
+                <!-- popContent -->
+                <div class="popContent">
+                  <!-- pop-cont -->
+                  <div class="pop-cont">
+                    //내용
+                    <div class="btn-area text-right mt20">
+                      <button class="btn btn-save"><span>확인</span></button>
+                      <button class="btn btn-cancel" onclick="modalControl('c')" class="btn_close"><span>취소</span></button>
+                    </div>
+                  </div>
+                  <!-- //pop-cont -->
+                </div>
+                <!-- //popContent -->
+                <!--  -->
+                <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- 가이드 제목 -->
+  <div style="color:red;font-size:30px;font-weight:600;margin-top:50px">툴팁</div>
+  <!-- 영업담당자 변경 -->
+  <div class="hoverBoxCont">
+    <span class="orange">영업담당자</span>
+    <div class="hoverBox">
+      <ul>
+          <li><span class="orange">JW중외제약 : 홍선미 / 010-7758-1801</span></li>
+          <li><span class="orange">JW신약 : 김병기 / 010-4751-0555</span></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- 가이드 제목 -->
+  <div style="color:red;font-size:30px;font-weight:600;margin-top:50px">슬라이드 1/9</div>
+  <!-- Swiper -->
+  <div class="swiper mySwiper sw01">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- 가이드 제목 -->
+  <div style="color:red;font-size:30px;font-weight:600;margin-top:50px">슬라이드 스와이프</div>
+  <!-- Swiper -->
+  <div class="swiper mySwiper sw02">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+
+  <!--  -->
+  <div class="mCustomScrollbar " data-mcs-theme="minimal-dark" style="overflow: visible;height:500px">
+    <h2 h2>theme: "minimal-dark"</h2>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p> 
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="full"><img src="images/img7.jpg" class="mCS_img_loaded"></p>
+    <p class="half"><img src="images/img2.jpg" class="mCS_img_loaded"><img src="images/img3.jpg" class="mCS_img_loaded"></p>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
+    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+    <p class="full"><img src="images/img4.jpg" class="mCS_img_loaded"></p>
+    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p> 
+    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+  </div>
+  <!--  -->
+
+  <div class="left_cont mCustomScrollbar" data-mcs-theme="minimal-dark" style="overflow: visible;height:100px">
+    <ul>
+      <li>네블라이저 <span>마스크</span> 멸균</li>
+      <li>네블라이저 <span>마스크</span>형키트 (.....)</li>
+      <li>닥터클라로 극세사 시트<span>마스크</span></li>
+      <li>대한헬스키퍼 방역(황사) <span> 마스크</span</li>
+      <li>마취<span>마스크</span>(Anesthesai Msdfsdf)</li>
+      <li>대한헬스키퍼 방역(황사) <span> 마스크</span</li>
+      <li>마취<span>마스크</span>(Anesthesai Msdfsdf)</li>
+    </ul>
+  </div>
+  <!--  -->
+  
+
+</div>
+  
+
+
+</body>
+</html>

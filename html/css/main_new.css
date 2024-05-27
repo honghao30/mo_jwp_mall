@@ -1,0 +1,674 @@
+@charset "utf-8";
+
+/* 공통 */
+/* 헤더 */
+#header{z-index:100;}
+/* 20231215 수정 */
+#header .search_wrap{
+    height:60px;
+    width:100%;
+    background:#fff;
+}
+#header .search_area{
+    height:60px;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#fff;
+    z-index: 999;
+    padding:0 20px;
+    box-sizing:border-box;
+    border-bottom: 1px solid #e8e8e8;
+}
+#header .input_box{
+    position:relative;
+}
+#header .input_box .btn_search{
+    position:absolute;
+    top:0;
+    right:0;
+    background:url(img/btn_search.png) 50% no-repeat;
+    background-size:27px auto;
+    width:27px;
+    height:27px;
+}
+#header .search_area span{
+    position:relative;
+    display: flex;
+    width: calc(100% - 70px);
+    padding:0 16px;
+    height: 38px;
+    align-items: center;
+    border-radius: 23.04px;
+    border: 0.96px solid #0072BC;
+    margin-top:10px;
+}
+#header .search_area .main_link{
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    padding: 10px;
+    z-index: 10;
+}
+#header .search_area .main_link img{
+    width: 90px;
+}
+#header .search_area .btn_search{
+    position:absolute;
+    top:5px;
+    right:6px;
+}
+#header .search_area .btn_basket{
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+#header .search_area .btn_basket img{width:50%;}
+
+/* 20231215 수정 */
+.main_wrap #header .gnbmenu{display:block;}
+#header .gnbmenu{display:none;margin-top:-1px;}
+/* //20231215 수정 */
+
+.content_wrap img{width:100%;height:100%;}
+.content_wrap .swiper-wrapper{height:auto;}
+
+/* 공지 */
+.content_wrap .noti_cont .title{
+    border-radius: 8px;
+    border: 1px solid #E1E3E9;
+    background: #FFF;
+    padding:8px 8px 4px 8px;
+    color: #222;
+    font-family:"GmarketSans";
+    font-size: 14px;
+    font-weight: 500;
+}
+/* 20231215 */
+.content_wrap .noti_cont{
+    position:relative;
+    padding: 14px 20px 10px 75px;
+    align-items: center;
+    font-size:14px;
+    font-weight: 400;
+    background:#fff;
+}
+.content_wrap .noti_cont .title{
+    position:absolute;
+    top:6px;
+    left:20px;
+    text-align:center;
+}
+/* //20231213 */
+
+.content_wrap .noti_cont .slide_noti{height:20px}
+/* ico */
+.ico_star{
+    padding-left:27px;
+    height: 24px;
+    line-height:24px;
+    background:url(img/ico_star.png) 0 50% no-repeat;background-size:25px auto;
+}
+/* 타이틀 */
+.title_cont span{
+    display:inline-block;
+    color: #0072BC;
+    font-family:"GmarketSans";
+    font-size: 18px;
+    line-height:28px;
+    font-weight: 500;
+}
+/* 툴팁 */
+.ico_info{
+    display:inline-block;
+    background:url(img/ico_info.png) 50% no-repeat;
+    background-size:20px auto;
+    width:20px;
+    height:20px;
+    vertical-align:-4px;
+}
+/* 20231214 수정 */
+.ico_info:hover .tooltip_cont{
+    display:block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 70px);
+    width: 334px;
+}
+.tooltip_cont:before{content:'';position:absolute;top:-12px;left:0;width:100%;height:10px;}
+.tooltip_cont{
+    display:none;
+    position:absolute;
+    top:30px;
+    left:-110px;
+    width:320px;
+    z-index:10;
+}
+/* 20231215 수정 */
+/* 관심상품 */
+.content_wrap .favorite_cont{
+    padding:20px 20px 20px 20px;
+    position:relative;
+}
+/* 관심상품 리스트 */
+.product_list{
+    display: flex;
+    overflow-y: auto;
+    padding-bottom:20px;
+    margin:0 -20px;
+}
+.product_list li{
+    margin-left:20px;
+    width:138px;
+}
+.product_list li+li{
+    margin-left:10px;
+}
+.product_list li:last-child{
+    margin-right:20px;
+}
+/* 20231218 수정 */
+.product_list .img_box{
+    display: flex;
+    width: 112px;
+    height: 112px;
+    padding: 18px 12px 17px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #FFF;
+    border: 1px solid #E1E3E9;
+    position:relative;
+    overflow:hidden;
+}
+/* square_type */
+.product_list.square_type .img_box{
+    border-radius: 0;
+}
+/* find_type */
+.product_list.find_type .img_box{
+    border-radius: 0;
+    background:none;
+}
+.product_list.find_type>li{
+    border: 1px solid #E1E3E9;
+    border-radius: 12px;
+    background:#fff;
+}
+.product_list.find_type>li.btn_more_li{
+    background:none;
+    border:none;
+}
+.product_list.find_type .img_box{
+    border:0;
+}
+.product_list.find_type .txt_cont{
+    margin:0;
+    padding:0 10px 20px 10px;
+}
+/* 20231215 수정 */
+.product_list .txt_cont{
+    margin-top:8px;
+    color: #222;
+    font-size: 14px;
+    font-weight: 400;
+}
+.product_list .txt_cont .txt{
+    display:inline-block;
+    height:36px;
+    word-break: break-all;
+    display: block; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.product_list .txt_cont .s_txt{
+    display:inline-block;
+    color: #AEB7C6;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px; /* 100% */
+    letter-spacing: -0.72px;
+    margin-top:5px;
+}
+.product_list .price_cont{
+    display:block;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid #E1E3E9;
+    position:relative;
+    text-align:right;
+}
+.product_list .price_cont .tit{
+    color: #AEB7C6;
+    font-size: 12px;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+.product_list .price_cont .price{
+    color: #0072BC;
+    text-align: right;
+    font-family:"GmarketSans";
+    font-size: 16px;
+    font-weight: 500;
+}
+.product_list .price_cont .sale{
+    position:absolute;
+    bottom:0;
+    left:0;
+    color: #32B6BD;
+    font-family: 'GmarketSans';
+    font-size: 14x;
+    font-weight: 400;
+    line-height: 18px;
+}
+.product_list .price_cont .marketPrice{
+    margin-bottom:5px;
+    color:#AEB7C6;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-decoration: line-through;
+}
+.product_list .sale_txt{
+    display:block;
+    margin-top:5px;
+    color: #FF4949;
+    font-family: 'GmarketSans';
+    font-size: 13px;
+    font-weight: 500;
+}
+.product_list .sale_txt strong{    
+    font-weight: 700;
+}
+.product_list .btn_more{
+    width:80px;
+    margin-top: 20px;
+}
+.product_list .btn_more img{height:auto;}
+.slide_noti{height:100px;}
+
+/* 이 상품을 찾으셨나요? */
+.find_product_cont{
+    margin-top:60px;
+    padding:0 20px 0 20px;
+    background: #F7F8FA;
+}
+.find_product_cont .find_title{
+    position:relative;
+    top:-20px;
+    border-radius: 0px 12px;
+    border: 1px solid #0072BC;
+    background: #FFF;
+    box-shadow: 0px 6px 4px 0px rgba(154, 168, 202, 0.30);
+    display: flex;
+    padding: 12px 12px 10px 12px;
+    align-items: center;
+    align-self: stretch;
+}
+.find_product_cont .find_title span{
+    color: #092D74;
+    font-family: 'GmarketSans';
+    font-size: 18px;
+    line-height:28px;
+    font-weight: 500;    
+    letter-spacing: -0.72px;
+    padding-left:30px;
+    background:url(img/ico_search.png) 0 0 no-repeat;
+    background-size:24px auto;
+}
+.find_product_cont .location_cont{
+    margin-top:16px;
+    position:relative;
+    padding: 5px 20px 0 20px;
+    margin: 0 -20px;
+}
+.find_product_cont .location_cont .location:after{content:'';display:block;clear:both;}
+.find_product_cont .location_cont .location li{
+    float:left;
+    color: #222;
+    font-family: 'GmarketSans';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px; /* 100% */
+    letter-spacing: -0.56px;
+}
+.find_product_cont .location_cont .location li+li:before{
+    content:">";
+    padding:0 6px;
+    color: #222;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px; /* 100% */
+    letter-spacing: -0.56px;
+}
+.find_product_cont .location_cont .location li:last-child{
+    color: #0072BC;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px; /* 100% */
+    letter-spacing: -0.64px;
+}
+.find_product_cont .category_list_cont button{
+    width:32px;
+    position:absolute;
+    top:-5px;
+    right:20px;
+}
+.find_product_cont .category_list_cont button.active{
+    transform: rotate(180deg);
+}
+.find_product_cont .category_list{
+    display:none;
+}
+
+
+.find_product_cont .category_list_cont button.active+.category_list{
+    display:block;
+    position:absolute;
+    top:40px;
+    left:0;
+    width:100%;
+    height:249px;
+    background: #f7f8fa;
+    z-index:10;
+    overflow-y:auto;
+}
+.find_product_cont .category_list{
+    border-top:1px solid #E1E3E9;
+    border-bottom:1px solid #E1E3E9;
+}
+
+.find_product_cont .category_list>ul{
+    width:100%;
+    position:relative;
+}
+.find_product_cont .category_list>ul>li{
+    background:#fff;
+    height: 39px;
+    border-bottom:1px solid #E1E3E9;
+}
+.find_product_cont .category_list>ul>li a{
+    height: 40px;
+    line-height:40px;
+    padding: 0px 20px;
+    font-size: 13px;
+    line-height:43px;
+    letter-spacing: -0.52px;
+    color: #AEB7C6;
+    font-family: 'GmarketSans';
+    display:block;
+}
+.find_product_cont .category_list>ul>li.on a{
+    color:#0072BC;
+    font-family: 'GmarketSans';
+}
+
+/* 추천상품 */
+.recommend_tab .tab-menu{
+    display: table;
+    table-layout:fixed;
+    width:100%;
+    border-bottom:1px solid #E1E3E9;
+}
+.recommend_tab .tab-menu .tab-item{
+    display:table-cell;
+    text-align:center;
+    color:#717B8A;
+    font-family: 'GmarketSans';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px; /* 100% */
+    letter-spacing: -0.84px;
+}
+.recommend_tab .tab-menu .tab-item.active{
+    color: #222;
+}
+.recommend_tab .tab-menu .tab-item span{
+    display:inline-block;
+    padding:20px 0 16px 0;
+}
+.recommend_tab .tab-menu .tab-item.active span{
+    position:relative;
+}
+.recommend_tab .tab-menu .tab-item.active span:after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;;
+    width:100%;
+    border-bottom:2px solid #0072BC;
+}
+.recommend_tab .tab-content{
+    padding:0 20px;
+}
+.tab-pane,
+.tab-pane1{display:none;}
+.tab-pane.active,
+.tab-pane1.active{display:block;}
+
+/* 의료용품, 의료소모품 탭 */
+.recommend_tab.line_type02 .tab-menu .tab-item.active span{
+    display:block;
+}
+.recommend_tab.line_type02 .tab-menu .tab-item.active span:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -45%;
+    width: 90%;
+    border-bottom: 2px solid #0072BC;
+}
+.medical_product_cont .tab-content{
+    padding:24px 20px;
+}
+/* 20231215 수정 */
+.medical_product_cont .banner_box{
+    margin: -24px -20px 0 -20px;
+}
+.tab-group.type03 .tab-menu{
+    border:none;
+    box-sizing:border-box;
+    padding:0 20px;
+}
+.tab-group.type03{
+    margin:24px -20px 0 -20px;
+
+}
+/* 20231215 수정 */
+.tab-group.type03 .tab-menu .tab-item1{
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid #E1E3E9;
+    line-height: 31px;
+    padding: 3px 16px 0px 16px;
+    color: #717B8A;
+    text-align: center;
+    font-family: 'GmarketSans';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.52px;
+}
+.tab-group.type03 .tab-menu .tab-item1.active{
+    color:#fff;
+    background: #0072BC;
+}
+.tab-group.type03 .tab-menu li+li{
+    margin-left:7px;
+}
+.tab-group.type03 .product_list{
+    display:block;
+    white-space: wrap;
+}
+.product_list.list_type li+li{
+    margin-top:14px
+}
+.product_list.list_type li{
+    position:relative;
+    margin:0;padding:0 20px 0 170px;
+    width:100%;
+    min-height:150px;
+    box-sizing:border-box;
+}
+.product_list.list_type li .img_box{
+    position:absolute;
+    top:0;
+    left:20px;
+}
+.product_list.list_type .txt_cont{
+    margin:0;
+}
+.tab-group.type03 .tab-menu{display:block;}
+
+.btn_area .btn_more{
+    border-radius: 8px;
+    border: 1px solid #E1E3E9;
+    background: #EFF3F9;
+    height: 40px;
+    line-height:40px;
+    text-align:center;
+    width:100%;
+    color: #717B8A;
+    font-family: 'GmarketSans';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.84px;
+}
+/* 인기 검색 상품 */
+.popularity_tag_cont{
+    padding:40px 20px;
+}
+.popularity_tag_cont .tag_list_cont{
+    margin:5px -20px 0 -20px;
+    padding:0 10px;
+    overflow-y:auto;
+}
+.popularity_tag_cont .tag_list{
+    width:120%;
+}
+.popularity_tag_cont .tag_list:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.popularity_tag_cont .tag_list li{
+    float:left;
+    margin:10px 0 0 10px;
+}
+.popularity_tag_cont .tag_list a{
+    display:flex;
+    align-content:center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    height: 32px;
+    padding: 0px 16px;
+    background: #EFF3F9;
+    color: #717B8A;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* 영업담당자, 고객센터 */
+.info_cont{
+    padding:40px 20px;
+}
+.info_cont .gray_box{
+    margin-top:16px;
+    padding:16px 20px;
+    border-radius: 12px;
+    background: #F7F8FA;
+}
+.info_cont .gray_box .tit{
+    width:80px;
+    color: #717B8A;
+    font-size: 14px;
+    font-weight: 400;
+}
+.info_cont .gray_box .name{
+    color: #222;
+    font-family: 'GmarketSans';
+    font-size: 14px;
+    font-weight: 500;
+}
+.info_cont .gray_box li+li{
+    border-top:1px solid #E1E3E9;
+    margin-top:16px;
+    padding-top:16px;
+}
+.info_cont .border_top{
+    border-top:1px solid #E1E3E9;
+    margin-top:32px;
+    padding-top:32px;
+}
+.info_cont .info_time .num{
+    display:block;
+    margin-top:12px;
+    padding-top:20px;
+    position:relative;
+    color: #222;
+    font-family: 'GmarketSans';
+    font-size: 20px;
+    font-weight: 500;
+}
+.info_cont .info_time .num:after{
+    content:'';
+    width:24px;
+    height:1px;
+    background: #E1E3E9;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.info_cont .info_time ul{
+    margin-top:16px;
+}
+.info_cont .info_time ul li+li{
+    margin-top:5px;
+}
+.info_cont .info_time .tit{
+    color: #222;
+    font-size: 14px;
+    font-weight: 400;
+    width:60px;
+    display:inline-block;
+}
+.info_cont .info_time .time{
+    color: #717B8A;
+    font-size: 14px;
+    font-weight: 400;
+}
+/* 카카오톡 채널 1:1 상담하기  */
+.link_kakao a{
+    display: flex;
+    height: 64px;
+    padding: 0px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    background: #371C1D;
+}
+.link_kakao a span{
+    padding-left:50px;
+    color:#fff;
+    background:url(img/img_logokakao.png) 0 50% no-repeat;
+    height:50px;
+    line-height:50px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.9px;
+}
+.link_kakao a span strong{
+    font-weight:700;
+}
+.mainlayer .layercont .banner .gaessamzieFlickStage li img{
+    width:100%;
+}
+.swiper-wrapper{height:auto !important;}
