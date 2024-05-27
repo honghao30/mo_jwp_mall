@@ -1,5 +1,36 @@
 @charset "utf-8";
 /* 공통 */
+
+/* 콤보박스  */
+.dropdown_menu_wrap {position: relative;}
+.dropdown_menu_wrap .btn-dropdown {font-family: 'Pretendard';border:1px solid #D8DDE9;height: 28px;padding: 0px 8px;border-radius: 4px;gap: 8px; display:flex;align-items: center;justify-content: center;font-size: 14px;font-weight: 300;line-height: 28px;}
+.dropdown_menu_wrap .btn-dropdown::after {content: '';width:12px;height: 7px;background: url('../img/ico/ico_arrow_b48.png') no-repeat center;background-size: 12px auto;}
+.dropdown_menu_wrap .btn-dropdown.is-active::after {transform: rotate(180deg);}
+.dropdown_menu_wrap .dropdown_list {position: absolute;left:0;top: 29px;background-color: #fff; width: 100%;border: 1px solid #D8DDE9;padding: 5px 0;display: none;z-index: 20;}
+.dropdown_menu_wrap .dropdown_list.is-active {display: block;}
+.dropdown_menu_wrap .dropdown_list li button {font-size: 14px;font-weight: 300;line-height: 14px;width: 100%;height: 100%;padding: 5px 10px;font-family: 'Pretendard';}
+.dropdown_menu_wrap .dropdown_list li:hover button {background-color: #D8DDE9;}
+
+/* switch */
+.switch_wrap {position: relative;font-size: 14px;font-weight: 300;line-height: 14px;display: flex;align-items: center;}
+.switch_wrap label {margin-right: 4px;}
+.switch_wrap [type="checkbox"] {appearance: none;position: relative;border: 2px solid #1293E7;border-radius: 20px;width: 40px;height: 20px;opacity: 1;font-size: 14px;}
+.switch_wrap [type="checkbox"]::before {content: "";position: absolute;left: 19px;top: 50%;transform: translateY(-50%); width: 15px;height: 15px;border-radius: 50%;background-color: #1293E7;transition: left 250ms linear;}
+.switch_wrap [type="checkbox"]:checked {background-color: #1293E7;border-color: #1293E7;}
+.switch_wrap [type="checkbox"]:checked::before {background-color: white; left: 0px;}
+.switch_wrap [type="checkbox"]:disabled {border-color: lightgray; opacity: 0.7; cursor: not-allowed; }
+.switch_wrap [type="checkbox"]:disabled:before {background-color: lightgray;}
+.switch_wrap [type="checkbox"]:disabled + span {opacity: 0.7;cursor: not-allowed;}
+
+
+/* 체크박스 */
+.cs_check_box {position: relative;font-size: 14px;font-weight: 400;line-height: 14px;color:#000;}
+.cs_check_box  label {padding:0;margin:0;color:#000;margin-left: 5px;}
+.cs_check_box  label::before {display: none !important;}
+.cs_check_box [type="checkbox"]{appearance: none;position: relative;border: 2px solid #CCCCCC;border-radius: 2px;width: 18px;height: 18px;opacity: 1;font-size: 14px;padding:0;margin:0;}
+.cs_check_box [type="checkbox"]::before {content: "";position: absolute;left: 2px;top: 2px;width: 11px;height: 11px;}
+.cs_check_box [type="checkbox"]:checked::before {background: url('../img/common/ico/ico_checkbox_check.png') no-repeat center;}
+
 .flex_justfy {display: flex;align-items: center;justify-content: space-between;}
 .ir-text {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;}
 
@@ -27,3 +58,20 @@
 .category_top_search .category_search .search_wrap_gray input {background-color: transparent;border:0;height: 35px;width: calc(100% - 50px);text-indent: 10px;margin: 0px;font-size: 14px;font-weight: 400;line-height: 14px;color:#AEB7C6;}
 .category_top_search .category_search .search_wrap_gray button {width:36px;height:36px;margin-right: 6px;}
 .category_top_search .category_search .search_wrap_gray button::before {content: ''; display: block;width: 100%;height: 100%;background: url('../img/ico/ico_blue_bl96.png') no-repeat center;background-size: 22px 22px}
+
+.search_result_option {padding: 12px 16px;}
+.total_count_box {display: flex;align-items: center;}
+.total_count_box .total_count {font-size: 14px;font-weight: 400;line-height: 14px;color:#717B8A;padding-right: 8px;margin-right: 8px;}
+.total_count_box .total_count::after {content: '';width:1px;height: 14px;background-color: #E1E3E9;position: absolute;right:0;top:50%;transform: translateY(-50%);}
+.total_count_box .total_count strong {font-weight: 700;color:#FF4949;}
+.sort_option {gap: 8px;}
+
+.btn_store_info {width:24px;height:24px;}
+.btn_store_info::before {content: ''; display: block;width: 100%;height: 100%; background: url('../img/ico/ico_filter_b98.png') no-repeat center; background-size: 24px auto;}
+
+.tag_wrap_gray {background: #F2F5FA;padding: 16px 0;overflow-x: scroll;}
+.tag_wrap_gray {-ms-overflow-style: none;scrollbar-width: none;}
+.tag_wrap_gray::-webkit-scrollbar {display: none;}
+.tag_wrap_gray .tag_inner {white-space: nowrap;display: flex;gap:8px;padding-left: 16px;}
+.product_tag {font-size: 14px;font-weight: 300;line-height: 14px;white-space: nowrap;align-items: center;display: flex;gap:2px;}
+.product_tag .btn_remove_x {width: 13px;height: 13px;background: #AEB7C6 url('../img/ico/ico_remove_w12.png') no-repeat center;background-size: 6px auto;}

@@ -129,14 +129,15 @@
 
     <!-- 메인리뉴얼 - 수정 추가 -->
     <script type="text/javascript" src="js/common_new.js"></script>
+    <script type="text/javascript" src="js/common_new2.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <!--// 메인리뉴얼 - 수정 추가 -->
 
     <script type="text/javascript">
         //<![CDATA[
-        var PAGE_ID0 = "main";
-        var PAGE_ID1 = "index";
-        var SECURE_URL = "https://m.jwpmall.co.kr";
+        // var PAGE_ID0 = "main";
+        // var PAGE_ID1 = "index";
+        // var SECURE_URL = "https://m.jwpmall.co.kr";
         //]]>
     </script>
 
@@ -155,14 +156,15 @@
 
 </head>
 
-<body class="" style=""><iframe id="frmProc" name="frmProc" src="dummy.html" width="0" height="0" style="display:none"></iframe>
-    <iframe id="frmloginChk" name="frmloginChk" src="dummy(1).html" width="0" height="0" style="display:none"></iframe>
+<body class="" style="">
+    <!-- <iframe id="frmProc" name="frmProc" src="dummy.html" width="0" height="0" style="display:none"></iframe> -->
+    <!-- <iframe id="frmloginChk" name="frmloginChk" src="dummy(1).html" width="0" height="0" style="display:none"></iframe>
     <form name="formloginChk" method="post">
         <input type="hidden" name="loginChk">
         <input type="hidden" name="ur_id">
         <input type="hidden" name="passwd">
         <input type="hidden" name="return_url">
-    </form>
+    </form> -->
 
     <script>
         var appyn = 'N';
@@ -1624,6 +1626,60 @@
                             <span class="ir-text">검색</span>
                         </button>
                     </div>
+                </div>
+                <!-- // 결과 내 검색 -->
+                <div class="search_result_option flex_justfy">
+                    <div class="total_count_box">
+                        <div class="total_count">전체 <strong>0</strong> 개</div>
+                        <div class="switch_wrap">
+                           <label for="fillter001">품절제외</label>
+                           <input type="checkbox" checked id="fillter001" />
+                        </div>
+                    </div>
+                    <div class="sort_option flex_justfy">
+                        <div class="dropdown_menu_wrap">
+                            <button type="button" class="btn-dropdown">판매인기순</button>
+                            <ul class="dropdown_list">
+                                <li><button type="button" data-option="판매인기순">판매인기순</button></li>
+                                <li><button type="button" data-option="제품명">제품명</button></li>
+                                <li><button type="button" data-option="제조사">제조사</button></li>
+                                <li><button type="button" data-option="높은가격순">높은가격순</button></li>
+                                <li><button type="button" data-option="낮은가격순">낮은가격순</button></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_store_info">
+                            <span class="ir-text">입점사</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- // sorting -->
+                <div class="tag_wrap_gray">
+                    <div class="tag_inner">
+                        <span class="product_tag">
+                            JW중외제약 
+                            <button type="button" class="btn_remove_x"><span class="ir-text">삭제</span></button>
+                        </span>
+                        <span class="product_tag">
+                            JW중외제약 
+                            <button type="button" class="btn_remove_x"><span class="ir-text">삭제</span></button>
+                        </span>
+                        <span class="product_tag">
+                            JW중외제약 
+                            <button type="button" class="btn_remove_x"><span class="ir-text">삭제</span></button>
+                        </span>
+                        <span class="product_tag">
+                            JW중외제약 
+                            <button type="button" class="btn_remove_x"><span class="ir-text">삭제</span></button>
+                        </span>
+                        <span class="product_tag">
+                            JW중외제약 
+                            <button type="button" class="btn_remove_x"><span class="ir-text">삭제</span></button>
+                        </span>
+                        <span class="product_tag">
+                            JW중외제약 
+                            <button type="button" class="btn_remove_x"><span class="ir-text">삭제</span></button>
+                        </span>                           
+                    </div>                                                                                                 
                 </div>
             </div>
 
