@@ -8,45 +8,45 @@
 	font-style: normal;
 	font-weight: 300;
 	src: local("NotoSansKR-Light"),
-		url("font/NotoSansKR-Light.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/NotoSansKR-Light.woff") format("woff"), /* Modern Browsers */
-		url("font/NotoSansKR-Light.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/NotoSansKR-Light.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/NotoSansKR-Light.woff") format("woff"), /* Modern Browsers */
+		url("../font/NotoSansKR-Light.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "NotoSans";
 	font-style: normal;
 	font-weight: 400;
 	src: local("NotoSansKR-DemiLight"),
-		url("font/NotoSansKR-DemiLight.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/NotoSansKR-DemiLight.woff") format("woff"), /* Modern Browsers */
-		url("font/NotoSansKR-DemiLight.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/NotoSansKR-DemiLight.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/NotoSansKR-DemiLight.woff") format("woff"), /* Modern Browsers */
+		url("../font/NotoSansKR-DemiLight.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "NotoSans";
 	font-style: normal;
 	font-weight: 500;
 	src: local("NotoSansKR-Regular"),
-		url("font/NotoSansKR-Regular.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/NotoSansKR-Regular.woff") format("woff"), /* Modern Browsers */
-		url("font/NotoSansKR-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/NotoSansKR-Regular.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/NotoSansKR-Regular.woff") format("woff"), /* Modern Browsers */
+		url("../font/NotoSansKR-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "NotoSans";
 	font-style: normal;
 	font-weight: 600;
 	src: local("NotoSansKR-Medium"),
-		url("font/NotoSansKR-Medium.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/NotoSansKR-Medium.woff") format("woff"), /* Modern Browsers */
-		url("font/NotoSansKR-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/NotoSansKR-Medium.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/NotoSansKR-Medium.woff") format("woff"), /* Modern Browsers */
+		url("../font/NotoSansKR-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "NotoSans";
 	font-style: normal;
 	font-weight: 700;
 	src: local("NotoSansKR-Bold"),
-		url("font/NotoSansKR-Bold.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/NotoSansKR-Bold.woff") format("woff"), /* Modern Browsers */
-		url("font/NotoSansKR-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/NotoSansKR-Bold.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/NotoSansKR-Bold.woff") format("woff"), /* Modern Browsers */
+		url("../font/NotoSansKR-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 /* Roboto */
@@ -55,36 +55,36 @@
 	font-style: normal;
 	font-weight: 300;
 	src: local("Roboto-Light"),
-		url("font/Roboto-Light.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/Roboto-Light.woff") format("woff"), /* Modern Browsers */
-		url("font/Roboto-Light.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/Roboto-Light.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/Roboto-Light.woff") format("woff"), /* Modern Browsers */
+		url("../font/Roboto-Light.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 500;
 	src: local("Roboto-Regular"),
-		url("font/Roboto-Regular.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/Roboto-Regular.woff") format("woff"), /* Modern Browsers */
-		url("font/Roboto-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/Roboto-Regular.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/Roboto-Regular.woff") format("woff"), /* Modern Browsers */
+		url("../font/Roboto-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 600;
 	src: local("Roboto-Medium"),
-		url("font/Roboto-Medium.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/Roboto-Medium.woff") format("woff"), /* Modern Browsers */
-		url("font/Roboto-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/Roboto-Medium.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/Roboto-Medium.woff") format("woff"), /* Modern Browsers */
+		url("../font/Roboto-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 700;
 	src: local("Roboto-Bold"),
-		url("font/Roboto-Bold.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/Roboto-Bold.woff") format("woff"), /* Modern Browsers */
-		url("font/Roboto-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/Roboto-Bold.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/Roboto-Bold.woff") format("woff"), /* Modern Browsers */
+		url("../font/Roboto-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 /* GmarketSans */
 @font-face {
@@ -92,27 +92,27 @@
 	font-style: normal;
 	font-weight: 300;
 	src: local("GmarketSansTTFLight"),
-		url("font/GmarketSansTTFLight.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/GmarketSansTTFLight.woff") format("woff"), /* Modern Browsers */
-		url("font/GmarketSansTTFLight.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/GmarketSansTTFLight.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/GmarketSansTTFLight.woff") format("woff"), /* Modern Browsers */
+		url("../font/GmarketSansTTFLight.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "GmarketSans";
 	font-style: normal;
 	font-weight: 400;
 	src: local("GmarketSansTTFMedium"),
-		url("font/GmarketSansTTFMedium.woff2") format("woff2"), /* Super Modern Browsers */
-		url("font/GmarketSansTTFMedium.woff") format("woff"), /* Modern Browsers */
-		url("font/GmarketSansTTFMedium.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/GmarketSansTTFMedium.woff2") format("woff2"), /* Super Modern Browsers */
+		url("../font/GmarketSansTTFMedium.woff") format("woff"), /* Modern Browsers */
+		url("../font/GmarketSansTTFMedium.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 @font-face {
 	font-family: "GmarketSans";
 	font-style: normal;
 	font-weight: 700;
 	src: local("GmarketSansTTFBold"),
-		url("font/GmarketSansTTFBold.ttf") format("woff2"), /* Super Modern Browsers */
-		url("font/GmarketSansTTFBold.woff") format("woff"), /* Modern Browsers */
-		url("font/GmarketSansTTFBold.ttf") format("truetype"); /* Safari, Android, iOS */
+		url("../font/GmarketSansTTFBold.ttf") format("woff2"), /* Super Modern Browsers */
+		url("../font/GmarketSansTTFBold.woff") format("woff"), /* Modern Browsers */
+		url("../font/GmarketSansTTFBold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 /* margin-top */

@@ -3,100 +3,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" async="" src="js/analytics.js"></script>
-    <script type="text/javascript" async="" src="js/js"></script>
-    <script>
-        //앱 내 데이터 저장하기 / 불러오기
-
-        function setPreferenceTest() {
-
-            console.log("setPreferenceTest key:abc, value:true");
-
-            window.flutter_inappwebview.callHandler('setPreference', {
-                'abc': true
-            }).then(function(result) {
-
-                console.log("setPreferenceTest result:" + String(result));
-
-                alert(result ? "값 설정완료" : "값 설정실패");
-
-            });
-
-        }
-
-        function getPreferenceTest() {
-
-            window.flutter_inappwebview.callHandler('getPreference', 'abc').then(function(result) {
-
-                console.log("getPreferenceTest key:abc, value:" + String(result));
-
-                alert("값 불러오기, abc : " + String(result));
-
-            });
-
-        }
-
-
-
-        function windowPopup() {
-
-            window.open("https://www.w3schools.com");
-
-        }
-
-
-
-        console.log("user-agent: " + navigator.userAgent);
-
-        //Flutter 웹뷰 ready 이벤트
-
-        window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-
-
-
-            //앱 & 기기 관련 정보 가져오기
-
-            window.flutter_inappwebview.callHandler('getAppInfo').then(function(result) {
-
-                // print to the console the data coming from the Flutter side.
-
-                // 앱 정보  { "os":"android", "deviceId":"기기ID", "fcmPushToken":"푸시토큰", "appVersion":"1.0.0"}
-
-                console.log("appInfo : " + JSON.stringify(result));
-
-                var os = result.os;
-                var deviceId = result.deviceId;
-                var fcmPushToken = result.fcmPushToken;
-
-                $.ajax({
-                    type: "POST",
-                    url: "/common/ajax/update_token_ajax.do",
-                    data: {
-                        os: os,
-                        deviceId: deviceId,
-                        fcmPushToken: fcmPushToken
-                    },
-                    error: function(request, status, error) {
-                        console.log(request.responseText)
-                    },
-                    success: function(data) {
-                        console.log(JSON.stringify(data));
-                    }
-                });
-
-                window.flutter_inappwebview.callHandler('getAppInfoWithArgs', 1, true, ['bar', 5], {
-                    foo: 'baz'
-                }, result);
-
-            });
-
-        });
-    </script>
-
-
-
-
-
+    <!-- <script type="text/javascript" async="" src="js/analytics.js"></script> -->
+    
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi"><!--화면 확대비율 고정 -->
     <title>JW중외제약 온라인몰</title>
@@ -133,69 +41,10 @@
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <!--// 메인리뉴얼 - 수정 추가 -->
 
-    <script type="text/javascript">
-        //<![CDATA[
-        // var PAGE_ID0 = "main";
-        // var PAGE_ID1 = "index";
-        // var SECURE_URL = "https://m.jwpmall.co.kr";
-        //]]>
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="js/js(1)"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-165668447-1');
-    </script>
 
 </head>
 
 <body class="" style="">
-    <!-- <iframe id="frmProc" name="frmProc" src="dummy.html" width="0" height="0" style="display:none"></iframe> -->
-    <!-- <iframe id="frmloginChk" name="frmloginChk" src="dummy(1).html" width="0" height="0" style="display:none"></iframe>
-    <form name="formloginChk" method="post">
-        <input type="hidden" name="loginChk">
-        <input type="hidden" name="ur_id">
-        <input type="hidden" name="passwd">
-        <input type="hidden" name="return_url">
-    </form> -->
-
-    <script>
-        var appyn = 'N';
-
-        function goLogout() {
-            top.location.href = "/mw/member/logout.do?appyn=" + appyn;
-        }
-
-        //Flutter 웹뷰 ready 이벤트
-        window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-
-            //앱 & 기기 관련 정보 가져오기
-
-            window.flutter_inappwebview.callHandler('getAppInfo').then(function(result) {
-
-                // print to the console the data coming from the Flutter side.
-
-                // 앱 정보  { "os":"android", "deviceId":"기기ID", "fcmPushToken":"푸시토큰", "appVersion":"1.0.0"}
-
-                console.log("appInfo : " + JSON.stringify(result));
-
-                appyn = "Y";
-
-                window.flutter_inappwebview.callHandler('getAppInfoWithArgs', 1, true, ['bar', 5], {
-                    foo: 'baz'
-                }, result);
-
-            });
-
-        });
-    </script>
 
 
     <script type="text/javascript">
@@ -1683,132 +1532,134 @@
                 </div>
             </div>
             <div class="product_cont">
-                  <div class="no_search_results">
-                    판매중인 상품이 없습니다.
-                  </div>
-  
-                  <div class="popular_searches_wrap">
-                      <div class="popular_searches_list">
+                <div class="no_search_results">
+                판매중인 상품이 없습니다.
+                </div>
+
+                <div class="popular_searches_wrap">
+                    <div class="popular_searches_list">
                         <div class="tit">인기 검색어</div>
                         <div class="popular_searches_rank">
-                          <ol>
-                            <li class="hot">
-                              <span class="num">1.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li class="hot">
-                              <span class="num">2.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li class="hot">
-                              <span class="num">3.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li>
-                              <span class="num">4.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li>
-                              <span class="num">5.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>                                                                                                        
-                          </ol>
-                          <ol>
-                            <li>
-                              <span class="num">6.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li>
-                              <span class="num">7.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li>
-                              <span class="num">8.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li>
-                              <span class="num">9.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>
-                            <li>
-                              <span class="num">10.</span>
-                              <a href="#">
-                                수액세트
-                              </a>
-                            </li>                                                                                                        
-                          </ol>                        
+                            <ol>
+                                <li class="hot">
+                                    <span class="num">1.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li class="hot">
+                                    <span class="num">2.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li class="hot">
+                                    <span class="num">3.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="num">4.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="num">5.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>                                                                                                        
+                            </ol>
+                            <ol>
+                                <li>
+                                    <span class="num">6.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="num">7.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="num">8.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="num">9.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="num">10.</span>
+                                    <a href="#">
+                                    수액세트
+                                    </a>
+                                </li>                                                                                                        
+                            </ol>                        
                         </div>
-                      </div>
-                      <div class="event_slide_area">
-                        <div class="event_slider">
-                          <!-- Swiper -->
-                          <div class="swiper_wrap type03">
-                            <div class="swiper mySwiper medical_banner_01">
-                              <div class="swiper-wrapper">
-                                <div class="swiper-slide"><a href="#"><img src="./img/sample/temp_slider.png" alt=""></a></div>
-                                <div class="swiper-slide"><a href="#"><img src="./img/sample/temp_slider.png" alt=""></a></div>
-                              </div>
-                              <div class="swiper-button-next"><img src="./img/common/btn_right_b.png" alt=""></div>
-                              <div class="swiper-button-prev"><img src="./img/common/btn_left_b.png" alt=""></div>
-                              <div class="swiper-pagination type01"></div>
-                              <div class="swiper-autoplay-button">
-                                <img src="./img/common/btn_pause_b.png" alt="" class="pause">
-                                <img src="./img/common/btn_play_b.png" alt="" class="play">
-                              </div>
+                    </div>
+                    <div class="event_slide_area">
+                    <div class="event_slider">
+                        <!-- Swiper -->
+                        <div class="swiper_wrap">
+                        <div class="swiper mySwiper medical_banner_01">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><a href="#"><img src="./img/sample/sample_cont_detail.png" alt=""></a></div>                            
+                                <div class="swiper-slide"><a href="#"><img src="./img/sample/sample_cont_detail.png" alt=""></a></div>     
                             </div>
-                          </div>
-                          <script>
-                            var medical_banner_01 = new Swiper(".medical_banner_01.swiper", {
-                              slidesPerView: 1,
-                              slidesPerGroup: 1,
-                              // spaceBetween: 4,
-                              pagination: {
-                                el: ".swiper-pagination",
-                                type: "fraction",
-                              },
-                              loop: true,
-                              navigation: {
-                                nextEl: ".medical_banner_01 .swiper-button-next",
-                                prevEl: ".medical_banner_01 .swiper-button-prev",
-                              },
-                              autoplay: {
-                                delay: 2000, // Autoplay delay in milliseconds
-                                disableOnInteraction: false, // Autoplay continues after user interaction
-                              },
-                            });
-                          
-                            // Pause/Play button functionality
-                            $(".medical_banner_01 .swiper-autoplay-button").click(function(){
-                              $(this).toggleClass("paused");
-                              if( $(this).is(".paused") ){
-                                medical_banner_01.autoplay.stop();
-                              }
-                              else{
-                                medical_banner_01.autoplay.start();
-                              };
-                            });
-                          </script>                        
+                            <div class="swiper_control_box">
+                                <div class="pagination"></div>
+                                <div class="button-prev"><span class="ir-text">이전</span></div>
+                                <div class="button-next"><span class="ir-text">다음</span></div> 
+                                <div class="swiper-autoplay-button">
+                                    <img src="./img/ico/ico_play_pause.png" alt="" class="pause">
+                                    <!-- <img src="./img/ico/ico_play_pause.png" alt="" class="play"> -->
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                  </div>                
+                        </div>
+                        <script>
+                        var medical_banner_01 = new Swiper(".medical_banner_01.swiper", {
+                            slidesPerView: 1,
+                            slidesPerGroup: 1,
+                            // spaceBetween: 4,
+                            pagination: {
+                            el: ".swiper_control_box .pagination",
+                            type: "fraction",
+                            },
+                            loop: true,
+                            navigation: {
+                            nextEl: ".medical_banner_01 .button-next",
+                            prevEl: ".medical_banner_01 .button-prev",
+                            },
+                            autoplay: {
+                            delay: 2000, // Autoplay delay in milliseconds
+                            disableOnInteraction: false, // Autoplay continues after user interaction
+                            },
+                        });
+                        
+                        // Pause/Play button functionality
+                        $(".medical_banner_01 .swiper-autoplay-button").click(function(){
+                            $(this).toggleClass("paused");
+                            if( $(this).is(".paused") ){
+                            medical_banner_01.autoplay.stop();
+                            }
+                            else{
+                            medical_banner_01.autoplay.start();
+                            };
+                        });
+                        </script>                        
+                    </div>
+                    </div>
+                </div>                
 
             </div>
 
@@ -1911,6 +1762,6 @@
 <div id="dim_mask" onclick="areaClose()">
 </div-->
     <div id="layerPopup"></div>
-    <img src="chrome-extension://lplhclpeegjedapdliokcacmphgcnlnd/img/error_128.png" title="Some errors occurred on this page. Click to see details." style="opacity: 1; position: fixed !important; bottom: 10px !important; right: 10px !important; cursor: pointer !important; z-index: 2147483647 !important; width: 38px !important; height: 38px !important; min-height: 38px !important; min-width: 38px !important; max-height: 38px !important; max-width: 38px !important;">
+    <!-- <img src="chrome-extension://lplhclpeegjedapdliokcacmphgcnlnd/img/error_128.png" title="Some errors occurred on this page. Click to see details." style="opacity: 1; position: fixed !important; bottom: 10px !important; right: 10px !important; cursor: pointer !important; z-index: 2147483647 !important; width: 38px !important; height: 38px !important; min-height: 38px !important; min-width: 38px !important; max-height: 38px !important; max-width: 38px !important;"> -->
 </body>
 </html>

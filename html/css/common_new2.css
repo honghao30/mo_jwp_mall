@@ -78,4 +78,32 @@
 .product_tag {font-size: 14px;font-weight: 300;line-height: 14px;white-space: nowrap;align-items: center;display: flex;gap:2px;}
 .product_tag .btn_remove_x {width: 13px;height: 13px;background: #AEB7C6 url('../img/ico/ico_remove_w12.png') no-repeat center;background-size: 6px auto;}
 
-.no_search_results {background: url('../img/img_mascot.png') no-repeat center top;background-size: 150px auto; width:fit-content;margin: 112px auto 40px; padding-top: 144px; display: flex;justify-content: center; font-size: 16px;font-weight: 300;line-height: 16px;color:#222;}
+.no_search_results {background: url('../img/img_mascot.png') no-repeat center top;background-size: 150px auto; width:fit-content;margin: 34px auto 40px; padding-top: 150px; display: flex;justify-content: center; font-size: 15px;font-weight: 400;line-height: 15px;color:#000;}
+
+.popular_searches_wrap {background: #F7F8FA;border-radius: 20px;padding: 20px 0px 0;margin:0 16px 100px;}
+.popular_searches_list .tit {font-size: 15px;font-weight: 400;line-height: 15px;color:#000;border-bottom: 1px solid #E1E3E9;padding:0 16px 20px;}
+.popular_searches_rank {display: flex;justify-content: space-between;padding: 20px 16px;}
+.popular_searches_rank ol {width: 50%;}
+.popular_searches_rank ol li {font-size: 14px;font-weight: 400;line-height: 14px;color:#717B8A;}
+.popular_searches_rank ol li .num {font-weight: 700;width:24px;font-family: 'Montserrat';display: inline-flex;}
+.popular_searches_rank ol li.hot {font-weight: 700;}
+.popular_searches_rank ol li.hot .num {color:#FF4949;}
+.popular_searches_rank ol li+li {margin-top:8px;}
+.popular_searches_wrap .event_slider {border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;overflow: hidden;}
+
+.mySwiper.medical_banner_01 {position: relative;}
+.swiper_control_box {position:absolute; border-radius: 24px;background: rgba(0, 0, 0, 0.4);padding: 8px 16px 8px 16px;right: 10px;bottom:10px;z-index:10;display: flex;align-items: center;gap:4px;}
+
+.swiper_control_box .swiper-horizontal>.swiper-pagination-bullets, 
+.swiper_control_box .swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper_control_box .swiper-pagination-custom, 
+.swiper_control_box .swiper-pagination-fraction {width: auto;}
+
+.swiper_control_box .button-next,
+.swiper_control_box .button-prev {width:16px;height:16px;position: relative; display: inline-flex;}
+.swiper_control_box .button-prev {background: url('../img/ico/ico_arrow_left.png') no-repeat center;background-size: 10px auto;}
+.swiper_control_box .button-next {background: url('../img/ico/ico_arrow_right.png') no-repeat center;background-size: 10px auto;}
+.swiper_control_box .pagination .swiper-pagination-current {font-weight: 700;}
+.swiper_control_box .pagination .swiper-pagination-total {font-weight: 300;}
+.swiper_control_box .pagination {font-family: 'Montserrat';font-size: 12px;font-weight: 700;line-height: 12px;color:#fff;}
+.swiper_control_box .swiper-autoplay-button img {width: 16px;height: 16px;}
