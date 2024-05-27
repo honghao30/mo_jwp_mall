@@ -1682,6 +1682,135 @@
                     </div>                                                                                                 
                 </div>
             </div>
+            <div class="product_cont">
+                  <div class="no_search_results">
+                    판매중인 상품이 없습니다.
+                  </div>
+  
+                  <div class="popular_searches_wrap">
+                      <div class="popular_searches_list">
+                        <div class="tit">인기 검색어</div>
+                        <div class="popular_searches_rank">
+                          <ol>
+                            <li class="hot">
+                              <span class="num">1.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li class="hot">
+                              <span class="num">2.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li class="hot">
+                              <span class="num">3.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li>
+                              <span class="num">4.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li>
+                              <span class="num">5.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>                                                                                                        
+                          </ol>
+                          <ol>
+                            <li>
+                              <span class="num">6.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li>
+                              <span class="num">7.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li>
+                              <span class="num">8.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li>
+                              <span class="num">9.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>
+                            <li>
+                              <span class="num">10.</span>
+                              <a href="#">
+                                수액세트
+                              </a>
+                            </li>                                                                                                        
+                          </ol>                        
+                        </div>
+                      </div>
+                      <div class="event_slide_area">
+                        <div class="event_slider">
+                          <!-- Swiper -->
+                          <div class="swiper_wrap type03">
+                            <div class="swiper mySwiper medical_banner_01">
+                              <div class="swiper-wrapper">
+                                <div class="swiper-slide"><a href="#"><img src="./img/sample/temp_slider.png" alt=""></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="./img/sample/temp_slider.png" alt=""></a></div>
+                              </div>
+                              <div class="swiper-button-next"><img src="./img/common/btn_right_b.png" alt=""></div>
+                              <div class="swiper-button-prev"><img src="./img/common/btn_left_b.png" alt=""></div>
+                              <div class="swiper-pagination type01"></div>
+                              <div class="swiper-autoplay-button">
+                                <img src="./img/common/btn_pause_b.png" alt="" class="pause">
+                                <img src="./img/common/btn_play_b.png" alt="" class="play">
+                              </div>
+                            </div>
+                          </div>
+                          <script>
+                            var medical_banner_01 = new Swiper(".medical_banner_01.swiper", {
+                              slidesPerView: 1,
+                              slidesPerGroup: 1,
+                              // spaceBetween: 4,
+                              pagination: {
+                                el: ".swiper-pagination",
+                                type: "fraction",
+                              },
+                              loop: true,
+                              navigation: {
+                                nextEl: ".medical_banner_01 .swiper-button-next",
+                                prevEl: ".medical_banner_01 .swiper-button-prev",
+                              },
+                              autoplay: {
+                                delay: 2000, // Autoplay delay in milliseconds
+                                disableOnInteraction: false, // Autoplay continues after user interaction
+                              },
+                            });
+                          
+                            // Pause/Play button functionality
+                            $(".medical_banner_01 .swiper-autoplay-button").click(function(){
+                              $(this).toggleClass("paused");
+                              if( $(this).is(".paused") ){
+                                medical_banner_01.autoplay.stop();
+                              }
+                              else{
+                                medical_banner_01.autoplay.start();
+                              };
+                            });
+                          </script>                        
+                        </div>
+                      </div>
+                  </div>                
+
+            </div>
 
             <!-- //html 마크업 -->
         </div>
