@@ -232,5 +232,10 @@ html,body {letter-spacing: -0.04em;}
 .order_button_wrap button {font-size: 16px;font-weight: 600;line-height: 16px;text-align: center;height: 48px;border-radius: 16px;}
 .order_button_wrap .btn_blue_line {width: calc(50% - 8px);border: 1px solid #0072BC;color:#0072BC;}
 .order_button_wrap .btn_blue_line:only-child {width: 100%;}
+.order_button_wrap .btn_blue:only-child {width: 100%;}
 .order_button_wrap .btn_blue {width: calc(50% - 8px);border: 1px solid #0072BC;background-color: #0072BC; color:#fff;}
 .order_button_wrap .btn_blue[disabled] {opacity: 0.5;}
+
+/* 필터 레이어 */
+.filter-layer {overflow-x:hidden;overflow-y:auto;position:fixed;left:0%;top:0;width:100%;height:100vh;background:#fff;z-index:101;-webkit-transition:left 0.2s;-moz-transition:left 0.2s;transition:left 0.2s;-webkit-overflow-scrolling:touch;}
+.filter_layer_inner {position: relative;height:100vh;display: flex;flex-direction: column;}
