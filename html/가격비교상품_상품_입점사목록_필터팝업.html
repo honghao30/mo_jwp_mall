@@ -1829,6 +1829,153 @@
                     </div>
                 </div>
             </div>
+            <!-- 필터 모달 -->
+            <div class="filter-layer">
+                <div class="filter_layer_inner">
+                    <div class="filter_layer_title">
+                        입점사 필터
+                    </div>
+                    <div class="filter_store_search">
+                        <input type="text" placeholder="" />
+                        <button type="button">
+                            <span class="ir-text">검색</span>
+                        </button>
+                        <div class="autocomplete_wrap">
+                            <ul>
+                                <li>
+                                    <a href="#"><span>키워드</span> 완성</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>키워드</span> 완성</a>
+                                </li>                                
+                            </ul>
+                        </div>
+                        <script>
+                            // 검색 input에 포커싱이 되면 search_input에 active 클래스 추가
+                            $(".filter_store_search input").focus(function () {
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").addClass("active");
+                              }
+                            });
+                  
+                            // 검색 input에서 포커스가 빠지면 search_input의 active 클래스 제거
+                            $(".filter_store_search input").blur(function () {
+                              // 입력된 텍스트가 있는지 확인
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").removeClass("active");
+                                $(".filter_store_search").removeClass("on");
+                              }
+                            });
+                  
+                            // keydown 이벤트가 발생하면 active 클래스 제거하고 on 클래스 추가
+                            $(".filter_store_search input").keydown(function () {
+                              $(".filter_store_search").removeClass("active").addClass("on");
+                            });
+                  
+                            // 입력된 텍스트가 없을 때 on 클래스 제거
+                            $(".filter_store_search input").keyup(function () {
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").removeClass("on");
+                              }
+                            });
+                  
+                            // 입력된 텍스트가 없을 때 클릭하면 active 클래스 추가
+                            $(".filter_store_search input").click(function () {
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").addClass("active");
+                              }
+                            });
+                  
+                            // 다른 곳을 클릭하면 on 클래스 제거
+                            $(document).on("click", function (event) {
+                              if (!$(event.target).closest(".filter_store_search").length) {
+                                $(".filter_store_search").removeClass("on");
+                              }
+                            });// 검색 input에 포커싱이 되면 search_input에 active 클래스 추가
+                            $(".filter_store_search input").focus(function () {
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").addClass("active");
+                              }
+                            });
+                  
+                            // 검색 input에서 포커스가 빠지면 search_input의 active 클래스 제거
+                            $(".filter_store_search input").blur(function () {
+                              // 입력된 텍스트가 있는지 확인
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").removeClass("active");
+                                $(".filter_store_search").removeClass("on");
+                              }
+                            });
+                  
+                            // keydown 이벤트가 발생하면 active 클래스 제거하고 on 클래스 추가
+                            $(".filter_store_search input").keydown(function () {
+                              $(".filter_store_search").removeClass("active").addClass("on");
+                            });
+                  
+                            // 입력된 텍스트가 없을 때 on 클래스 제거
+                            $(".filter_store_search input").keyup(function () {
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").removeClass("on");
+                              }
+                            });
+                  
+                            // 입력된 텍스트가 없을 때 클릭하면 active 클래스 추가
+                            $(".sfilter_store_search input").click(function () {
+                              if ($(this).val() === "") {
+                                $(".filter_store_search").addClass("active");
+                              }
+                            });
+                  
+                            // 다른 곳을 클릭하면 on 클래스 제거
+                            $(document).on("click", function (event) {
+                              if (!$(event.target).closest(".filter_store_search").length) {
+                                $(".filter_store_search").removeClass("on");
+                              }
+                            });
+                            
+                          </script>                          
+                    </div>
+                    <div class="filter_store_result">                        
+                        <div class="selectd_tag_wap">
+                            <div class="mo_tit_ft18">선택한 입점사</div>
+                            <div class="tag_wrap">
+                                <span class="tag_box selected">
+                                    <button type="button" class="btn_tag_name">태전약국</button>
+                                    <button type="button" class="btn_remove_x"><span class="ir-text">해제</span> </button>
+                                </span>
+                                <span class="tag_box selected">
+                                    <button type="button" class="btn_tag_name">JW제약</button>
+                                    <button type="button" class="btn_remove_x"><span class="ir-text">해제</span> </button>
+                                </span>
+                                <span class="tag_box selected">
+                                    <button type="button" class="btn_tag_name">JW</button>
+                                    <button type="button" class="btn_remove_x"><span class="ir-text">해제</span> </button>
+                                </span>       
+                            </div>                                                 
+                        </div>
+                        <div class="tag_list_wap">
+                            <div class="mo_tit_ft18">입점사 전체 목록</div>
+                            <div class="tag_wrap">
+                                <span class="tag_box">
+                                    <button type="button" class="btn_tag_name">서울약사신협</button>                                
+                                </span>
+                                <span class="tag_box">
+                                    <button type="button" class="btn_tag_name">보덕메디팜</button>                                
+                                </span>       
+                                <span class="tag_box">
+                                    <button type="button" class="btn_tag_name">보덕</button>                                
+                                </span>                                           
+                            </div>             
+                        </div> 
+                        <div class="order_button_wrap flex_justfy">                        
+                            <button type="button" class="btn_blue">필터적용</button>
+                        </div>                 
+                    </div>
+                    <button type="button" class="btn_close">
+                        <span class="ir-text">닫기</span>
+                    </button>
+                </div>         
+            </div>
             <!-- //html 마크업 -->
         </div>
 
