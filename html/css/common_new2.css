@@ -34,6 +34,7 @@ html,body {letter-spacing: -0.04em;}
 
 .flex_justfy {display: flex;align-items: center;justify-content: space-between;}
 .ir-text {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;}
+.bg_gray {background-color: #F2F5FA;}
 
 /* badge */
 .badge_area {display: flex;flex-wrap: wrap;}
@@ -126,7 +127,7 @@ html,body {letter-spacing: -0.04em;}
 .swiper_control_box .swiper-autoplay-button img {width: 12px;height: 12px;}
 
 /* 가격비교 상품 목록 */
-.product_list_item {border: 1px solid #E1E3E9;overflow: hidden;}
+.product_list_item {border: 1px solid #E1E3E9;overflow: hidden;background-color: #fff;}
 .product_list_item .item_summary_info {display: flex;justify-content: space-between;padding: 24px 16px;gap: 12px;}
 .product_list_item .item_summary_info .product_thumbnail {width: 101px;height: 101px;overflow: hidden;}
 .product_list_item .item_summary_info .product_thumbnail img {width: 100%;}
@@ -146,3 +147,11 @@ html,body {letter-spacing: -0.04em;}
 .items_link_list .price {flex:1;font-size: 16px;font-weight: 400;line-height: 16px;color:#000;text-align: right;}
 .items_link_list .price strong {font-family: 'Montserrat';font-weight: 700;}
 .items_link_list.soldout-list .name {color:#AEB7C6;}
+
+.product_description {margin-top: 12px;}
+.product_description .unit {font-size: 14px;font-weight: 400;line-height: 14px;color:#717B8A;}
+.product_description .btn_more_arrow {font-size: 13px;font-weight: 400;line-height: 13px;background: url('../img/ico/ico_arrow_box_right.png') no-repeat right center;padding-right: 18px;background-size: 13px auto;}
+.product_spec_graybox {padding: 20px 16px 14px;border-radius: 12px;background: #F7F8FA;margin:0 16px 24px;}
+.product_spec_graybox ul {display: flex;justify-content: space-between;flex-wrap: wrap;}
+.product_spec_graybox li {position: relative;padding-left: 6px;font-size: 13px;font-weight: 400;line-height: 13px;color:#717B8A;width: 48%;margin-bottom: 6px;}
+.product_spec_graybox li::before {content: '';display: block;position: absolute;left:0;top: 5px; width:2px;height:2px;background-color: #AEB7C6;border-radius: 50%;}
