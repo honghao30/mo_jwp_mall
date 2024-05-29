@@ -1,0 +1,24 @@
+.content_wrap {font-family: Noto Sans KR; }
+.mypage_infobox {background-color: #F2F5FA; padding: 32px 16px 16px 16px;}
+.mypage_info-title {display: flex; gap: 4px; justify-content: flex-start; align-items: center;}
+.mypage_info-title>img {width: 28px; height: 28px; display: block;}
+.mypage_info-title p {font-size: 16px; font-weight: 400; line-height: 32px; letter-spacing: -0.64px; color: #000000;}
+.mypage_info-title .mypage_name {color:#0072BC;}
+.mypage_infobox dl.mypage_info-des {padding: 16px 0; background-color: #fff; display: flex; flex-wrap: nowrap;}
+.mypage_infobox dl.mypage_info-des + dl.mypage_info-des {margin-top: 8px;}
+.mypage_infobox dl.mypage_info-des>div:not(:first-child) {border-left: 2px solid #E1E3E9;}
+.mypage_infobox dl.mypage_info-des>div {width: 33.333%; display: flex; flex-direction: column; gap:12px; padding:0 12px;}
+.mypage_infobox dl.mypage_info-des.whalf>div {width: 50%;}
+.mypage_infobox dl.mypage_info-des dt {font-size: 13px; line-height: 13px; letter-spacing: -0.52px; color:#717B8A; text-align: left;}
+.mypage_infobox dl.mypage_info-des dd {font-size: 15px; line-height: 15px; text-align: right;}
+.mypage_infobox dl.mypage_info-des dd strong {font-size: 15px; font-weight: 700; line-height: 15px;}
+.mypage_infobox dl.mypage_info-des .flx-box img {width: 20px; height: 20px;}
+.mypage_infobox dl.mypage_info-des .flx-box dt {display: flex; justify-content: space-between; align-items: center;}
+.mypage_infobox dl.mypage_info-des .flx-box dt>div{display: flex; align-items: center; gap: 4px; color: #FF4949;}
+.mypage_infobox .logout-box {text-align: end;}
+.mypage_infobox .logout-box .logout-btn {padding: 7.5px 12px; border-radius: 16px; border: 1px solid #E1E3E9; background-color: #fff; margin-top: 16px; display: inline-block;}
+.mypage_menu {display: flex; flex-wrap: wrap;}
+.mypage_menu li {padding: 16px 0 16px 16px; border-bottom: 2px solid #E1E3E9; position: relative; width: calc(50% - 16px);}
+.mypage_menu li::after {content: ''; position: absolute; background: url(../img/ico/ico_arrow_right_b36.png) center no-repeat; width: 16px; height: 16px; right: 16px; top: 16px;}
+.mypage_menu li:nth-child(2n) {border-left: 2px solid #E1E3E9; width: calc(49.5% - 16px);}
+.same {background-color: #F7F8FA; padding: 92.5px 0; text-align: center;}
