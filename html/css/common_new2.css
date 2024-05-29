@@ -306,7 +306,7 @@ html,body {letter-spacing: -0.04em;}
 .product_detail_tab_cont.active {display: block;}
 
 /* 상세정보 테이블 */
-.product_table_wrap {margin: 24px auto 32px;width: 100%;border-top: 1px solid #E1E3E9;}
+.product_table_wrap {margin: 12px auto 32px;width: 100%;border-top: 1px solid #E1E3E9;}
 .product_table_wrap table {width: 100%;}
 .product_table_wrap tbody th {text-align: left;font-size: 13px;font-weight: 400;line-height: 13px;color:#222;height: 36px;vertical-align: middle; border-bottom: 1px solid #E1E3E9;padding-left: 16px;background-color: #F7F8FA;}
 .product_table_wrap tbody td {text-align: left;font-size: 13px;font-weight: 400;line-height: 13px;color: #717B8A;height: 36px;vertical-align: middle; border-bottom: 1px solid #E1E3E9;padding-left: 16px;}
