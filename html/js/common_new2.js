@@ -106,8 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
 
-      btnPlus &&
-        btnPlus.addEventListener("click", () => {
+      btnPlus && btnPlus.addEventListener("click", () => {
           let currentQuantity = parseInt(quantityInput.value);
           quantityInput.value = currentQuantity + 1;
         });
