@@ -432,3 +432,11 @@ html,body {letter-spacing: -0.04em;}
 .btn_pagination_prev::before {background: url('../img/ico/ico_left_single.png') no-repeat center;background-size: 100% auto;}
 .btn_pagination_next::before,
 .btn_pagination_last::before {transform: rotate(180deg);}
+
+/* 이벤트 테이블 */
+.event_table {width: 100%;}
+.event_table table {table-layout: fixed;}
+.event_table thead th {vertical-align: middle;text-align: center;height: 36px;background: rgba(247, 248, 250, 1);font-size: 14px;font-weight: 500;line-height: 14px;color: #222222;}
+.event_table tbody td {vertical-align: middle;text-align: center;height: 36px;font-size: 12px;font-weight: 400;line-height: 13px;color:#717B8A;}
+.event_table tbody td.subject {text-align: left;}
+.event_table tbody td.subject a {display: block;width: 80%;white-space: nowrap;overflow: hidden; text-overflow: ellipsis;}
