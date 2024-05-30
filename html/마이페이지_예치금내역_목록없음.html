@@ -1467,100 +1467,64 @@
         <!-- content_wrap -->
         <div class="content_wrap">  
             <!-- html 마크업 -->
-            <div class="mypage_infobox">
-                <div class="mypage_info-title">
-                    <img src="./img/ico_vip.png">
-                    <p><span class="mypage_name">제이더블유중외제약주식회사</span>님의 쇼핑정보</p>
-                </div>
-                <dl class="mypage_info-des">
-                    <div>
-                        <dt>이번달 주문건</dt>
-                        <dd><strong>1,000</strong>건</dd>
+            <div class="tab-group touchscrollwrap type04">
+                <ul class="tab-menu no_scroll">
+                    <li class="tab-item1 active">예치금 내역</li>
+                    <li class="tab-item1">예치금 구매</li>
+                    <li class="tab-item1">마이너스 잔고 내역</li>
+                    <li class="tab-item1">여신결제 내역</li>
+                    <!-- <li class="tab-item1">주문/배송 내역</li>
+                    <li class="tab-item1">취소/반품 내역</li>
+                    <li class="tab-item1">반품신청</li>
+                    <li class="tab-item1">거래원장</li> -->
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane1 active">
+                        <div class="bank-top">
+                            <p>사용 가능한 예치금</p>
+                            <div class="moneybox">
+                                <p><strong>4,900,000</strong>원</p>
+                                <a href="#">예치금 구매</a> <!--예치금 구매화면으로 -->
+                            </div>
+                        </div>
+                        <div class="bank-search">
+                            <div>
+                                <div class="dropdown_menu_wrap">
+                                    <button type="button" class="btn-dropdown">직접입력</button>
+                                    <ul class="dropdown_list">
+                                        <li><button type="button" data-option="7일">7일</button></li>
+                                        <li><button type="button" data-option="1개월">1개월</button></li>
+                                        <li><button type="button" data-option="3개월">3개월</button></li>
+                                        <li><button type="button" data-option="6개월">6개월</button></li>
+                                        <li><button type="button" data-option="1년">1년</button></li>
+                                        <li><button type="button" data-option="직접입력">직접입력</button></li>
+                                    </ul>
+                                </div>
+                                <div class="inputbox">
+                                    <input name="search" type="text" placeholder="구매번호 및 구매내용 검색">
+                                    <button type="button" class="btn_search_top">
+                                        <span class="ir-text">검색</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="btn_wrap">
+                                <button class="btn btn-reset"><span>초기화</span></button>
+                                <button class="btn btn-inquiry"><span>조회</span></button>
+                            </div>
+                        </div>
+                        <div class="bank-cont no-cont">
+                            <p class="cont-tit">상세내역</p>
+                            <div class="no-cont-inner">
+                                <img src="./img/ico/ico_mascot.png">
+                                <p class="no_result">예치금 내역이 없습니다.</p>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div>
-                        <dt>이번달 주문금액</dt>
-                        <dd><strong>1,586,000</strong>원</dd>
-                    </div>
-                    <div>
-                        <dt>이번달 반품금액</dt>
-                        <dd><strong>350,000</strong>원</dd>
-                    </div>
-                </dl>
-                <dl class="mypage_info-des whalf">
-                    <div>
-                        <dt>마이너스 잔고</dt>
-                        <dd><strong>560,000</strong>원</dd>
-                    </div>
-                    <div class="flx-box">
-                        <dt>예치금
-                            <div>예치금 구매<img src="./img/ico/ico_plus_red.png"></div>
-                        </dt>
-                        <dd><strong>890,000</strong>원</dd>
-                    </div>
-                </dl>
-                <dl class="mypage_info-des">
-                    <div>
-                        <dt>마일리지</dt>
-                        <dd><strong>2,000</strong>M</dd>
-                    </div>
-                    <div>
-                        <dt>포인트</dt>
-                        <dd><strong>500,000</strong>P</dd>
-                    </div>
-                    <div>
-                        <dt>보유쿠폰</dt>
-                        <dd><strong>15</strong>매</dd>
-                    </div>
-                </dl>
-                <div class="logout-box">
-                    <a class="logout-btn">로그아웃</a>
+                    <div class="tab-pane1">탭2</div>
+                    <div class="tab-pane1">탭3</div>
                 </div>
             </div>
-            <ul class="mypage_menu">
-                <li>
-                    <a href="#">주문정보</a>
-                </li>
-                <li>
-                    <a href="#">결제정보</a>
-                </li>
-                <li>
-                    <a href="#">재입고알림 내역</a>
-                </li>
-                <li>
-                    <a href="#">관심상품</a>
-                </li>
-                <li>
-                    <a href="#">주문상품재구매</a>
-                </li>
-                <li>
-                    <a href="#">주거래약정</a>
-                </li>
-                <li>
-                    <a href="#">주거래약정</a>
-                </li>
-                <li>
-                    <a href="#">약가인하보상</a>
-                </li>
-                <li>
-                    <a href="#">멤버십 안내</a>
-                </li>
-                <li>
-                    <a href="#">1:1문의</a>
-                </li>
-                <li>
-                    <a href="#">회원정보</a>
-                </li>
-                <li>
-                    <a href="#">공지사항</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-                <li>
-                    <a href="#">배송/결제 안내</a>
-                </li>
-            </ul>
-            <p class="same">현재 하단과 동일</p>
             <!-- //html 마크업 -->
         </div>
 
