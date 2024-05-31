@@ -93,6 +93,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       });
 
+      // cat list toggle
+      const addCartButton = document.querySelector('.btn_toggle_add_list')
+      addCartButton && addCartButton.addEventListener('click', function(){
+        addCartButton.classList.toggle('is-active');
+        document.querySelector('.add_cart_list').classList.toggle('is-active');
+      });
 
       // 수량 조절
         const quantityInput = document.getElementById('quantityInput');
