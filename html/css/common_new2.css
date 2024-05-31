@@ -28,9 +28,9 @@ html,body {letter-spacing: -0.04em;}
 .cs_check_box {position: relative;font-size: 14px;font-weight: 400;line-height: 14px;color:#000;}
 .cs_check_box  label {padding:0;margin:0;color:#000;margin-left: 5px;}
 .cs_check_box  label::before {display: none !important;}
-.cs_check_box [type="checkbox"]{appearance: none;position: relative;border: 2px solid #CCCCCC;border-radius: 2px;width: 18px;height: 18px;opacity: 1;font-size: 14px;padding:0;margin:0;}
+.cs_check_box [type="checkbox"]{appearance: none;position: relative;background: #D8DDE9;border: 2px solid #CCCCCC;border-radius: 2px;width: 18px;height: 18px;opacity: 1;font-size: 14px;padding:0;margin:0;}
 .cs_check_box [type="checkbox"]::before {content: "";position: absolute;left: 2px;top: 2px;width: 11px;height: 11px;}
-.cs_check_box [type="checkbox"]:checked::before {background: url('../img/common/ico/ico_checkbox_check.png') no-repeat center;}
+.cs_check_box [type="checkbox"]:checked::before {background: url('../img/ico/ico_check_wt.png') no-repeat center;background-size: 10px auto;}
 
 .flex_justfy {display: flex;align-items: center;justify-content: space-between;}
 .flex_center {display: flex;align-items: center;}
@@ -499,3 +499,8 @@ html,body {letter-spacing: -0.04em;}
 .list_bottom .price_wrap .new_price strong {font-weight: 700;}
 .list_bottom .count {font-size: 15px;font-weight: 400;line-height: 15px;color:#717B8A;}
 .list_bottom .price_wrap .sals {border: 1px solid #FF4949;color:#FF4949;padding: 4px 8px;border-radius: 11px;font-family: 'Montserrat';font-size: 14px;font-weight: 700;line-height: 14px;}
+
+/* 묶음상품 */
+.product_list_wrap.type_thumbnail li .product_thumb .select_check {position: absolute;right:8px;top:8px; z-index: 10;}
+.product_list_wrap.type_thumbnail li .product_thumb .no_return {position: absolute;left:8px;top:8px; z-index: 10; display: inline-block; border: 1px solid #FF4949;color:#FF4949;padding: 4px 8px;border-radius: 11px;font-family: 'Montserrat';font-size: 14px;font-weight: 700;line-height: 14px;background: #fff;}
+.product_list_wrap.type_thumbnail li .btn_add_favorite {width:28px;height:28px;background: url('../img/ico/ico_favorite_off.png') no-repeat center;background-size: 100% auto;}
