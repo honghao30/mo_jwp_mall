@@ -485,7 +485,7 @@ html,body {letter-spacing: -0.04em;}
 .order_floating_bottom .order_util_area .btn_toggle_add_list::after {content: '';display: block;width:20px;height: 20px;background: url('../img/ico/ico_arrow_b48.png') no-repeat;background-size: 20px auto;transform: rotate(-180deg);}
 .order_floating_bottom .order_util_area .btn_toggle_add_list.is-active {top: 10px;}
 .order_floating_bottom .order_util_area .btn_toggle_add_list.is-active::after {transform: rotate(0deg);}
-.order_floating_bottom .order_util_area .add_cart_list {height:0;overflow: hidden;}
+.order_floating_bottom .order_util_area .add_cart_list {height:0;overflow: hidden;}ㅇ
 .order_floating_bottom .order_util_area .add_cart_list.is-active {border-bottom: 1px solid #E1E3E9;padding-top: 20px;height: auto;max-height: 350px;overflow-y: scroll;transition: all 0.3s;}
 .order_floating_bottom .order_util_area .add_cart_list li {border: 1px solid #E1E3E9;border-radius: 12px;padding: 16px;margin-bottom: 16px;position: relative;}
 .order_floating_bottom .order_util_area .add_cart_list li .cate {font-size: 12px;font-weight: 400;line-height: 12px;color: #717B8A;}
