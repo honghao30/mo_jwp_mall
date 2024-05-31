@@ -132,6 +132,7 @@
 
     <!-- 메인리뉴얼 - 수정 추가 -->
     <script type="text/javascript" src="js/common_new.js"></script>
+    <script type="text/javascript" src="js/common_new2.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <!--// 메인리뉴얼 - 수정 추가 -->
 
@@ -156,6 +157,17 @@
       gtag("config", "UA-165668447-1");
     </script>
 
+    <!-- 콘텐츠 카테고리 탭 이벤트 -->
+    <script>
+      // 카테고리 리스트
+      $(document).ready(function () {
+        $(".content_category_tab li").click(function () {
+          $(this).parent().children("li").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+
     <style>
       /* 콘텐츠 탭 */
       .content_tab {
@@ -163,11 +175,11 @@
         height: 48px;
         display: flex;
         flex-direction: row;
-      }
-      .content_tab > div {
-        width: 50%;
-        line-height: 48px;
         border-bottom: 1px solid #e1e3e9;
+      }
+      .content_tab li {
+        width: 50%;
+        border-bottom: 4px solid transparent;
         color: #aeb7c6;
         box-sizing: border-box;
         font-size: 16px;
@@ -175,8 +187,7 @@
         align-items: center;
         justify-content: center;
       }
-      .content_tab > div.active {
-        border-width: 4px;
+      .content_tab li.active {
         border-color: #0072bc;
         color: #0072bc;
       }
@@ -206,45 +217,24 @@
       .content_category_tab li.active {
         background: linear-gradient(101.56deg, #1293e7 0%, #32b6bd 100%);
         color: #fff;
-      }
-
-      .content_list_wrap {
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
       }
 
       .content_list_wrap .content_info {
-        width: 100%;
-        display: flex;
-        font-size: 14px;
-        color: #717b8a;
-        align-items: center;
-        justify-content: space-between;
         padding: 8px 16px;
-        box-sizing: border-box;
-      }
-
-      .content_list_wrap .content_info div span {
-        color: #ff4949;
-        font-weight: 700;
-        margin-left: 4px;
-      }
-
-      .content_list_wrap .content_info select {
-        width: 71.5px;
-        font-size: 14px;
-        color: #717b8a;
-        border-color: #d8dde9;
-        border-radius: 4px;
       }
 
       /* 콘텐츠 존재하지 않을 때 */
       .content_empty {
+        height: calc(100% - 680px);
+        min-height: 280px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 32px 0 40px;
+        display: none;
       }
-
       .content_empty img {
         width: 84px;
         height: auto;
@@ -255,18 +245,82 @@
         font-size: 15px;
       }
 
-      .content_list_pop {
+      .content_list:empty {
+        padding: 0;
+      }
+
+      .content_list:empty ~ .content_empty {
+        display: flex;
+      }
+
+      .content_list {
         display: flex;
         padding: 24px 0;
         box-sizing: border-box;
         flex-wrap: wrap;
         place-items: flex-end;
+        border-top: 1px solid #e1e3e9;
       }
-
-      .content_list_pop li {
+      .content_list li {
         width: 50%;
         padding: 0 8px;
         box-sizing: border-box;
+        margin-bottom: 16px;
+      }
+
+      .content_list li .content_main_img {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+        position: relative;
+      }
+
+      /* 동영상 리스트 썸네일 */
+      .content_list_video .content_main_img::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .content_list_video .content_main_img::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 45%;
+        height: 45%;
+        background-image: url(./img/ico/ico_play.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .content_list li .content_title {
+        margin-top: 12px;
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .content_list li .content_desc {
+        font-size: 12px;
+        color: #aeb7c6;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        line-height: 1;
+      }
+
+      .content_list li .content_down_btn {
+        width: 100%;
+        height: 36px;
+        background-color: #0072bc;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 8px;
       }
     </style>
   </head>
@@ -3777,100 +3831,168 @@
       <!-- content_wrap -->
       <div class="content_wrap">
         <div class="content_page_wrap">
-          <!-- 콘텐츠 탭 -->
-          <div class="content_tab">
-            <div class="active">POP 자료실</div>
-            <div>동영상 자료실</div>
-          </div>
-
-          <!-- 자료실 검색 -->
-          <div>
-            <h4>자료실 내 검색</h4>
-            <input type="text" placeholder="검색어를 입력하세요." />
-          </div>
-
-          <!-- 콘텐츠 카테고리탭 -->
-          <ul class="content_category_tab">
-            <li class="active">전체</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-            <li>항목1</li>
-          </ul>
-
-          <!-- 콘텐츠 리스트 영역 -->
-          <div class="content_list_wrap">
-            <!-- 콘텐츠 정보 및 정렬 -->
-            <div class="content_info">
-              <div>전체 <span>15</span>개</div>
-              <select>
-                <option>인기순</option>
-              </select>
-            </div>
-
-            <!-- 콘텐츠 리스트1. 콘텐츠 항목이 존재하지 않을 때 -->
-            <div class="content_empty">
-              <img src="img/img_mascot2.png" alt="마스코트 이미지" />
-              <p>등록된 콘텐츠가 없습니다.</p>
-            </div>
-
-            <!-- 콘텐츠 리스트2. 콘텐츠 항목이 존재할 때(POP자료실) -->
-            <ul class="content_list_pop">
-              <li>
-                <!-- 컨텐츠 대표 이미지 -->
-                <div class="content_main_img">
-                  <img src="img/sample/sample_cont_detail.png" />
-                </div>
-                <div class="content_title">
-                  [웹세미나] 위너프페리주 217mL의 임상활용
-                </div>
-                <div class="content_desc">
-                  <p>2024-03-01</p>
-                  <p>조회수 : 25</p>
-                </div>
-                <button class="content_down_btn">다운로드</button>
-              </li>
-              <li>
-                <!-- 컨텐츠 대표 이미지 -->
-                <div class="content_main_img">
-                  <img src="img/sample/sample_cont_detail.png" />
-                </div>
-                <div class="content_title">
-                  [웹세미나] 위너프페리주 217mL의 임상활용
-                </div>
-                <div class="content_desc">
-                  <p>2024-03-01</p>
-                  <p>조회수 : 25</p>
-                </div>
-                <button class="content_down_btn">다운로드</button>
-              </li>
-              <li>
-                <!-- 컨텐츠 대표 이미지 -->
-                <div class="content_main_img">
-                  <img src="img/sample/sample_cont_detail.png" />
-                </div>
-                <div class="content_title">
-                  [웹세미나] 위너프페리주 217mL의 임상활용
-                </div>
-                <div class="content_desc">
-                  <p>2024-03-01</p>
-                  <p>조회수 : 25</p>
-                </div>
-                <button class="content_down_btn">다운로드</button>
-              </li>
+          <!-- <div class="content_tab tab-group">
+            <div class="tab-item active">POP 자료실</div>
+            <div class="tab-item">동영상 자료실</div>
+          </div> -->
+          <div class="tab-group">
+            <ul class="content_tab tab-menu">
+              <li class="tab-item active">POP 자료실</li>
+              <li class="tab-item">동영상 자료실</li>
             </ul>
 
-            <!-- 콘텐츠 리스트3. 콘텐츠 항목이 존재할 때(동영상자료실) -->
-            <ul class="content_list_video"></ul>
+            <!-- 결과 내 검색 -->
+            <div class="category_top_search">
+              <div class="category_search flex_justfy">
+                <div class="tit">카테고리 내 검색</div>
+                <div class="search_wrap_gray">
+                  <input type="text" placeholder="" />
+                  <button type="button">
+                    <span class="ir-text">검색</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- POP자료실 -->
+            <div class="tab-pane active">
+              <!-- 콘텐츠 카테고리탭 -->
+              <ul class="content_category_tab">
+                <li class="active">전체</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+              </ul>
+              <div class="content_list_wrap">
+                <div class="content_info flex_justfy">
+                  <div class="total_count_box">
+                    <div class="total_count">전체 <strong>0</strong> 개</div>
+                  </div>
+                  <div class="dropdown_menu_wrap">
+                    <button type="button" class="btn-dropdown">인기순</button>
+                    <ul class="dropdown_list">
+                      <li>
+                        <button type="button" data-option="인기순">
+                          인기순
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- //콘텐츠 정보 및 정렬 -->
+
+                <ul class="content_list">
+                  <li>
+                    <div class="content_main_img">
+                      <img src="img/sample/sample_cont_detail.png" />
+                    </div>
+                    <div class="content_title">
+                      [웹세미나] 위너프페리주 217mL의 임상활용
+                    </div>
+                    <div class="content_desc flex_justfy">
+                      <p>2024-03-01</p>
+                      <p>조회수 : 25</p>
+                    </div>
+                    <button class="content_down_btn">다운로드</button>
+                  </li>
+                  <li>
+                    <div class="content_main_img">
+                      <img src="img/sample/sample_cont_detail.png" />
+                    </div>
+                    <div class="content_title">
+                      [웹세미나] 위너프페리주 217mL의 임상활용
+                    </div>
+                    <div class="content_desc flex_justfy">
+                      <p>2024-03-01</p>
+                      <p>조회수 : 25</p>
+                    </div>
+                    <button class="content_down_btn">다운로드</button>
+                  </li>
+                  <li>
+                    <div class="content_main_img">
+                      <img src="img/sample/sample_cont_detail.png" />
+                    </div>
+                    <div class="content_title">
+                      [웹세미나] 위너프페리주 217mL의 임상활용
+                    </div>
+                    <div class="content_desc flex_justfy">
+                      <p>2024-03-01</p>
+                      <p>조회수 : 25</p>
+                    </div>
+                    <button class="content_down_btn">다운로드</button>
+                  </li>
+                </ul>
+
+                <!-- 
+                  ## 콘텐츠 리스트 콘텐츠 항목이 존재하지 않을 때 
+                  content_list 내 li가 없으면 나오도록 설정되어있습니다.
+                -->
+                <div class="content_empty">
+                  <img src="img/img_mascot2.png" alt="마스코트 이미지" />
+                  <p>등록된 콘텐츠가 없습니다.</p>
+                </div>
+              </div>
+
+              <!-- //콘텐츠 리스트 영역 -->
+            </div>
+            <!-- //POP자료실 -->
+
+            <!-- 동영상자료실 -->
+            <div class="tab-pane">
+              <!-- 콘텐츠 카테고리탭 -->
+              <ul class="content_category_tab">
+                <li class="active">전체</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+                <li>항목1</li>
+              </ul>
+              <div class="content_list_wrap">
+                <div class="content_info flex_justfy">
+                  <div class="total_count_box">
+                    <div class="total_count">전체 <strong>0</strong> 개</div>
+                  </div>
+                  <div class="dropdown_menu_wrap">
+                    <button type="button" class="btn-dropdown">인기순</button>
+                    <ul class="dropdown_list">
+                      <li>
+                        <button type="button" data-option="인기순">
+                          인기순
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- //콘텐츠 정보 및 정렬 -->
+
+                <ul class="content_list content_list_video"></ul>
+
+                <!-- 
+                  ## 콘텐츠 리스트 콘텐츠 항목이 존재하지 않을 때 
+                  content_list 내 li가 없으면 나오도록 설정되어있습니다.
+                -->
+                <div class="content_empty">
+                  <img src="img/img_mascot2.png" alt="마스코트 이미지" />
+                  <p>등록된 콘텐츠가 없습니다.</p>
+                </div>
+              </div>
+            </div>
+            <!-- //동영상자료실 -->
           </div>
         </div>
       </div>

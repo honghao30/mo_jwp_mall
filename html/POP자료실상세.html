@@ -2,91 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" async="" src="js/analytics.js"></script>
-    <script type="text/javascript" async="" src="js/js"></script>
-    <script>
-      //앱 내 데이터 저장하기 / 불러오기
-
-      function setPreferenceTest() {
-        console.log("setPreferenceTest key:abc, value:true");
-
-        window.flutter_inappwebview
-          .callHandler("setPreference", {
-            abc: true,
-          })
-          .then(function (result) {
-            console.log("setPreferenceTest result:" + String(result));
-
-            alert(result ? "값 설정완료" : "값 설정실패");
-          });
-      }
-
-      function getPreferenceTest() {
-        window.flutter_inappwebview
-          .callHandler("getPreference", "abc")
-          .then(function (result) {
-            console.log("getPreferenceTest key:abc, value:" + String(result));
-
-            alert("값 불러오기, abc : " + String(result));
-          });
-      }
-
-      function windowPopup() {
-        window.open("https://www.w3schools.com");
-      }
-
-      console.log("user-agent: " + navigator.userAgent);
-
-      //Flutter 웹뷰 ready 이벤트
-
-      window.addEventListener(
-        "flutterInAppWebViewPlatformReady",
-        function (event) {
-          //앱 & 기기 관련 정보 가져오기
-
-          window.flutter_inappwebview
-            .callHandler("getAppInfo")
-            .then(function (result) {
-              // print to the console the data coming from the Flutter side.
-
-              // 앱 정보  { "os":"android", "deviceId":"기기ID", "fcmPushToken":"푸시토큰", "appVersion":"1.0.0"}
-
-              console.log("appInfo : " + JSON.stringify(result));
-
-              var os = result.os;
-              var deviceId = result.deviceId;
-              var fcmPushToken = result.fcmPushToken;
-
-              $.ajax({
-                type: "POST",
-                url: "/common/ajax/update_token_ajax.do",
-                data: {
-                  os: os,
-                  deviceId: deviceId,
-                  fcmPushToken: fcmPushToken,
-                },
-                error: function (request, status, error) {
-                  console.log(request.responseText);
-                },
-                success: function (data) {
-                  console.log(JSON.stringify(data));
-                },
-              });
-
-              window.flutter_inappwebview.callHandler(
-                "getAppInfoWithArgs",
-                1,
-                true,
-                ["bar", 5],
-                {
-                  foo: "baz",
-                },
-                result
-              );
-            });
-        }
-      );
-    </script>
+    <!-- <script type="text/javascript" async="" src="js/analytics.js"></script> -->
 
     <meta name="format-detection" content="telephone=no" />
     <meta
@@ -132,31 +48,15 @@
 
     <!-- 메인리뉴얼 - 수정 추가 -->
     <script type="text/javascript" src="js/common_new.js"></script>
+    <script type="text/javascript" src="js/common_new2.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
     <!--// 메인리뉴얼 - 수정 추가 -->
 
-    <script type="text/javascript">
-      //<![CDATA[
-      var PAGE_ID0 = "main";
-      var PAGE_ID1 = "index";
-      var SECURE_URL = "https://m.jwpmall.co.kr";
-      //]]>
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="js/js(1)"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-165668447-1");
-    </script>
-
     <style>
+      .content_desc_page_wrap {
+        padding-bottom: 50px;
+      }
+
       .content_title_wrap {
         padding: 32px 16px 24px;
       }
@@ -172,6 +72,10 @@
         color: #717b8a;
         justify-content: space-between;
         padding-top: 12px;
+      }
+
+      .content_desc .img_wrap {
+        aspect-ratio: 8/5;
       }
 
       .content_desc_btn {
@@ -192,7 +96,7 @@
         border-radius: 8px;
       }
 
-      .content_desc_btn button:last-child {
+      .content_desc_btn button.bg_blue {
         background-color: #0072bc;
         color: #fff;
       }
@@ -200,69 +104,6 @@
   </head>
 
   <body class="" style="">
-    <iframe
-      id="frmProc"
-      name="frmProc"
-      src="dummy.html"
-      width="0"
-      height="0"
-      style="display: none"
-    ></iframe>
-    <iframe
-      id="frmloginChk"
-      name="frmloginChk"
-      src="dummy(1).html"
-      width="0"
-      height="0"
-      style="display: none"
-    ></iframe>
-    <form name="formloginChk" method="post">
-      <input type="hidden" name="loginChk" />
-      <input type="hidden" name="ur_id" />
-      <input type="hidden" name="passwd" />
-      <input type="hidden" name="return_url" />
-    </form>
-
-    <script>
-      var appyn = "N";
-
-      function goLogout() {
-        top.location.href = "/mw/member/logout.do?appyn=" + appyn;
-      }
-
-      //Flutter 웹뷰 ready 이벤트
-
-      window.addEventListener(
-        "flutterInAppWebViewPlatformReady",
-        function (event) {
-          //앱 & 기기 관련 정보 가져오기
-
-          window.flutter_inappwebview
-            .callHandler("getAppInfo")
-            .then(function (result) {
-              // print to the console the data coming from the Flutter side.
-
-              // 앱 정보  { "os":"android", "deviceId":"기기ID", "fcmPushToken":"푸시토큰", "appVersion":"1.0.0"}
-
-              console.log("appInfo : " + JSON.stringify(result));
-
-              appyn = "Y";
-
-              window.flutter_inappwebview.callHandler(
-                "getAppInfoWithArgs",
-                1,
-                true,
-                ["bar", 5],
-                {
-                  foo: "baz",
-                },
-                result
-              );
-            });
-        }
-      );
-    </script>
-
     <script type="text/javascript">
       //<![CDATA[
       function validTopSearch(f) {
@@ -2568,19 +2409,24 @@
       <!-- 메인리뉴얼 - 수정 -->
       <header id="header">
         <!-- 메인리뉴얼 - 수정 -->
-
-        <div class="search_wrap">
-          <div class="search_area">
-            <!-- 20231207 수정 -->
-            <a href="#" class="main_link"
-              ><img src="img/search_logo.png" alt=""
-            /></a>
-            <span class="input_box" onclick="searchLayer(this);">
-              <button class="btn_search"></button>
-            </span>
-            <!--// 20231207 수정 -->
-            <button class="btn_basket">
-              <a href="#"><img src="img/img_cart.png" alt="" /></a>
+        <div class="search_wrap flex_justfy">
+          <div class="top_header_left">
+            <button type="button" class="btn_go_back">
+              <span class="ir-text">뒤로가기</span>
+            </button>
+            <div class="cate_tit_top">POP 자료실 상세보기</div>
+          </div>
+          <div class="top_header_right">
+            <button
+              type="button"
+              class="btn_search_top"
+              onclick="searchLayer(this);"
+            >
+              <span class="ir-text">검색</span>
+            </button>
+            <button class="btn_basket_top">
+              <div class="counter">24</div>
+              <span class="ir-text">장바구니</span>
             </button>
           </div>
         </div>
@@ -3718,14 +3564,14 @@
           </div>
           <!-- 콘텐츠 내용 -->
           <div class="content_desc">
-            <div>
+            <div class="img_wrap">
               <img src="img/sample/sample_cont_detail.png" />
             </div>
           </div>
           <!-- 버튼 영역 -->
           <div class="content_desc_btn">
             <button>목록</button>
-            <button>다운로드</button>
+            <button class="bg_blue">다운로드</button>
           </div>
         </div>
       </div>
@@ -3874,23 +3720,6 @@
 <div id="dim_mask" onclick="areaClose()">
 </div-->
     <div id="layerPopup"></div>
-    <img
-      src="chrome-extension://lplhclpeegjedapdliokcacmphgcnlnd/img/error_128.png"
-      title="Some errors occurred on this page. Click to see details."
-      style="
-        opacity: 1;
-        position: fixed !important;
-        bottom: 10px !important;
-        right: 10px !important;
-        cursor: pointer !important;
-        z-index: 2147483647 !important;
-        width: 38px !important;
-        height: 38px !important;
-        min-height: 38px !important;
-        min-width: 38px !important;
-        max-height: 38px !important;
-        max-width: 38px !important;
-      "
-    />
+    <!-- <img src="chrome-extension://lplhclpeegjedapdliokcacmphgcnlnd/img/error_128.png" title="Some errors occurred on this page. Click to see details." style="opacity: 1; position: fixed !important; bottom: 10px !important; right: 10px !important; cursor: pointer !important; z-index: 2147483647 !important; width: 38px !important; height: 38px !important; min-height: 38px !important; min-width: 38px !important; max-height: 38px !important; max-width: 38px !important;"> -->
   </body>
 </html>
