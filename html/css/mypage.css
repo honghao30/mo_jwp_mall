@@ -32,10 +32,10 @@
 .mypage_info-title>img {width: 28px; height: 28px; display: block;}
 .mypage_info-title p {font-size: 16px; font-weight: 400; line-height: 32px; letter-spacing: -0.64px; color: #000000;}
 .mypage_info-title .mypage_name {color:#0072BC;}
-.mypage_infobox dl.mypage_info-des {padding: 16px 0; background-color: #fff; display: flex; flex-wrap: nowrap;}
+.mypage_infobox dl.mypage_info-des {border-radius: 12px; padding: 16px 0; background-color: #fff; display: flex; flex-wrap: nowrap;}
 .mypage_infobox dl.mypage_info-des + dl.mypage_info-des {margin-top: 8px;}
 .mypage_infobox dl.mypage_info-des>div:not(:first-child) {border-left: 2px solid #E1E3E9;}
-.mypage_infobox dl.mypage_info-des>div {width: 33.333%; display: flex; flex-direction: column; gap:12px; padding:0 12px;}
+.mypage_infobox dl.mypage_info-des>div {width: 33.333%; display: flex; flex-direction: column; gap:12px; padding:0 12px; justify-content: space-between;}
 .mypage_infobox dl.mypage_info-des.whalf>div {width: 50%;}
 .mypage_infobox dl.mypage_info-des dt {font-size: 13px; line-height: 13px; letter-spacing: -0.52px; color:#717B8A; text-align: left;}
 .mypage_infobox dl.mypage_info-des dd {font-size: 15px; line-height: 15px; text-align: right;}
@@ -173,7 +173,7 @@ input[type="checkbox"]:checked {background-color: #0072BC; border-color: #0072BC
 .delivery_cont:last-child {padding-bottom: 55px;}
 .delivery_cont.delivery_cont-btm {padding-bottom: 40px;}
 .payment_graybox {background-color: #F7F8FA; border-radius: 12px; display: flex; flex-direction: column; gap: 12px; padding: 20px 16px;}
-.payment_graybox li {padding-left: 7px; position: relative; color: #717B8A;}
+.payment_graybox li {padding-left: 7px; position: relative; color: #717B8A; font-size: 13px; font-weight: 400; line-height: 18px; letter-spacing: -0.52px;}
 .payment_graybox li::before {position: absolute; width: 3px; height: 3px; background-color: #717B8A; border-radius: 50%; content: ''; top: 7px; left: 0;}
 /* 쿠폰내역 */
 .coupon_cont .coupon_innerbox {border: 1px solid #E1E3E9; padding: 16px; border-radius: 6px;}
@@ -183,8 +183,14 @@ input[type="checkbox"]:checked {background-color: #0072BC; border-color: #0072BC
 .coupon_btm {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; display: flex; flex-direction: column; gap: 8px;}
 .coupon_btm .coupon_btm-des {color: #717B8A;}
 .coupon_top {display: flex; align-items: center; font-size: 14px; font-weight: 500; line-height: 14px; letter-spacing: -0.56px; gap: 17px;}
-.coupon_use {color: #FF4949;}
-.coupon_unuse {color: #0072BC;}
+.coupon_use, .color-red {color: #FF4949;}
+.coupon_unuse, .color-blue {color: #0072BC;}
 .coupon_date {font-family: Montserrat; position: relative; color: #717B8A;}
 .coupon_date::after{position: absolute; width: 1px; height: 14px; background-color: #E1E3E9; content: ''; top: 50%; transform: translateY(-50%); right: -8.5px;}
 .use_date {font-weight: 400; color: #AEB7C6; font-family: Montserrat; margin-left: 8px;}
+/* 멤버십 안내 */
+.membership-box {padding: 32px 16px; background-color: #F2F5FA;}
+.membership-box .member-innertop {margin-bottom: 16px;display: flex; flex-direction: column; gap: 8px;}
+.membership-box .member-innertop img {width: 25px; height: 25px;}
+.membership-box .member-innertop p {font-size: 16px; line-height: 16px; letter-spacing: -0.64px; font-weight: 500;}
+.membership-box .mypage_infobox {padding: 0; margin-bottom: 64px;}
