@@ -1163,7 +1163,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">마이페이지</div>
+                    <div class="cate_tit_top">주문정보</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1471,28 +1471,43 @@
             <!-- html 마크업 -->
             <div class="tab-group touchscrollwrap type04">
                 <ul class="tab-menu no_scroll">
-                    <li class="tab-item1 active">예치금 내역</li>
+                    <!-- <li class="tab-item1 active">예치금 내역</li>
                     <li class="tab-item1">예치금 구매</li>
                     <li class="tab-item1">마이너스 잔고 내역</li>
-                    <li class="tab-item1">여신결제 내역</li>
-                    <!-- <li class="tab-item1">주문/배송 내역</li>
+                    <li class="tab-item1">여신결제 내역</li> -->
+                    <li class="tab-item1">주문/배송 내역</li>
                     <li class="tab-item1">취소/반품 내역</li>
                     <li class="tab-item1">반품신청</li>
-                    <li class="tab-item1">거래원장</li> -->
+                    <li class="tab-item1 active">거래원장</li>
                 </ul>
+                <script>
+                    $(document).ready(function () {
+                    // 4번째 탭 컨텐츠가 활성화 되어야해서 1번째 탭 컨텐츠 활성화 제거
+                    $(".tab-group").each(function () {
+                        $(this).find(".tab-item:first").removeClass("active");
+                        $(this).find(".tab-pane1:first").hide();
+                    });
+                });
+                </script>
                 <div class="tab-content">
+                    <div class="tab-pane1">탭1</div>
+                    <div class="tab-pane1">탭2</div>
+                    <div class="tab-pane1">탭3</div>
                     <div class="tab-pane1 active">
-                        <div class="bank-top">
-                            <p>사용 가능한 예치금</p>
-                            <div class="moneybox">
-                                <p><strong>4,900,000</strong>원</p>
-                                <a href="#">예치금 구매</a> <!--예치금 구매화면으로 -->
-                            </div>
-                        </div>
                         <div class="bank-search">
+                            <div class="search-company">
+                                <div class="dropdown_menu_wrap">
+                                    <button type="button" class="btn-dropdown">JW중외제약</button>
+                                    <ul class="dropdown_list">
+                                        <li><button type="button" data-option="JW중외제약">JW중외제약</button></li>
+                                        <li><button type="button" data-option="JW중외제약2">JW중외제약2</button></li>
+                                        <li><button type="button" data-option="JW중외제약3">JW중외제약3</button></li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="date-search">
                                 <div class="dropdown_menu_wrap">
-                                    <button type="button" class="btn-dropdown">직접입력</button>
+                                    <button type="button" class="btn-dropdown">1개월</button>
                                     <ul class="dropdown_list">
                                         <li><button type="button" data-option="7일">7일</button></li>
                                         <li><button type="button" data-option="1개월">1개월</button></li>
@@ -1503,13 +1518,13 @@
                                     </ul>
                                 </div>
                                 <div class="inputbox">
-                                    <input name="search" type="text" placeholder="구매번호 및 구매내용 검색">
+                                    <input name="search" type="text" placeholder="제품명 검색">
                                     <button type="button" class="btn_search_top">
                                         <span class="ir-text">검색</span>
                                     </button>
                                 </div>
                             </div>
-                            <script>
+                            <!-- <script>
                                 $(function() {
                                         fn_default_datepicker();
                                 });
@@ -1576,23 +1591,34 @@
                                 <input type="text" class="datepicker-input" id="datepicker_start" /> 
                                 <span>~</span>
                                 <input type="text" class="datepicker-input"  id="datepicker_end" />
-                            </div>       
+                            </div>   -->
                             <div class="btn_wrap">
                                 <button class="btn btn-reset"><span>초기화</span></button>
                                 <button class="btn btn-inquiry"><span>조회</span></button>
                             </div>
                         </div>
-                        <div class="bank-cont no-cont">
-                            <p class="cont-tit">상세내역</p>
-                            <div class="no-cont-inner">
+                        <div class="bank-cont no-cont no-cont2">
+                            <div class="check_item_box">
+                                <span class="cs_check_box">
+                                    <input type="checkbox" checked id="check1">
+                                    <label for="check1">매출내역</label>
+                                </span>
+                                <span class="cs_check_box">
+                                    <input type="checkbox" checked id="check2">
+                                    <label for="check2">수금내역</label>
+                                </span>
+                                <span class="cs_check_box">
+                                    <input type="checkbox" checked id="check3">
+                                    <label for="check3">채권내역</label>
+                                </span>                                        
+                            </div>
+                            <div class="no-cont-inner no-cont-inner2">
                                 <img src="./img/ico/ico_mascot.png">
-                                <p class="no_result">예치금 내역이 없습니다.</p>
+                                <p class="no_result">조회 후 확인이 가능합니다.</p>
                             </div>
                         </div>
                         
                     </div>
-                    <div class="tab-pane1">탭2</div>
-                    <div class="tab-pane1">탭3</div>
                 </div>
             </div>
             <!-- //html 마크업 -->
