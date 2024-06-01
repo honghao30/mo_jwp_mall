@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css/main_new.css">
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-    
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <!--// 추가 -->
 
     <script type="text/javascript" src="js/misc.js"></script>
@@ -1162,7 +1162,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">마이페이지</div>
+                    <div class="cate_tit_top">재입고알림 내역</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1466,125 +1466,82 @@
         <!--// 검색 영역 레이어 -->
 
         <!-- content_wrap -->
-        <div class="content_wrap">  
+        <div class="content_wrap restock_wrap">  
             <!-- html 마크업 -->
-            <div class="tab-group touchscrollwrap type04">
-                <ul class="tab-menu no_scroll">
-                    <li class="tab-item1 active">예치금 내역</li>
-                    <li class="tab-item1">예치금 구매</li>
-                    <li class="tab-item1">마이너스 잔고 내역</li>
-                    <li class="tab-item1">여신결제 내역</li>
-                    <!-- <li class="tab-item1">주문/배송 내역</li>
-                    <li class="tab-item1">취소/반품 내역</li>
-                    <li class="tab-item1">반품신청</li>
-                    <li class="tab-item1">거래원장</li> -->
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane1 active">
-                        <div class="bank-top">
-                            <p>사용 가능한 예치금</p>
-                            <div class="moneybox">
-                                <p><strong>4,900,000</strong>원</p>
-                                <a href="#">예치금 구매</a> <!--예치금 구매화면으로 -->
-                            </div>
-                        </div>
-                        <div class="bank-search">
-                            <div class="date-search">
-                                <div class="dropdown_menu_wrap">
-                                    <button type="button" class="btn-dropdown">1개월</button>
-                                    <ul class="dropdown_list">
-                                        <li><button type="button" data-option="7일">7일</button></li>
-                                        <li><button type="button" data-option="1개월">1개월</button></li>
-                                        <li><button type="button" data-option="3개월">3개월</button></li>
-                                        <li><button type="button" data-option="6개월">6개월</button></li>
-                                        <li><button type="button" data-option="1년">1년</button></li>
-                                        <li><button type="button" data-option="직접입력">직접입력</button></li>
-                                    </ul>
-                                </div>
-                                <div class="inputbox">
-                                    <input name="search" type="text" placeholder="구매번호 및 구매내용 검색">
-                                    <button type="button" class="btn_search_top">
-                                        <span class="ir-text">검색</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="btn_wrap">
-                                <button class="btn btn-reset"><span>초기화</span></button>
-                                <button class="btn btn-inquiry"><span>조회</span></button>
-                            </div>
-                        </div>
-                        <div class="bank-cont">
-                            <div>
-                                <p class="cont-tit">상세내역</p>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                            <p>A1234567</p>
-                                            <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="blue-dt">구매</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                        <p>A1234567</p>
-                                        <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="red-dt">사용</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                        <p>A1234567</p>
-                                        <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="gray-dt">취소</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div class="pagination pos1">
-                                <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
-                                <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                                <a href="#">8</a>
-                                <a href="#">9</a>
-                                <a href="#">10</a>
-                                <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
-                                <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
-                            </div>
-                        </div>
+            <div class="bank-search">
+                <div class="date-search">
+                    <div class="dropdown_menu_wrap">
+                        <button type="button" class="btn-dropdown">1개월</button>
+                        <ul class="dropdown_list">
+                            <li><button type="button" data-option="7일">7일</button></li>
+                            <li><button type="button" data-option="1개월">1개월</button></li>
+                            <li><button type="button" data-option="3개월">3개월</button></li>
+                            <li><button type="button" data-option="6개월">6개월</button></li>
+                            <li><button type="button" data-option="1년">1년</button></li>
+                            <li><button type="button" data-option="직접입력">직접입력</button></li>
+                        </ul>
                     </div>
-                    <div class="tab-pane1">탭2</div>
-                    <div class="tab-pane1">탭3</div>
+                    <div class="inputbox">
+                        <input name="search" type="text" placeholder="입점사 및 제품명 검색">
+                        <button type="button" class="btn_search_top">
+                            <span class="ir-text">검색</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <button class="btn btn-reset"><span>초기화</span></button>
+                    <button class="btn btn-inquiry"><span>조회</span></button>
+                </div>
+            </div>
+            <div class="bank-cont restock-cont">
+                <div>
+                    <p class="cont-tit">상세내역</p>
+                    <div class="cont-inner restock-inner">
+                        <div class="inner-top">
+                            <p>2024-05-02 14:00</p>
+                            <span class="flag-gray flag-box">알림해제</네무>
+                        </div> 
+                        <dl>
+                            <dt class="company-dt">JW중외제약</dt>
+                            <dd>JW생활건강 피톤케어 뉴컬러 라벤더 피톤치드 차량용 천...</dd>
+                        </dl>
+                    </div>
+                    <div class="cont-inner restock-inner">
+                        <div class="inner-top">
+                            <p>2024-05-02 14:00</p>
+                            <span class="flag-gray flag-box">알림해제</span>
+                        </div> 
+                        <dl>
+                            <dt class="company-dt">JW중외제약</dt>
+                            <dd>JW생활건강 피톤케어 뉴컬러 라벤더 피톤치드 차량용 천...</dd>
+                        </dl>
+                    </div>
+                    <div class="cont-inner restock-inner">
+                        <div class="inner-top">
+                            <p>2024-05-02 14:00</p>
+                            <span class="flag-gray flag-box">알림해제</span>
+                        </div> 
+                        <dl>
+                            <dt class="company-dt">JW중외제약</dt>
+                            <dd>JW생활건강 피톤케어 뉴컬러 라벤더 피톤치드 차량용 천...</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="pagination pos1">
+                    <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
+                    <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
+                    <a href="#">1</a>
+                    <a class="active" href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
+                    <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
                 </div>
             </div>
             <!-- //html 마크업 -->

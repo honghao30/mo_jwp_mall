@@ -34,11 +34,11 @@
 .bank-top .moneybox a{padding: 7px 12px; border: 1px solid #FF4949; border-radius: 16px; color: #FF4949; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
 .bank-search {padding: 16px; background-color: #F2F5FA;}
 .bank-search .date-search {display: flex; gap: 8px; width: calc(100% - 8px); margin-bottom: 16px;}
-.bank-search .inputbox {position: relative; flex: 0 0 calc(100% - 112px);}
+.bank-search .inputbox {position: relative; flex: 0 0 calc(100% - 31.1111vw);}
 .bank-search .inputbox input {height: 36px; border-radius: 6px;}
 .bank-search .inputbox input::placeholder {font-size: 13px;font-weight: 400;line-height: 13px;letter-spacing: -0.52px;}
 .bank-search .inputbox button{position: absolute; top: 50%; width: 20px; height: 20px; right: 8px; transform: translateY(-50%);}
-.bank-search .dropdown_menu_wrap button {background: #fff; border-radius:6px; padding: 8px 8px 8px 12px; height: 36px; justify-content: space-between; width: 112px; font-size: 13px;font-weight: 400;line-height: 13px;letter-spacing: -0.52px;}
+.bank-search .dropdown_menu_wrap button {background: #fff; border-radius:6px; padding: 8px 8px 8px 12px; height: 36px; justify-content: space-between; width: 31.1111vw; font-size: 13px;font-weight: 400;line-height: 13px;letter-spacing: -0.52px;}
 .bank-search .dropdown_menu_wrap li{display: block;}
 .bank-search> div.btn_wrap {display: flex; justify-content: center; gap: 8px; margin-top: 16px;}
 .bank-search> div.btn_wrap .btn {width: 80px; height: 36px; padding: 0; display: flex; justify-content: center; align-items: center; font-family: Pretendard; font-size: 14px; font-weight: 600; line-height: 14px; letter-spacing: -0.56px;}
@@ -68,14 +68,13 @@
 .no-cont-inner {display: flex; flex-direction: column; gap: 16px; align-items: center; padding: 57px 0;}
 .no-cont-inner2 {padding: 84px 0;}
 .no-cont-inner3 {padding: 62px 0;}
-.bank-search .date-search .dropdown_menu_wrap .dropdown_list {width: 98.5%;}
+.no-cont-inner4 {padding: 117px 0;}
 .bank-search .search-company {margin-bottom: 16px;}
-.bank-search .search-company .dropdown_menu_wrap .dropdown_list {width: 99.85%;}
 .bank-search .search-company .dropdown_menu_wrap button {width: 100%;}
 .bank-search .dropdown_menu_wrap .dropdown_list {top: 32px;}
 .bank-search .dropdown_menu_wrap .dropdown_list li button {font-size: 13px; line-height: 13px; letter-spacing: -0.52px;}
 /* 페이징 */
-.pagination { display: flex;align-items: center; justify-content: center;gap: 8px; margin-top: 32px;} 
+.pagination {display: flex;align-items: center; justify-content: center;gap: 8px; margin: 32px 0 0 0;} 
 .pagination a {display: flex;align-items: center; width: 24px; height: 24px; text-decoration: none;font-family: 'Montserrat';font-size: 13px;font-weight: 300;line-height: 13px;color:#222;} 
 .pagination a:hover:not(.active) {color:#0072BC;font-weight: 700; } 
 .pagination a.active { color:#0072BC;font-weight: 700;}
@@ -89,12 +88,14 @@
 .btn_pagination_prev::before {background: url(../img/ico/ico_left_48.png) no-repeat center; background-size: contain;}
 .btn_pagination_next::before,
 .btn_pagination_last::before {transform: rotate(180deg);}
+.btn_pagination_last::before {margin-left: -10px;}
+.btn_pagination_first::before {margin-right: -10px;}
 /* datepicker */
 .bank-search .data_period_picker {position: relative; display: flex; align-items: center;}
-.bank-search .data_period_picker input {padding: 8px 8px 8px 12px;text-align: left; width: calc(50% - 11.75px); background-color: #fff; height: 36px; line-height: 13px; border: 1px solid #E1E0E5; font-size: 13px; font-weight: 400; color:#000;}
+.bank-search .data_period_picker input {padding: 8px 8px 8px 12px;text-align: left; width: calc(50% - 12.15px); background-color: #fff; height: 36px; line-height: 13px; border: 1px solid #E1E0E5; font-size: 13px; font-weight: 400; color:#000;}
 .bank-search .data_period_picker #datepicker_end {margin-left: 34px;}
 .bank-search .data_period_picker img {width:20px; height:20px; margin-left: -29px;}
-.bank-search .data_period_picker span {position: absolute; top: 50%; transform: translateY(-50%); left: 49%;}
+.bank-search .data_period_picker span {position: absolute; top: 50%; transform: translateY(-50%); left: 50%;}
 .ui-datepicker-title {display: flex; align-items: center; justify-content: center; margin: 0;}
 .ui-datepicker-title select {padding-top: 0; padding-bottom: 0; height: 35px;}
 /* 체크박스 */
@@ -102,8 +103,27 @@
 .cs_check_box {position: relative; font-size: 14px; font-weight: 400; line-height: 14px; letter-spacing: -0.56px; color:#000; display: flex; align-items: center; gap: 4px;}
 .cs_check_box  label {padding:0;margin:0;color:#000;}
 .cs_check_box  label::before {display: none !important;}
+input[type="checkbox"]+label {font-size: 14px; font-weight: 400; line-height: 14px; letter-spacing: -0.56px;  color:#000; }
 .cs_check_box [type="checkbox"]{appearance: none;position: relative;border: 2px solid #CCCCCC;border-radius: 8px;width: 24px;height: 24px;opacity: 1;font-size: 14px;padding:0;margin:0;}
 .cs_check_box [type="checkbox"]::before {content: "";position: absolute; top:50%; left:25%; transform: translateY(-50%); width: 12px;height: 7px; background-size: contain; }
 .cs_check_box [type="checkbox"]:checked::before {background: url('../img/ico/ico_checkbox_check.png') no-repeat center; background-size: contain;}
 input[type="checkbox"]:checked {background-color: #0072BC; border-color: #0072BC;}
-
+/* 테이블 */
+.bank-cont2 {padding: 32px 0 40px 16px;}
+.bank-cont2 .mypage_table_wrap {overflow-x: scroll;}
+.bank-cont2 .mypage_table_wrap table {width: 195%;}
+.bank-cont2 .mypage_table_wrap table th {font-size: 14px; font-weight: 500; line-height: 14px; letter-spacing: -0.56px; padding: 11px 0; text-align: center;}
+.bank-cont2 .mypage_table_wrap table tr td:first-child {font-family: Montserrat;}
+.bank-cont2 .mypage_table_wrap table tr td {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;  padding: 11.5px 0; color: #717B8A;}
+.text-l {text-align: left;}
+.text-r {text-align: right;}
+/* 재입고알림 내역 */
+.bank-cont.restock-cont {padding-bottom: 28px;}
+.bank-cont.restock-cont .cont-inner.restock-inner {padding: 8px 16px 16px;}
+.bank-cont.restock-cont .cont-inner.restock-inner .inner-top {margin-bottom: 16px; padding-bottom: 9px; justify-content: space-between;}
+.bank-cont.restock-cont .cont-inner.restock-inner .inner-top p{font-family: Montserrat; font-size: 14px; font-weight: 500; line-height: 14px; letter-spacing: -0.56px; color: #717B8A;}
+.bank-cont.restock-cont .cont-inner.restock-inner .inner-top span.flag-box {border-radius: 15px; padding: 7.5px 12px; text-align: center; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
+.bank-cont.restock-cont .cont-inner.restock-inner .inner-top span.flag-box.flag-gray {color:#717B8A; background-color: rgba(0, 0, 0, 0.05);}
+.bank-cont.restock-cont .cont-inner.restock-inner dl {flex-direction: column; gap: 8px; align-items: flex-start;} 
+.bank-cont.restock-cont .cont-inner.restock-inner dl dt{font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; color: #AEB7C6;}
+.bank-cont.restock-cont .cont-inner.restock-inner dl dd{font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.62px; color: #000;}
