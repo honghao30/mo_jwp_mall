@@ -27,6 +27,7 @@
 		url("../font/Montserrat-SemiBold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 .content_wrap {font-family: Noto Sans KR; }
+.dropdown_menu_wrap .btn-dropdown {font-size: 13px; line-height: 13px; letter-spacing: -0.52px;}
 .mypage_infobox {background-color: #F2F5FA; padding: 32px 16px 16px 16px;}
 .mypage_info-title {display: flex; gap: 4px; justify-content: flex-start; align-items: center;}
 .mypage_info-title>img {width: 28px; height: 28px; display: block;}
@@ -193,4 +194,56 @@ input[type="checkbox"]:checked {background-color: #0072BC; border-color: #0072BC
 .membership-box .member-innertop {margin-bottom: 16px;display: flex; flex-direction: column; gap: 8px;}
 .membership-box .member-innertop img {width: 25px; height: 25px;}
 .membership-box .member-innertop p {font-size: 16px; line-height: 16px; letter-spacing: -0.64px; font-weight: 500;}
-.membership-box .mypage_infobox {padding: 0; margin-bottom: 64px;}
+.membership-box .mypage_infobox {padding: 0; margin-bottom: 32px;}
+img.member-step {width: 25px; height: 25px;}
+.step-bar {width: 100%;}
+.step-bar .progress {width: 100%;}
+.step-bar #progress {appearance: none;}
+.step-bar #progress::-webkit-progress-bar {background: #D8DDE9; border-radius: 2px; height: 4px; width: 100%; overflow: hidden;}
+.step-bar #progress::-webkit-progress-value {background: #717B8A; border-radius: 2px; height: 4px; width: 48px;}
+.bar-notibox {display: flex;}
+.bar-notibox .bar-noti {display: flex; flex-direction: column; gap: 4px; width: 25%; align-items: center;}
+.bar-notibox .bar-noti p {color: #AEB7C6;font-family: Montserrat;  font-size: 13px; font-weight: 400; line-height: 13px; font-weight: 600;}
+.bar-notibox .bar-noti p.active {color: #222222;}
+.membertype-box {margin-top: 32px; border: 1px solid #E1E3E9; padding: 8px 16px 16px 16px; border-radius: 6px;}
+.member-type {padding-bottom: 8px; margin-bottom: 16px;;display: flex; gap: 4px; justify-content: flex-start; align-items: center; border-bottom: 1px solid #E1E3E9;}
+.member-type p {font-size: 14px; font-weight: 700; line-height: 14px; letter-spacing: -0.56px;}
+.member-notic {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
+.member-notic > div + div {margin-top: 16px;}
+.member-notic li{color: #717B8A; margin-top: 8px; position: relative; padding-left: 7px;}
+.member-notic li::before , .inquiry-noti li::before {position: absolute; content: ''; width: 3px;height: 3px; background-color: #717B8A; border-radius: 50%; left: 0; top: 5px; }
+.membertype-box + .membertype-box {margin-top: 12px;}
+/* 문의내역 */
+.inquiry_wrap .inquiry-table {margin-top: 32px; border-top: 1px solid #AEB7C6; margin-bottom: 32px;}
+.inquiry_wrap .inquiry-table thead th {font-size: 14px; font-weight: 500; line-height: 14px; letter-spacing: -0.56px; text-align: center;}
+.inquiry_wrap .inquiry-table tbody .num-td {font-size: 13px; font-weight: 400; line-height: 13px; color: #717B8A; font-family: Montserrat;}
+.inquiry_wrap .inquiry-table tbody .long-td {text-align: start; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; font-family: Montserrat;}
+.inquiry_wrap .inquiry-table tbody .long-td p{margin-bottom: 4px;width: 55.5556vw; overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.inquiry_wrap .inquiry-table tbody .long-td span {color: #717B8A;}
+.answer-done, .answer-none {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
+.answer-done {color: #0072BC;}
+.answer-none{color: #AEB7C6;}
+.inquiry-table + .pagination {margin-bottom: 40px;}
+.inquiry-noti {margin: 32px 0 24px;}
+.inquiry-noti li {color: #717B8A; margin-top: 8px; position: relative; padding-left: 7px; font-size: 13px; font-weight: 400; line-height: 18px; letter-spacing: -0.52px;}
+.inquiry-form {display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;}
+.inquiry-form textarea {border-radius: 6px; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; max-height: 132px; height: 132px; padding: 12px 8px 12px 12px;}
+.inquiry-form input {height: 36px; border-radius: 6px; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
+.inquiry-form input::placeholder, textarea::placeholder{color: #AEB7C6; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
+.inquiry-form .dropdown_menu_wrap .btn-dropdown {width: 100%; justify-content: space-between; padding: 0 12px; height: 36px; border-radius: 6px;}
+.inquiry-form .dropdown_menu_wrap .dropdown_list {width: 99.6%;}
+.inquiry-form .form-phone {display: flex; gap: 4px; align-items: center;}
+.inquiry-form .form-phone span {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; color:#AEB7C6;}
+.inquiry-form .form-phone input, .inquiry-form .form-phone .dropdown_menu_wrap .btn-dropdown {width: 27.9167vw; height: 36px;}
+.inquiry_wrap .form-email {display: flex; gap: 4px; align-items: center; margin: 24px 0;}
+.inquiry_wrap .form-email input {width: 29.5833vw; height: 36px; border-radius: 6px;}
+.inquiry_wrap .form-email .dropdown_menu_wrap .btn-dropdown {width: 25.1389vw; height: 36px;}
+.inquiry_wrap .form-email span {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; color:#AEB7C6;}
+.inquiry-radio p {font-size: 14px; font-weight: 400; line-height: 14px; letter-spacing: -0.56px; color: #717B8A; margin-bottom: 8px;}
+.inquiry_wrap .btn_wrap {margin: 40px 0;}
+.inquiry_wrap .btn-check {background-color: #0072BC; width: 100%; color: #fff; border:0;}
+.inquiry_wrap input[type="radio"] {width: 24px; height: 24px; border: 1.5px solid #E1E3E9; border-radius: 50%;}
+.inquiry_wrap input[type="radio"]::after { background-size: contain; background-position: center; content: ''; overflow: hidden; position: absolute; left: 0; top: 0; width: 24px; height: 24px;}
+.inquiry_wrap input[type="radio"]:checked::after{background: url('../img/ico/ico_radio_checked.png') center no-repeat; background-size: contain; background-position: center; content: ''; overflow: hidden; position: absolute; left: 0; top: 0; width: 24px; height: 24px;}
+.inquiry_wrap .radio_wrap {display: flex; align-items: center;}
+.inquiry_wrap .radio_wrap input[type="radio"]+label {margin: 0 16px 0 8px; font-size: 14px; font-weight: 400; line-height: 14px; letter-spacing: -0.56px;}

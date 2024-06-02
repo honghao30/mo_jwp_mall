@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css/main_new.css">
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css">
+    
     <!--// 추가 -->
 
     <script type="text/javascript" src="js/misc.js"></script>
@@ -34,7 +34,6 @@
     <script type="text/javascript" src="js/jquery.gaessamzie.flick.min.js"></script>
     <script type="text/javascript" src="js/jquery.laybox.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
-    <script src="js/jquery-ui.js"></script>
 
     <script type="text/javascript" src="js/common.js"></script>
 
@@ -1163,7 +1162,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">멤버십 안내</div>
+                    <div class="cate_tit_top">1:1문의</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1467,150 +1466,190 @@
         <!--// 검색 영역 레이어 -->
 
         <!-- content_wrap -->
-        <div class="content_wrap membership_wrap">  
+        <div class="content_wrap delivery_wrap inquiry_wrap">  
             <!-- html 마크업 -->
-            <div class="membership-box">
-                <div class="member-innertop">
-                    <img src="../html/img/ico/icon_memebership_family.png" class="member-step">
-                    <p>
-                        <span class="color-blue">제이더블유중외제약주식회사</span>님,
-                    </p>
-                    <p>
-                        4월 멤버십 등급은<span class="color-red">FAMILY</span>입니다.
-                    </p>
-                </div>
-                <div class="mypage_infobox">
-                    <dl class="mypage_info-des whalf">
-                        <div>
-                            <dt>04월 주문금액</dt>
-                            <dd><strong>2,500,000</strong>원</dd>
-                        </div>
-                        <div>
-                            <dt>1분기 주문금액</dt>
-                            <dd><strong>3,040,000</strong>원</dd>
-                        </div>
-                    </dl>
-                    <dl class="mypage_info-des">
-                        <div>
-                            <dt>다음 등급까지<br/>남은 금액</dt>
-                            <dd><strong>500,000</strong>원</dd>
-                        </div>
-                        <div>
-                            <dt>쿠폰</dt>
-                            <dd><strong>5</strong>장</dd>
-                        </div>
-                        <div>
-                            <dt>출석체크</dt>
-                            <dd><strong>13</strong>회</dd>
-                        </div>
-                    </dl>
-                </div>
-                <div class="step-bar">
-                    <progress
-                        class="progress"
-                        id="progress"
-                        value="10"
-                        min="0"
-                        max="100"
-                    ></progress>
-                    <div class="bar-notibox">
-                        <div class="bar-noti">
-                            <img src="../html/img/ico/icon_memebership_family.png" class="member-step">
-                            <p class="active">FAMILY</p>
-                        </div>
-                        <div class="bar-noti">
-                            <img src="../html/img/ico/icon_memebership_silver.png" class="member-step">
-                            <p>SILVER</p>
-                        </div>
-                        <div class="bar-noti">
-                            <img src="../html/img/ico/icon_memebership_gold.png" class="member-step">
-                            <p>GOLD</p>
-                        </div>
-                        <div class="bar-noti">
-                            <img src="../html/img/ico/icon_memebership_diamond.png" class="member-step">
-                            <p>DIAMOND</p>
-                        </div>
-                        <div class="bar-noti">
-                            <img src="../html/img/ico/icon_memebership_vip.png" class="member-step">
-                            <p>VIP</p>
+            <div class="tab-group touchscrollwrap type05">
+                <ul class="tab-menu no_scroll">
+                    <li class="tab-item1 active">1:1문의 내역</li>
+                    <li class="tab-item1">1:1문의 작성</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane1 active">
+                        <table class="inquiry-table">
+                            <colgroup>
+                                <col style="width:15%" />
+                                <col style="width:60%;" />
+                                <col style="width:25%;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">답변</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="num-td">20</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">19</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-none">답변 준비중</td>
+                                </tr>
+                                <tr>
+                                    <td class="num-td">18</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>
+                                <tr>
+                                    <td class="num-td">17</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">16</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">15</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">14</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">13</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">12</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">11</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>                                                                                                                                                                                                                                                                                                                                                                                                               
+                            </tbody>
+                        </table>
+                        <div class="pagination pos1">
+                            <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
+                            <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
+                            <a href="#">1</a>
+                            <a class="active" href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
+                            <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="bank-cont">
-                <div>
-                    <p class="delivery_title">등급별 멤버십 혜택</p>
-                    <ul class="payment_graybox">
-                        <li>멤버십 등급은 분기별 주문금액을 기준으로 산정됩니다.</li>
-                        <li>멤버십 등급 기준을 충족하지 못할 경우 등급이 하향될 수 있으며, 등급별 혜택은 당사 정책에 따라 변동될 수 있습니다.</li>
-                    </ul>
-                </div>
-                <div class="membertype-box">
-                    <div class="member-type">
-                        <img src="../html/img/ico/icon_memebership_basic.png" class="member-step">
-                        <p>BASIC</p>
                     </div>
-                    <div class="member-notic">
-                        <div>
-                            <p>&#60;공통혜택&#62;</p>
-                            <ul>
-                                <li>예치금 선구매 및 카드 즉시할인 제공</li>
-                                <li>기획전 및 프로모션을 통한 추가 혜택 제공</li>
-                            </ul>
+                    <div class="tab-pane1">
+                        <ul class="inquiry-noti">
+                            <li>문의사항에 대한 답변은 1:1문의 내역, 고객님의 메일을 통해 확인하실 수 있습니다.</li>
+                        </ul>
+                        <div class="inquiry-form">
+                            <div class="dropdown_menu_wrap inquiry-select">
+                                <button type="button" class="btn-dropdown">선택하세요.</button>
+                                <ul class="dropdown_list">
+                                    <li><button type="button" data-option="option1">option1</button></li>
+                                    <li><button type="button" data-option="option2">option2</button></li>
+                                    <li><button type="button" data-option="option3">option3</button></li>
+                                </ul>
+                            </div>
+                            <input type="text" placeholder="제목을 입력하세요." />
+                            <textarea name="inquiryInput" placeholder="내용을 입력하세요."></textarea>
+                            <div class="form-phone">
+                                <div class="dropdown_menu_wrap">
+                                    <button type="button" class="btn-dropdown">010</button>
+                                    <ul class="dropdown_list">
+                                        <li><button type="button" data-option="010">010</button></li>
+                                        <li><button type="button" data-option="011">011</button></li>
+                                    </ul>
+                                </div>
+                                <span>-</span>
+                                <input type="text" placeholder="" />
+                                <span>-</span>
+                                <input type="text" placeholder="" />
+                            </div>
                         </div>
-                        <div>
-                            <p>&#60;혜택 1&#62; 주문할인 쿠폰 총 5만원 지급</p>
-                            <ul>
-                                <li>첫 가입 축하 2만원</li>
-                                <li>첫 주문할인 2만원</li>
-                                <li>1차 재주문 할인 1만원</li>
-                            </ul>
+                        <div class="inquiry-radio">
+                            <p>답변 내용을 SMS로 받아보시겠습니까?</p>
+                            <div class="radio_wrap">
+                                <input type="radio" id="op1" name="option" value="yes">
+                                <label for="op1">네</label>
+                                <input type="radio" id="op2" name="option" value="no">
+                                <label for="op2">아니요</label>
+                            </div>
                         </div>
-                        <div>
-                            <p>&#60;혜택 2&#62;</p>
-                            <ul>
-                                <li>무료 반품쿠폰</li>
-                            </ul>
+                        <div class="form-email">
+                            <input type="text" placeholder="" />
+                            <span>@</span>
+                            <input type="text" placeholder="" />
+                            <div class="dropdown_menu_wrap">
+                                <button type="button" class="btn-dropdown">직접입력</button>
+                                <ul class="dropdown_list">
+                                    <li><button type="button" data-option="010">010</button></li>
+                                    <li><button type="button" data-option="011">011</button></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <p>&#60;혜택 3&#62;</p>
-                            <ul>
-                                <li>예치금 선구매 정책 확정 후 내용 추가 예정</li>
-                            </ul>
+                        <div class="inquiry-radio">
+                            <p>답변 내용을 SMS로 받아보시겠습니까?</p>
+                            <div class="radio_wrap">
+                                <input type="radio" id="op3" name="option2" value="yes">
+                                <label for="op3">네</label>
+                                <input type="radio" id="op4" name="option2" value="no">
+                                <label for="op4">아니요</label>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="membertype-box">
-                    <div class="member-type">
-                        <img src="../html/img/ico/icon_memebership_family.png" class="member-step">
-                        <p>FAMILY</p>
-                    </div>
-                    <div class="member-notic">
-                        <div>
-                            <p>&#60;공통혜택&#62;</p>
-                            <ul>
-                                <li>예치금 선구매 및 카드 즉시할인 제공</li>
-                                <li>기획전 및 프로모션을 통한 추가 혜택 제공</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p>&#60;혜택 1&#62; 주문할인 쿠폰 총 5만원 지급</p>
-                            <ul>
-                                <li>승급 첫 주문할인 3만원</li>
-                                <li>1차 재주문 할인 1만원</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p>&#60;혜택 2&#62;</p>
-                            <ul>
-                                <li>월 1회 무료 반품 쿠폰 지급 (공급사 제품만 가능)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p>&#60;혜택 3&#62;</p>
-                            <ul>
-                                <li>예치금 선구매 정책 확정 후 내용 추가 예정</li>
-                            </ul>
+                        <div class="btn_wrap">
+                            <button class="btn btn-check"><span>확인</span></button>
                         </div>
                     </div>
                 </div>
