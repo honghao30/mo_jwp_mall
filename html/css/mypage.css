@@ -45,9 +45,9 @@
 .mypage_infobox dl.mypage_info-des .flx-box dt {display: flex; justify-content: space-between; align-items: center;}
 .mypage_infobox dl.mypage_info-des .flx-box dt>div{display: flex; align-items: center; gap: 4px; color: #FF4949;}
 .mypage_infobox .logout-box {text-align: end;}
-.mypage_infobox .logout-box .logout-btn {padding: 7.5px 12px; border-radius: 16px; border: 1px solid #E1E3E9; background-color: #fff; margin-top: 16px; display: inline-block;}
+.mypage_infobox .logout-box .logout-btn {color: #717B8A; padding: 7.5px 12px; border-radius: 16px; border: 1px solid #E1E3E9; background-color: #fff; margin-top: 16px; display: inline-block;}
 .mypage_menu {display: flex; flex-wrap: wrap;}
-.mypage_menu li {padding: 16px 0 16px 16px; border-bottom: 2px solid #E1E3E9; position: relative; width: calc(50% - 16px);}
+.mypage_menu li {padding: 16px 0 16px 16px; border-bottom: 2px solid #E1E3E9; position: relative; width: calc(50% - 17px);}
 .mypage_menu li::after {content: ''; position: absolute; background: url(../img/ico/ico_arrow_right_b36.png) center no-repeat; width: 16px; height: 16px; right: 16px; top: 16px;}
 .mypage_menu li:nth-child(2n) {border-left: 2px solid #E1E3E9; width: calc(49.5% - 16px);}
 .same {background-color: #F7F8FA; padding: 92.5px 0; text-align: center;}
@@ -166,16 +166,18 @@ input[type="checkbox"]:checked {background-color: #0072BC; border-color: #0072BC
 .delivery_title {font-size: 18px; font-weight: 500; line-height: 18px; letter-spacing: -0.72px; margin-bottom: 24px;}
 .delivery_cont dl {display: flex; flex-direction: column; border-top: 1px solid #AEB7C6;}
 .delivery_cont dl >div {display: flex; }
-.delivery_cont dt {width: 32.2222vw; border-bottom: 1px solid #E1E3E9; background-color: #F7F8FA; padding: 11.5px 0 11.5px 16px;}
-.delivery_cont dd {flex: 1; border-bottom: 1px solid #E1E3E9; padding: 11.5px 0 11.5px 16px;}
+.delivery_cont dt {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;width: 32.2222vw; border-bottom: 1px solid #E1E3E9; background-color: #F7F8FA; padding: 11.5px 0 11.5px 16px;}
+.delivery_cont dd {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;color:#717B8A; flex: 1; border-bottom: 1px solid #E1E3E9; padding: 11.5px 0 11.5px 16px;}
 .delivery_cont .delivery_innerbox {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; border: 1px solid #E1E3E9; padding: 16px; border-radius: 6px; display: flex; flex-direction: column; gap: 8px;}
 .delivery_cont .delivery_innerbox  + .delivery_innerbox {margin-top: 12px;}
 .delivery_cont .delivery_innerbox-des {color: #717B8A;}
 .delivery_cont:last-child {padding-bottom: 55px;}
 .delivery_cont.delivery_cont-btm {padding-bottom: 40px;}
 .payment_graybox {background-color: #F7F8FA; border-radius: 12px; display: flex; flex-direction: column; gap: 12px; padding: 20px 16px;}
-.payment_graybox li {padding-left: 7px; position: relative; color: #717B8A; font-size: 13px; font-weight: 400; line-height: 18px; letter-spacing: -0.52px;}
+.payment_graybox li {padding-left: 7px; position: relative; color: #717B8A; font-size: 13px; font-weight: 400; line-height: 18px; letter-spacing: -0.52px !important;}
 .payment_graybox li::before {position: absolute; width: 3px; height: 3px; background-color: #717B8A; border-radius: 50%; content: ''; top: 7px; left: 0;}
+.payment_graybox li a {text-decoration: underline; color: #717B8A;}
+.payment_graybox li a.fw-bold {font-weight: 500;}
 /* 쿠폰내역 */
 .coupon_cont .coupon_innerbox {border: 1px solid #E1E3E9; padding: 16px; border-radius: 6px;}
 .coupon_cont .coupon_innerbox +.coupon_innerbox {margin-top: 12px;}
@@ -203,7 +205,7 @@ img.member-step {width: 25px; height: 25px;}
 .step-bar #progress::-webkit-progress-value {background: #717B8A; border-radius: 2px; height: 4px; width: 48px;}
 .bar-notibox {display: flex;}
 .bar-notibox .bar-noti {display: flex; flex-direction: column; gap: 4px; width: 25%; align-items: center;}
-.bar-notibox .bar-noti p {color: #AEB7C6;font-family: Montserrat;  font-size: 13px; font-weight: 400; line-height: 13px; font-weight: 600;}
+.bar-notibox .bar-noti p {word-break: keep-all; color: #AEB7C6;font-family: Montserrat;  font-size: 13px; font-weight: 400; line-height: 13px; font-weight: 600;}
 .bar-notibox .bar-noti p.active {color: #222222;}
 .membertype-box {margin-top: 32px; border: 1px solid #E1E3E9; padding: 8px 16px 16px 16px; border-radius: 6px;}
 .member-type {padding-bottom: 8px; margin-bottom: 16px;;display: flex; gap: 4px; justify-content: flex-start; align-items: center; border-bottom: 1px solid #E1E3E9;}
@@ -231,7 +233,8 @@ img.member-step {width: 25px; height: 25px;}
 .inquiry-form input {height: 36px; border-radius: 6px; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
 .inquiry-form input::placeholder, textarea::placeholder{color: #AEB7C6; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
 .inquiry-form .dropdown_menu_wrap .btn-dropdown {width: 100%; justify-content: space-between; padding: 0 12px; height: 36px; border-radius: 6px;}
-.inquiry-form .dropdown_menu_wrap .dropdown_list {width: 99.6%;}
+.inquiry_wrap .dropdown_menu_wrap .dropdown_list {width: 99.6%;}
+.inquiry_wrap .form-email .dropdown_menu_wrap .dropdown_list {width: 98.5%;}
 .inquiry-form .form-phone {display: flex; gap: 4px; align-items: center;}
 .inquiry-form .form-phone span {font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px; color:#AEB7C6;}
 .inquiry-form .form-phone input, .inquiry-form .form-phone .dropdown_menu_wrap .btn-dropdown {width: 27.9167vw; height: 36px;}
