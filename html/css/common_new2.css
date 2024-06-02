@@ -533,3 +533,24 @@ html,body {letter-spacing: -0.04em;}
 .baner_timesals_wrap .bg_clock {width:74px;height:74px;background: url('../img/ico/bg_clock.png') no-repeat center;background-size: 100% auto;position: absolute;left: 73%;bottom: -23px;}
 .baner_timesals_wrap .bg_wt {width:40px;height:22px;background: url('../img/ico/bg_wt.png') no-repeat center;background-size: 100% auto;font-size: 10px;font-weight: 700;line-height: 10px;color:#0072BC;position: absolute;text-align: center;top: 50px;left: 75%;}
 .baner_timesals_wrap .bg_wt span {display: block;padding-top: 5px;}
+
+/* 콘텐츠 */
+#header .gnbmenu.type_new_type ul li a {position:relative;display:block;height:41px;padding:11px 0 0;font-size: 15px;font-weight: 500;color:#000;box-sizing:border-box;}
+#header .gnbmenu.type_new_type ul li.active a {color:#059ad9;}
+#header .gnbmenu.type_new_type ul li.active a:after {content:'';position:absolute;left:0;bottom:-3px;width:100%;height:3px;background:#059ad9;z-index:2;}
+#header .gnbmenu.type_new_type ul li a span {color:#059ad9;}
+
+/* 콘텐츠 탭 */
+.content_tab {width: 100%; height: 48px; display: flex; border-bottom: 1px solid #e1e3e9;}
+.content_tab button {width: 50%; border-bottom: 4px solid transparent; color: #aeb7c6; box-sizing: border-box; font-size: 16px; display: flex; align-items: center; justify-content: center;} 
+.content_tab button.active {border-color: #0072bc; color: #0072bc;}
+.contents_cate_wrap .tab-group.type03 {margin: 0;}
+
+.media_content_list {display: flex; padding: 24px 16px 0; box-sizing: border-box; flex-wrap: wrap; place-items: flex-end; border-top: 1px solid #e1e3e9;gap: 16px;} 
+.media_content_list li {width: calc(50% - 12px);box-sizing: border-box;} 
+.media_content_list li .content_main_img {width: 100%; border-radius: 12px; overflow: hidden; aspect-ratio: 1/1; position: relative;} 
+.media_content_list li .content_title {margin-top: 12px; font-size: 13px; line-height: 1.3;} 
+.media_content_list li .content_desc {font-size: 12px; color: #aeb7c6; margin-top: 8px; margin-bottom: 12px; line-height: 1;} 
+.media_content_list li .content_down_btn {width: 100%; height: 36px; background-color: #0072bc; color: #fff; text-align: center; font-weight: 600; border-radius: 8px;}
+.content_list_video .content_main_img::before {content: ""; display: block; position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);} 
+.content_list_video .btn_play_video {display: block; position: absolute; width: 45%; height: 45%; background-image: url('../img/ico/ico_play_media.png'); background-repeat: no-repeat; background-size: cover; top: 50%; left: 50%; transform: translate(-50%, -50%);} 
