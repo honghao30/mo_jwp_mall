@@ -5,7 +5,7 @@
 #header{z-index:100;}
 /* 20231215 수정 */
 #header .search_wrap{
-    height:60px;
+    height:59px;
     width:100%;
     background:#fff;
 }
@@ -20,6 +20,7 @@
     padding:0 20px;
     box-sizing:border-box;
     border-bottom: 1px solid #e8e8e8;
+    min-width:320px;
 }
 #header .input_box{
     position:relative;
@@ -28,12 +29,12 @@
     position:absolute;
     top:0;
     right:0;
-    background:url(img/btn_search.png) 50% no-repeat;
+    background:url(../img/btn_search.png) 50% no-repeat;
     background-size:27px auto;
     width:27px;
     height:27px;
 }
-#header .search_area span{
+/* #header .search_area span{
     position:relative;
     display: flex;
     width: calc(100% - 70px);
@@ -43,15 +44,15 @@
     border-radius: 23.04px;
     border: 0.96px solid #0072BC;
     margin-top:10px;
-}
-#header .search_area .main_link{
+} */
+/* #header .search_area .main_link{
     display: block;
     position: absolute;
     top: 12px;
     left: 30px;
     padding: 10px;
     z-index: 10;
-}
+} */
 #header .search_area .main_link img{
     width: 90px;
 }
@@ -83,11 +84,11 @@
     border-radius: 8px;
     border: 1px solid #E1E3E9;
     background: #FFF;
-    padding:8px 8px 4px 8px;
+    padding:8px;
     color: #222;
-    font-family:"GmarketSans";
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 13px;
+    line-height:13px;
+    font-weight: 400;
 }
 /* 20231215 */
 .content_wrap .noti_cont{
@@ -112,34 +113,39 @@
     padding-left:27px;
     height: 24px;
     line-height:24px;
-    background:url(img/ico_star.png) 0 50% no-repeat;background-size:25px auto;
+    background:url(../img/ico_star.png) 0 50% no-repeat;background-size:25px auto;
 }
 /* 타이틀 */
 .title_cont span{
     display:inline-block;
-    color: #0072BC;
-    font-family:"GmarketSans";
     font-size: 18px;
     line-height:28px;
-    font-weight: 500;
+    font-weight: 600;
 }
+.title_cont .s_txt{
+    color: #717B8A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+}
+.title_cont span+.s_txt{margin-top:3px;}
 /* 툴팁 */
 .ico_info{
     display:inline-block;
-    background:url(img/ico_info.png) 50% no-repeat;
-    background-size:20px auto;
-    width:20px;
-    height:20px;
-    vertical-align:-4px;
+    background:url(../img/ico_info.png) 50% no-repeat;
+    background-size:24px auto;
+    width:24px;
+    height:24px;
+    vertical-align:-6px;
 }
 /* 20231214 수정 */
 .ico_info:hover .tooltip_cont{
     display:block;
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, 70px);
-    width: 334px;
+    transform: translate(-50%, 50px);
 }
 .tooltip_cont:before{content:'';position:absolute;top:-12px;left:0;width:100%;height:10px;}
 .tooltip_cont{
@@ -165,7 +171,7 @@
 }
 .product_list li{
     margin-left:20px;
-    width:138px;
+    width:150px;
 }
 .product_list li+li{
     margin-left:10px;
@@ -174,16 +180,18 @@
     margin-right:20px;
 }
 /* 20231218 수정 */
+.product_list .img_box img{
+    object-fit: cover;
+}
 .product_list .img_box{
     display: flex;
-    width: 112px;
-    height: 112px;
-    padding: 18px 12px 17px 12px;
+    width: 150px;
+    height: 150px;
     justify-content: center;
     align-items: center;
     border-radius: 12px;
     background: #FFF;
-    border: 1px solid #E1E3E9;
+    border: 1px solid #EFF3F9;
     position:relative;
     overflow:hidden;
 }
@@ -253,7 +261,6 @@
 .product_list .price_cont .price{
     color: #0072BC;
     text-align: right;
-    font-family:"GmarketSans";
     font-size: 16px;
     font-weight: 500;
 }
@@ -319,7 +326,7 @@
     font-weight: 500;    
     letter-spacing: -0.72px;
     padding-left:30px;
-    background:url(img/ico_search.png) 0 0 no-repeat;
+    background:url(../img/ico_search.png) 0 0 no-repeat;
     background-size:24px auto;
 }
 .find_product_cont .location_cont{
@@ -484,27 +491,32 @@
 /* 20231215 수정 */
 .tab-group.type03 .tab-menu .tab-item1{
     display: inline-block;
-    border-radius: 20px;
-    border: 1px solid #E1E3E9;
-    line-height: 31px;
-    padding: 3px 16px 0px 16px;
+    border-radius: 24px;
+    /* border: 1px solid #E1E3E9; */
+    line-height: 42px;
+    padding: 0 16px;
     color: #717B8A;
     text-align: center;
-    font-family: 'GmarketSans';
-    font-size: 14px;
+    /* font-family: 'GmarketSans'; */
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.52px;
+
+    border: 1px solid #F2F5FA;
+    background:#fff;    
 }
 .tab-group.type03 .tab-menu .tab-item1.active{
     color:#fff;
-    background: #0072BC;
+    background: linear-gradient(102deg, #1293E7 0%, #32B6BD 100%);
+    box-shadow: 0px 4px 4px 0px #0072BC33;
 }
 .tab-group.type03 .tab-menu li+li{
     margin-left:7px;
 }
 .tab-group.type03 .product_list{
     display:block;
-    white-space: wrap;
+    /* white-space: wrap; */
+    padding: 0 20px 20px 20px;
 }
 .product_list.list_type li+li{
     margin-top:14px
@@ -658,7 +670,7 @@
 .link_kakao a span{
     padding-left:50px;
     color:#fff;
-    background:url(img/img_logokakao.png) 0 50% no-repeat;
+    background:url(../img/img_logokakao.png) 0 50% no-repeat;
     height:50px;
     line-height:50px;
     font-size: 15px;

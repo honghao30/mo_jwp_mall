@@ -1316,25 +1316,38 @@
             
 			<div class="search_wrap">
 				<div class="search_area">
-                    <!-- 20231207 수정 -->
-                    <a href="#" class="main_link"><img src="img/search_logo.png" alt=""></a>
+                    <!-- <a href="#" class="main_link"><img src="img/search_logo.png" alt=""></a>
 					<span class="input_box" onclick="searchLayer(this);">
 						<button class="btn_search" ></button>
 					</span>
-                    <!--// 20231207 수정 -->
 					<button class="btn_basket">
                         <a href="#"><img src="img/img_cart.png" alt=""></a>
-                    </button>
+                    </button> -->
+                    <a href="#none" class="ico_top_manager btn_fixed_up"></a>
+                    <a href="#none" class="main_link"><img src="img/search_logo.png" alt="Jwpmall"></a>
+                    <!-- <span class="ico_top_search" onclick="searchLayer(this);"></span>
+                    <a href="#none" class="ico_top_cart">
+                        <span class="alrim">24</span>
+                    </a> -->
+                    <div class="top_header_right">
+                        <button type="button" class="btn_search_top" onclick="searchLayer(this);">
+                            <span class="ir-text">검색</span>
+                        </button>
+                        <button class="btn_basket_top">
+                            <div class="counter">24</div>
+                            <span class="ir-text">장바구니</span>
+                        </button>
+                    </div>
 				</div>
 			</div>
 			<!--// 메인리뉴얼 - 수정 -->
 
             <div class="gnbmenu touchscrollwrap">
                 <ul>
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/goods/search.do?sword=%EB%B9%84%EA%B8%89%EC%97%AC" target="">영양수액(비급여)</a></li class="bar">
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1637" target="">철분주사제</a></li class="bar">
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/event/special.do?idx=331" target="">체스트메이트</a></li class="bar">
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/goods/search.do?sword=%EC%9C%84%EB%84%88%ED%94%84" target="">위너프페리</a></li>
+                    <li><a href="https://m.jwpmall.co.kr/mw/goods/search.do?sword=%EB%B9%84%EA%B8%89%EC%97%AC" target="">영양수액(비급여)</a></li>
+                    <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1637" target="">철분주사제</a></li>
+                    <li><a href="https://m.jwpmall.co.kr/mw/event/special.do?idx=331" target="">체스트메이트</a></li>
+                    <li><a href="https://m.jwpmall.co.kr/mw/goods/search.do?sword=%EC%9C%84%EB%84%88%ED%94%84" target="">위너프페리</a></li>
                     <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1638" target="">일반수액(급여)</a></li>
                 </ul>
             </div>
@@ -1622,36 +1635,56 @@
         <div class="content_wrap">
             <!-- 스와이프 배너 -->
             <!-- Swiper -->
-            <div class="swiper mySwiper main_sw">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/main_banner_01.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/main_banner_01.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/main_banner_01.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/main_banner_01.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/main_banner_01.png" alt=""></div>
+            <div class="swiper_wrap type01">
+                <div class="swiper ad_mid_banner_01">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#"><img src="img/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/banner/banner_01.png" alt=""></a></div>
+                    </div>
+                    <div class="control_box">
+                        <div class="swiper-pagination type01"></div>
+                        <div class="swiper-pagination type01" style="display:none"></div>
+                        <div class="swiper-button-prev"><img src="img/common/btn_left.png" alt=""></div>
+                        <div class="swiper-button-next"><img src="img/common/btn_right.png" alt=""></div>
+                        <div class="swiper-autoplay-button">
+                            <img src="img/common/btn_pause.png" alt="" class="pause">
+                            <img src="img/common/btn_play.png" alt="" class="play">
+                        </div>
+                    </div>
                 </div>
-                <!-- 20231219 수정 -->
-                <div class="swiper-button-next"><img src="img/btn_brand_right.png" alt=""></div>
-                <div class="swiper-button-prev"><img src="img/btn_brand_left.png" alt=""></div>
-                <!-- //20231219 수정 -->                
             </div>
-            <!-- Initialize Swiper -->
             <script>
-                var swiper = new Swiper(".main_sw", {
-                    pagination: {
-                        el: ".swiper-pagination",
-                        dynamicBullets: true,
-                    },
-                    autoplay: {
-                    delay: 3000, // 자동 플레이 간격을 밀리초 단위로 지정합니다 (예: 3초 = 3000)
-                    disableOnInteraction: false, // 유저 상호작용 후에도 자동 플레이를 유지할지 여부를 설정합니다
-                    },
-                    loop: true, // 무한 루프 활성화
-                    navigation: {
-                      nextEl: ".main_sw .swiper-button-next",
-                      prevEl: ".main_sw .swiper-button-prev",
-                    }
-                });		
+                var ad_mid_banner_01 = new Swiper(".ad_mid_banner_01.swiper", {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 4,
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "fraction",
+                },
+                loop: true,
+                navigation: {
+                    nextEl: ".ad_mid_banner_01 .swiper-button-next",
+                    prevEl: ".ad_mid_banner_01 .swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 2000, // Autoplay delay in milliseconds
+                    disableOnInteraction: false, // Autoplay continues after user interaction
+                },
+                });
+            
+                // Pause/Play button functionality
+                $(".ad_mid_banner_01 .swiper-autoplay-button").click(function(){
+                $(this).toggleClass("paused");
+                if( $(this).is(".paused") ){
+                    ad_mid_banner_01.autoplay.stop();
+                }
+                else{
+                    ad_mid_banner_01.autoplay.start();
+                };
+                });
             </script>
             
             <!-- 공지 -->
@@ -1659,7 +1692,7 @@
                 <span class="title">공지</span>
                 <div class="swiper mySwiper slide_noti">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide"><p class="txt">※비급여 영양수액 판매처 변경 안내※</p></div>
+                      <div class="swiper-slide"><p class="txt">15% 만니톨주 250ml 생산중단안내 <span class="txt_new">N</span></p></div>
                       <div class="swiper-slide">Slide 2</div>
                       <div class="swiper-slide">Slide 3</div>
                       <div class="swiper-slide">Slide 4</div>
@@ -1686,14 +1719,176 @@
                 </script>
             </div>
 
+            <!-- 개인정보 영역 -->
+            <div class="user_info_wrap">
+                <div class="tit">
+                    <div class="mem_label">
+                        <span class="level_icon new"></span>
+                    </div>
+                    <span class="fleft">
+                        <strong class="colorB">제이더블유중외제약</strong><span>님</span>
+                    </span>
+                    <span class="fright">
+                        <button class="btn default btn_round btn_o">예치금 구매</button>
+                    </span>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <span class="txt">03월 주문금액</span>
+                            <span class="value">1,586,000<span>원</span></span>
+                        </li>
+                        <li>
+                            <span class="txt">03월 반품금액</span>
+                            <span class="value">0<span>원</span></span>
+                        </li>
+                        <li>
+                            <span class="txt">마이너스잔고</span>
+                            <span class="value">112,000<span>원</span></span>
+                        </li>
+                        <li>
+                            <span class="txt">예치금</span>
+                            <span class="value">112,000<span>원</span></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span class="txt">마일리지</span>
+                            <span class="value">2,000<span>M</span></span>
+                        </li>
+                        <li>
+                            <span class="txt">포인트</span>
+                            <span class="value">5,000<span>P</span></span>
+                        </li>
+                        <li>
+                            <span class="txt">보유쿠폰</span>
+                            <span class="value">15<span>매</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 스와이프 배너 -->
+            <div class="mt20">
+                <!-- Swiper -->
+                <div class="swiper_wrap type01">
+                    <div class="swiper ad_mid_banner_02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_01.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_01.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_01.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_01.png" alt=""></a></div>
+                        </div>
+                        <div class="control_box">
+                            <div class="swiper-pagination type01"></div>
+                            <div class="swiper-pagination type01" style="display:none"></div>
+                            <!-- <div class="swiper-button-prev"><img src="img/common/btn_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/common/btn_right.png" alt=""></div> -->
+                            <div class="swiper-autoplay-button">
+                                <img src="img/common/btn_pause.png" alt="" class="pause">
+                                <img src="img/common/btn_play.png" alt="" class="play">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var ad_mid_banner_02 = new Swiper(".ad_mid_banner_02.swiper", {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 4,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "fraction",
+                    },
+                    loop: true,
+                    navigation: {
+                        nextEl: ".ad_mid_banner_02 .swiper-button-next",
+                        prevEl: ".ad_mid_banner_02 .swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 2000, // Autoplay delay in milliseconds
+                        disableOnInteraction: false, // Autoplay continues after user interaction
+                    },
+                    });
+                
+                    // Pause/Play button functionality
+                    $(".ad_mid_banner_02 .swiper-autoplay-button").click(function(){
+                    $(this).toggleClass("paused");
+                    if( $(this).is(".paused") ){
+                        ad_mid_banner_02.autoplay.stop();
+                    }
+                    else{
+                        ad_mid_banner_02.autoplay.start();
+                    };
+                    });
+                </script>
+            </div>
+
+            <!-- 스와이프 배너 -->
+            <div class="mt20">
+                <!-- Swiper -->
+                <div class="swiper_wrap type01">
+                    <div class="swiper ad_mid_banner_03">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                        </div>
+                        <div class="control_box">
+                            <div class="swiper-pagination type01"></div>
+                            <div class="swiper-pagination type01" style="display:none"></div>
+                            <!-- <div class="swiper-button-prev"><img src="img/common/btn_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/common/btn_right.png" alt=""></div> -->
+                            <div class="swiper-autoplay-button">
+                                <img src="img/common/btn_pause.png" alt="" class="pause">
+                                <img src="img/common/btn_play.png" alt="" class="play">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var ad_mid_banner_03 = new Swiper(".ad_mid_banner_03.swiper", {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 4,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "fraction",
+                    },
+                    loop: true,
+                    navigation: {
+                        nextEl: ".ad_mid_banner_03 .swiper-button-next",
+                        prevEl: ".ad_mid_banner_03 .swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 2000, // Autoplay delay in milliseconds
+                        disableOnInteraction: false, // Autoplay continues after user interaction
+                    },
+                    });
+                
+                    // Pause/Play button functionality
+                    $(".ad_mid_banner_03 .swiper-autoplay-button").click(function(){
+                    $(this).toggleClass("paused");
+                    if( $(this).is(".paused") ){
+                        ad_mid_banner_03.autoplay.stop();
+                    }
+                    else{
+                        ad_mid_banner_03.autoplay.start();
+                    };
+                    });
+                </script>
+            </div>
+
             <!-- barCont -->
             <div class="barCont"></div>
 
             <!-- 관심상품 -->
-            <div class="favorite_cont">
+            <div class="favorite_cont pt40">
                 <!-- title -->
                 <div class="title_cont">
-                    <span class="ico_star">관심상품</span>
+                    <!-- <span class="ico_star">관심상품</span> -->
+                    <span>고객님의 관심상품 & 최근 주문상품</span>
                     <div class="ico_info">
                         <div class="tooltip_cont">
                             <img src="img/img_tool_tip.png" alt="">
@@ -1702,7 +1897,7 @@
                 </div>
 
                 <!-- 로딩바 -->
-                <div class="sk-fading-circle">
+                <div class="sk-fading-circle" style="display: none;">
                     <div class="sk-circle1 sk-circle"></div>
                     <div class="sk-circle2 sk-circle"></div>
                     <div class="sk-circle3 sk-circle"></div>
@@ -1720,60 +1915,703 @@
                 
                 <!-- list -->
                 <ul class="product_list mt20 no_scroll">
+                    <li>
+                        <span class="img_box">
+                            <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                            </a>
+                        </span>
+                        <div class="price_info">
+                            <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                            </a>
+                            <div class="price_box">
+                                <div class="price"><strong>37,900</strong>원</div>
+                                <div class="btns">
+                                    <span class="heart on"></span>
+                                    <a href="#" class="btn_add_wish">
+                                        <span class="ir-text">장바구니</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="img_box">
+                            <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                <img src="./img/sample/product_sample_img.png" alt="">
+                            </a>
+                        </span>
+                        <div class="price_info">
+                            <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                            </a>
+                            <div class="price_box">
+                                <div class="price"><strong>37,900</strong>원</div>
+                                <div class="btns">
+                                    <span class="heart"></span>
+                                    <a href="#" class="btn_add_wish">
+                                        <span class="ir-text">장바구니</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="soldout">
                         <span class="img_box">
-                            <a href="../goods/detail.do?gno=9802&amp;cate=2130"><img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt=""></a>
-                        </span>
-                        <div class="txt_cont">
                             <a href="../goods/detail.do?gno=9802&amp;cate=2130">
-                                <span class="txt">5%포도당주(TF)-110ML 5%포도당주(TF)-110ML 5%포도당주(TF)-110ML</span>
-                                <span class="price_cont">
-                                    <span class="price">10,000원</span>
-                                </span>
+                                <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
                             </a>
+                        </span>
+                        <div class="price_info">
+                            <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                            </a>
+                            <div class="price_box">
+                                <div class="price"><strong>37,900</strong>원</div>
+                                <div class="btns">
+                                    <span class="heart on"></span>
+                                    <a href="#" class="btn_add_wish">
+                                        <span class="ir-text">장바구니</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <span class="img_box">
-                            <a href="../goods/detail.do?gno=9802&amp;cate=2130"><img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt=""></a>
-                        </span>
-                        <div class="txt_cont">
                             <a href="../goods/detail.do?gno=9802&amp;cate=2130">
-                                <span class="txt">5%포도당주(TF)-110ML</span>
-                                <span class="price_cont">
-                                    <span class="price">10,000원</span>
-                                </span>
+                                <img src="./img/sample/product_sample_img.png" alt="">
                             </a>
+                        </span>
+                        <div class="price_info">
+                            <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                            </a>
+                            <div class="price_box">
+                                <div class="price"><strong>37,900</strong>원</div>
+                                <div class="btns">
+                                    <span class="heart"></span>
+                                    <a href="#" class="btn_add_wish">
+                                        <span class="ir-text">장바구니</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <span class="img_box">
-                            <a href="../goods/detail.do?gno=9802&amp;cate=2130"><img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt=""></a>
-                        </span>
-                        <div class="txt_cont">
                             <a href="../goods/detail.do?gno=9802&amp;cate=2130">
-                                <span class="txt">5%포도당주(TF)-110ML</span>
-                                <span class="price_cont">
-                                    <span class="price">10,000원</span>
-                                </span>
+                                <img src="./img/sample/product_image_sample2.png" alt="">
                             </a>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="img_box">
-                            <a href="../goods/detail.do?gno=9802&amp;cate=2130"><img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt=""></a>
                         </span>
-                        <div class="txt_cont">
+                        <div class="price_info">
                             <a href="../goods/detail.do?gno=9802&amp;cate=2130">
-                                <span class="txt">5%포도당주(TF)-110ML</span>
-                                <span class="price_cont">
-                                    <span class="price">10,000원</span>
-                                </span>
+                                <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
                             </a>
+                            <div class="price_box">
+                                <div class="price"><strong>37,900</strong>원</div>
+                                <div class="btns">
+                                    <span class="heart"></span>
+                                    <a href="#" class="btn_add_wish">
+                                        <span class="ir-text">장바구니</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </div>
+
+            <!-- 이 상품을 찾으셨나요? -->
+            <div class="cont_area pt40 pb20">
+                <div class="title_cont">
+                    <span>이 상품을 찾으셨나요?</span>
+                    <p class="s_txt">고객님의 맞춤 상품을 찾아 드립니다.</p>
+                </div>
+                <div class="tab-group touchscrollwrap type03">
+                    <ul class="tab-menu no_scroll">
+                        <li class="tab-item1 active">일반의원</li>
+                        <li class="tab-item1">가정의학과</li>
+                        <li class="tab-item1">내과</li>
+                        <li class="tab-item1">마취통증의학과</li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane1 active">
+                            <!-- 탭 내용 -->
+                            <ul class="product_list mt20 no_scroll">
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><span class="colorR">품절</span></div>
+                                            <div class="btns">
+                                                <button class="btn_request">재입고 알림</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart on"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_image_sample2.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="product_list no_scroll">
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart on"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart on"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_image_sample2.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 222
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 333
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 444
+                            <!-- //탭 내용 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 고객님에게 맞는 상품을 추천해 드립니다. -->
+            <div class="cont_area bg_w pt40 pb40">
+                <div class="title_cont">
+                    <span>고객님에게 맞는 상품을 추천해 드립니다.</span>
+                </div>
+                <div class="tab-group touchscrollwrap type03">
+                    <ul class="tab-menu no_scroll">
+                        <li class="tab-item1 active">MD추천상품</li>
+                        <li class="tab-item1">금주인기상품</li>
+                        <li class="tab-item1">주사용품</li>
+                        <li class="tab-item1">기타등등</li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane1 active">
+                            <!-- 탭 내용 -->
+                            <ul class="product_list mt20 no_scroll">
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><span class="colorR">품절</span></div>
+                                            <div class="btns">
+                                                <button class="btn_request">재입고 알림</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart on"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_image_sample2.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="text-center mt20">
+                                <button class="btn default btn_round btn_size_m btn_arrow"><span>더보기</span></button>
+                            </div>
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 222
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 333
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 444
+                            <!-- //탭 내용 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 전문 브랜드관 -->
+            <div class="cont_area pt40 pb20">
+                <div class="title_cont">
+                    <span>전문 브랜드관</span>
+                </div>
+                <div class="tab-group touchscrollwrap type03">
+                    <ul class="tab-menu no_scroll">
+                        <li class="tab-item1 active">일반의원</li>
+                        <li class="tab-item1">가정의학과</li>
+                        <li class="tab-item1">내과</li>
+                        <li class="tab-item1">마취통증의학과</li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane1 active">
+                            <!-- 탭 내용 -->
+                            <div class="inner_box">
+                                <!-- 스와이프 배너 -->
+                                <!-- Swiper -->
+                                <div class="swiper_wrap type01">
+                                    <div class="swiper sw_brand_01">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="#"><img src="img/sample/brand_banner_01.png" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="#"><img src="img/sample/brand_banner_01.png" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="#"><img src="img/sample/brand_banner_01.png" alt=""></a></div>
+                                            <div class="swiper-slide"><a href="#"><img src="img/sample/brand_banner_01.png" alt=""></a></div>
+                                        </div>
+                                        <div class="control_box">
+                                            <div class="swiper-pagination type01"></div>
+                                            <div class="swiper-pagination type01" style="display:none"></div>
+                                            <!-- <div class="swiper-button-prev"><img src="img/common/btn_left.png" alt=""></div>
+                                            <div class="swiper-button-next"><img src="img/common/btn_right.png" alt=""></div> -->
+                                            <div class="swiper-autoplay-button">
+                                                <img src="img/common/btn_pause.png" alt="" class="pause">
+                                                <img src="img/common/btn_play.png" alt="" class="play">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    var sw_brand_01 = new Swiper(".sw_brand_01.swiper", {
+                                    slidesPerView: 1,
+                                    slidesPerGroup: 1,
+                                    spaceBetween: 4,
+                                    pagination: {
+                                        el: ".swiper-pagination",
+                                        type: "fraction",
+                                    },
+                                    loop: true,
+                                    navigation: {
+                                        nextEl: ".sw_brand_01 .swiper-button-next",
+                                        prevEl: ".sw_brand_01 .swiper-button-prev",
+                                    },
+                                    autoplay: {
+                                        delay: 2000, // Autoplay delay in milliseconds
+                                        disableOnInteraction: false, // Autoplay continues after user interaction
+                                    },
+                                    });
+                                
+                                    // Pause/Play button functionality
+                                    $(".sw_brand_01 .swiper-autoplay-button").click(function(){
+                                    $(this).toggleClass("paused");
+                                    if( $(this).is(".paused") ){
+                                        sw_brand_01.autoplay.stop();
+                                    }
+                                    else{
+                                        sw_brand_01.autoplay.start();
+                                    };
+                                    });
+                                </script>
+                            </div>
+                            
+                            <ul class="product_list mt20 no_scroll">
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><span class="colorR">품절</span></div>
+                                            <div class="btns">
+                                                <button class="btn_request">재입고 알림</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="soldout">
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img class="img" src="https://m.jwpmall.co.kr/data/base/goods/middle/5_포도당_110.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart on"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_sample_img.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="img_box">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <img src="./img/sample/product_image_sample2.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="price_info">
+                                        <a href="../goods/detail.do?gno=9802&amp;cate=2130">
+                                            <span class="txt">5%포도당주(TF)-110ML 텍스트텍스트텍스트텍스트</span>
+                                        </a>
+                                        <div class="price_box">
+                                            <div class="price"><strong>37,900</strong>원</div>
+                                            <div class="btns">
+                                                <span class="heart"></span>
+                                                <a href="#" class="btn_add_wish">
+                                                    <span class="ir-text">장바구니</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 222
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 333
+                            <!-- //탭 내용 -->
+                        </div>
+                        <div class="tab-pane1">
+                            <!-- 탭 내용 -->
+                            탭 444
+                            <!-- //탭 내용 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<!-- 지울것 --><!-- 지울것 --><!-- 지울것 --><!-- 지울것 --><!-- 지울것 --><!-- 지울것 -->
 
             <!-- 중간배너 -->
             <div class="banner_cont">
@@ -1915,7 +2753,7 @@
             <div class="banner_cont">
                 <!-- 스와이프 배너 -->
                 <!-- Swiper -->
-                <div class="swiper mySwiper main_sw">
+                <div class="swiper mySwiper main_sw01">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><a href="#"><img src="img/bg_banner_01.png" alt=""></a></div>
                         <div class="swiper-slide"><a href="#"><img src="img/bg_banner_01.png" alt=""></a></div>
@@ -1931,7 +2769,7 @@
 
                 <!-- Initialize Swiper -->
                 <script>
-                    var swiper = new Swiper(".main_sw", {
+                    var swiper = new Swiper(".main_sw01", {
                         pagination: {
                             el: ".swiper-pagination",
                             dynamicBullets: true,
@@ -1944,8 +2782,8 @@
                         },
                         loop: true, // 무한 루프 활성화
                         navigation: {
-                        nextEl: ".main_sw .swiper-button-next",
-                        prevEl: ".main_sw .swiper-button-prev",
+                        nextEl: ".main_sw01 .swiper-button-next",
+                        prevEl: ".main_sw01 .swiper-button-prev",
                         }
                     });		
                 </script>
@@ -2192,6 +3030,8 @@
             <!-- barCont -->
             <div class="barCont"></div>
 
+<!-- 지울것 --><!-- 지울것 --><!-- 지울것 --><!-- 지울것 --><!-- 지울것 --><!-- 지울것 -->            
+
             <!-- 의료용품, 의료소모품 탭 -->
             <div class="medical_product_cont">
                 <div class="tab-group recommend_tab line_type02">
@@ -2264,10 +3104,10 @@
                             </div>
                             <div class="tab-group touchscrollwrap type03">
                                 <ul class="tab-menu no_scroll">
-                                <li class="tab-item1 active">원내제품</li>
-                                <li class="tab-item1">철분주사</li>
-                                <li class="tab-item1">CMG제약</li>
-                                <li class="tab-item1">코로나 진단키트</li>
+                                    <li class="tab-item1 active">원내제품</li>
+                                    <li class="tab-item1">철분주사</li>
+                                    <li class="tab-item1">CMG제약</li>
+                                    <li class="tab-item1">코로나 진단키트</li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane1 active">
@@ -2836,12 +3676,10 @@
     <!-- <a href="#header" id="top">맨위로</a> -->
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/cookie.js"></script>
-
     <script type="text/javascript">
         function _e(id) {
             return document.getElementById(id);
         }
-
         $(function() {
             $('.mainlayer .banner').gaessamzieFlick({
                 indicator: true,
@@ -2849,22 +3687,17 @@
                 play: true,
                 delay: 5
             });
-            
         });
-
         function mainLayerClose(a) {
             $(a).closest('.mainlayer').hide();
         }
-
         function mainLayerCookieClose(a) {
-
-
             $(a).closest('.mainlayer').hide();
         }
     </script>
 
 <!-- 메인리뉴얼 - 수정 -->
-<div class="mainlayer">
+<div class="mainlayer" style="display: none;">
 	<div class="layerdim"></div>
 	<div class="layercont">
 		<div class="banner">
@@ -2880,6 +3713,43 @@
 	</div>
 </div>
 <!--// 메인리뉴얼 - 수정 -->
+
+<!-- 영업담당자 레이더 -->
+<div class="mainlayer" style="display: none;">
+	<div class="layerdim"></div>
+	<div class="layercont">
+		<div class="banner">
+			<a href="#" class="hoverBoxCont">
+                <span class="ico_charge">영업담당자</span>
+                <div class="hoverBox">
+                    <ul>
+                    <li><span class="jw">JW중외제약</span><strong>홍선미</strong><span class="ico_phone">010-7758-1801</span></li>
+                    <li><span class="jw">JW신약</span><strong>김병기</strong><span class="ico_phone">010-4751-0555</span></li>
+                    </ul>
+                </div>
+            </a>
+		</div>
+		<ul class="buttonbox">			
+			<li><button type="button" onclick="mainLayerClose(this);">닫기</button></li>
+		</ul>
+	</div>
+</div>
+<!--// 영업담당자 레이더 -->
+
+<!-- 클래스 on 으로 하면 열림 -->
+<div class="foot_banner_cont">
+    <div class="content">
+        <p class="tit">영업담당자</p>
+        <div class="list">
+            <ul>
+                <li><span class="jw">JW중외제약</span><strong class="name">홍선미</strong><span class="phone">010-7758-1801</span></li>
+                <li><span class="jw">JW신약</span><strong class="name">김병기</strong><span class="phone">010-4751-0555</span></li>
+            </ul>
+        </div>
+        <a href="#none" class="btn_close hidden" data-target="btn_close">닫기</a>
+    </div>
+</div>
+<!-- //하단 메인 팝업 영역 -->
 
 
     <ul id="fixedMenu">

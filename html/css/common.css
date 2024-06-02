@@ -565,7 +565,7 @@ table tfoot td{text-align:center;padding:10px 5px; border-bottom:solid 1px #ccd1
 .warn_list li em{color:#ff5a63;}
 
 /* gallery */
-.gallery{positioin:relative;}
+.gallery{position:relative;}
 .gallery .gaessamzieFlickStage{min-width:1px}
 .gallery .gaessamzieFlickStage:after{content:"";display:block;clear:both}
 .gallery .gaessamzieFlickStage .gaessamzieFlickItem,
