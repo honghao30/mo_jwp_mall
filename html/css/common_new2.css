@@ -48,6 +48,7 @@ html,body {letter-spacing: -0.04em;}
 .mo_tit_ft18 {font-size: 18px;font-weight: 500;line-height: 18px;color:#000;}
 .mo_tit_ft15 {font-size: 15px;font-weight: 500;line-height: 15px;color:#000;}
 .color-red {color: #FF4949;}
+.description_box {font-size: 14px;font-weight: 400;line-height: 19px;color:#717B8A;margin: 16px 0 32px;}
 
 /* badge */
 .badge_area {display: flex;flex-wrap: wrap;}
@@ -81,7 +82,7 @@ html,body {letter-spacing: -0.04em;}
 .top_header_right {padding-right: 16px;}
 .top_header_left,
 .top_header_right {display: flex;align-items: center;gap: 8px;}
-.cate_tit_top {font-size: 18px;font-weight: 400;line-height: 18px;color:#000;}
+.cate_tit_top {font-size: 18px;font-weight: 400;line-height: 18px;color:#000;font-family: 'NotoSans';}
 .btn_basket_top {position: relative;}
 .btn_basket_top img {width: 50%;}
 .btn_go_back {width:24px;height: 24px;}
@@ -593,7 +594,7 @@ html,body {letter-spacing: -0.04em;}
 .order_list_wrap .order_list li .order_condition_info {color: #AEB7C6;display: flex;align-items: center;justify-content: space-between;margin-top:10px;font-size: 14px;font-weight: 400;line-height: 14px;}
 .order_list_wrap .order_list li .order_condition_info .order_condition {color:#000;}
 .order_list_wrap .order_list li .order_condition_info.order_return_counter {border-top: 1px solid #E1E3E9;padding-top:12px;}
-.order_list_wrap .order_list li .order_condition_info.order_return_counter .order_condition {width: 80px;}
+.order_list_wrap .order_list li .order_condition_info.order_return_counter .order_condition {width: 80px;margin-right: 4px;}
 .order_list_wrap .order_list li .order_condition_info.order_return_counter .order_condition_data input {max-width: 70%;}
 .order_list_wrap .order_list li .order_handle_bottom {display: flex;align-items: center;justify-content: space-between;border-top: 1px solid #e1e3e9;padding-top: 16px;gap:4px;}
 .order_list_wrap .order_list li .order_handle_bottom .radio_box {width: 48%;}
@@ -606,7 +607,7 @@ html,body {letter-spacing: -0.04em;}
 .order_number_box {background: #F2F5FA;padding: 16px;}
 .order_number_box.order_num {font-family: 'Montserrat';font-size: 14px;font-weight: 500;line-height: 14px;color:#717B8A;}
 .order_number_box .order_num .num {color:#0072BC;font-size: 16px;line-height: 16px;border-right: 1px solid #E1E3E9;padding-right: 10px;margin-right: 10px;}
-.order_return_wrap {padding: 32px 16px;}
+.order_return_wrap {padding: 32px 16px;font-family: 'NotoSans', 'Apple-Gothic', '애플고딕', Droid Sans, Helvetica, Tahoma, sans-serif;}
 .order_return_wrap .product_table_wrap,
 .order_return_wrap .inquiry-form {margin-top: 24px;}
 
