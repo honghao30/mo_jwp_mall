@@ -564,13 +564,13 @@ html,body {letter-spacing: -0.04em;}
 
 /* 주문반품 */
 .order_list_wrap {min-height: 300px;}
-.order_list_wrap .order_list li {border:1px solid #E1E3E9;border-radius: 8px;padding: 16px;}
+.order_list_wrap .order_list li {border:1px solid #E1E3E9;border-radius: 8px;padding: 16px;margin-bottom: 22px;}
 .order_list_wrap .order_list li .price_box {justify-content: flex-start;gap: 10px;}
 .order_list_wrap .order_list li .price_box .unit_info {font-size: 14px;font-weight: 400;line-height: 14px;color:#717B8A;border-left: 1px solid #E1E3E9;padding-left:10px;}
 .order_list_wrap .order_list li .price_box .unit_info span {font-family: 'Montserrat';}
 .order_list_wrap .order_list li .order_condition_info {color: #AEB7C6;display: flex;align-items: center;justify-content: space-between;margin-top:10px;font-size: 14px;font-weight: 400;line-height: 14px;}
 .order_list_wrap .order_list li .order_condition_info .order_condition {color:#000;}
-.order_list_wrap .order_list li .order_handle_bottom {display: flex;align-items: center;justify-content: space-between;border-top: 1px solid #e1e3e9;padding-top: 16px;}
+.order_list_wrap .order_list li .order_handle_bottom {display: flex;align-items: center;justify-content: space-between;border-top: 1px solid #e1e3e9;padding-top: 16px;gap:4px;}
 .order_list_wrap .order_list li .order_handle_bottom .radio_box {width: 48%;}
 .order_list_wrap .order_list li .oder_type {font-size: 14px;font-weight: 400;line-height: 14px;color:#FF4949;margin-left:2px;}
 .order_list_wrap .order_list li .order_number_wrap {display: flex;align-items: center;justify-content: space-between;border-bottom: 1px solid #E1E3E9;padding-bottom: 12px;}
