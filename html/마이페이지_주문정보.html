@@ -1473,12 +1473,132 @@
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane active" id="delivery">
-                        1
-                        
+                        <div class="bank-search">
+                            <div class="date-search">
+                                <div class="dropdown_menu_wrap">
+                                    <button type="button" class="btn-dropdown">1개월</button>
+                                    <ul class="dropdown_list">
+                                        <li><button type="button" data-option="7일">7일</button></li>
+                                        <li><button type="button" data-option="1개월">1개월</button></li>
+                                        <li><button type="button" data-option="3개월">3개월</button></li>
+                                        <li><button type="button" data-option="6개월">6개월</button></li>
+                                        <li><button type="button" data-option="1년">1년</button></li>
+                                        <li><button type="button" data-option="직접입력">직접입력</button></li>
+                                    </ul>
+                                </div>
+                                <div class="inputbox">
+                                    <input name="search" type="text" placeholder="입력 하세요.">
+                                    <button type="button" class="btn_search_top">
+                                        <span class="ir-text">검색</span>
+                                    </button>
+                                </div>
+                            </div>                           
+                            <div class="btn_wrap">
+                                <button class="btn btn-reset"><span>초기화</span></button>
+                                <button class="btn btn-inquiry"><span>조회</span></button>
+                            </div>
+                        </div>
+                        <!-- 주문검색 -->
+                        <div class="order_list_wrap">
+                            <ul class="product_list_wrap type_list order_list">
+                                <li class="flex_column">
+                                    <div class="promotion_top">
+                                        <div class="product_thumb">
+                                            <a href="#"><img src="./img/sample/product_image_sample2.png" alt="" /></a>
+                                        </div>
+                                        <div class="product_info">                                        
+                                            <div class="product_name">
+                                                <a href="#">피톤케어 뉴컬러 라벤더 피톤치드 차량용 천연 방향제</a>
+                                            </div>                                        
+                                            <div class="price_box">
+                                                <div class="price"><strong>23,000</strong> 원</div>
+                                                <div class="unit_info"><span>10</span> 개</div>
+                                            </div>
+                                            <div class="order_condition_info">
+                                                <div class="text">0차 주분</div>
+                                                <div class="order_condition">발송완료</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order_handle_bottom">
+                                        <div class="radio_box">
+                                            <input type="radio" id="op1" name="option" value="yes">
+                                            <label for="op1">완통반품</label>
+                                        </div>
+                                        <div class="radio_box">
+                                            <input type="radio" id="op2" name="option" value="no">
+                                            <label for="op2">낱알반품</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                                                                                                                        
+                            </ul>
+                        </div>   
+                        <div class="order_button_wrap flex_justfy">
+                            <button type="button" class="btn_blue_line">신청취소</button>
+                            <button type="button" class="btn_blue">바로신청</button>
+                        </div>                                             
                     </div>
                     <div class="tab-pane" id="return">
-                        2
-                        
+                        <div class="bank-search">
+                            <div class="date-search">
+                                <div class="dropdown_menu_wrap">
+                                    <button type="button" class="btn-dropdown">1개월</button>
+                                    <ul class="dropdown_list">
+                                        <li><button type="button" data-option="7일">7일</button></li>
+                                        <li><button type="button" data-option="1개월">1개월</button></li>
+                                        <li><button type="button" data-option="3개월">3개월</button></li>
+                                        <li><button type="button" data-option="6개월">6개월</button></li>
+                                        <li><button type="button" data-option="1년">1년</button></li>
+                                        <li><button type="button" data-option="직접입력">직접입력</button></li>
+                                    </ul>
+                                </div>
+                                <div class="inputbox">
+                                    <input name="search" type="text" placeholder="입력 하세요.">
+                                    <button type="button" class="btn_search_top">
+                                        <span class="ir-text">검색</span>
+                                    </button>
+                                </div>
+                            </div>                           
+                            <div class="btn_wrap">
+                                <button class="btn btn-reset"><span>초기화</span></button>
+                                <button class="btn btn-inquiry"><span>조회</span></button>
+                            </div>
+                        </div>
+                        <!-- 주문검색 -->
+                        <div class="order_list_wrap">
+                            <ul class="product_list_wrap type_list order_list">
+                                <li class="flex_column">
+                                    <div class="order_number_wrap">
+                                        <div class="order_num">
+                                            <span class="num">A0000000000000</span>
+                                            <span class="data">2024-05-02</span>
+                                        </div>
+                                        <a href="#" class="btn_arrow_right">상세보기</a>
+                                    </div>
+                                    <div class="promotion_top">
+                                        <div class="product_thumb">
+                                            <a href="#"><img src="./img/sample/product_image_sample2.png" alt="" /></a>
+                                        </div>
+                                        <div class="product_info">                                        
+                                            <div class="product_name">
+                                                <a href="#">피톤케어 뉴컬러 라벤더 피톤치드 차량용 천연 방향제</a>
+                                            </div>                                        
+                                            <div class="price_box">
+                                                <div class="price"><strong>23,000</strong> 원</div>
+                                                <div class="unit_info"><span>10</span> 개</div>
+                                                <div class="oder_type">(낱알)</div>
+                                            </div>
+                                            <div class="order_condition_info flex_start">                                                
+                                                <div class="order_condition">반품신청</div>
+                                                <div class="order_condition_data">2024-01-01</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                                                                                                                        
+                            </ul>
+                        </div>                         
                     </div>
                     <script>
                         function detailtab(target){

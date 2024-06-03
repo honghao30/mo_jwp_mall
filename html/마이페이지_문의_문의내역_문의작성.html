@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css/main_new.css">
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css">
+    
     <!--// 추가 -->
 
     <script type="text/javascript" src="js/misc.js"></script>
@@ -34,7 +34,6 @@
     <script type="text/javascript" src="js/jquery.gaessamzie.flick.min.js"></script>
     <script type="text/javascript" src="js/jquery.laybox.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
-    <script src="js/jquery-ui.js"></script>
 
     <script type="text/javascript" src="js/common.js"></script>
 
@@ -1163,7 +1162,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">주문정보</div>
+                    <div class="cate_tit_top">1:1문의</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1467,347 +1466,191 @@
         <!--// 검색 영역 레이어 -->
 
         <!-- content_wrap -->
-        <div class="content_wrap">  
+        <div class="content_wrap delivery_wrap inquiry_wrap">  
             <!-- html 마크업 -->
-            <div class="tab-group touchscrollwrap type04">
+            <div class="tab-group touchscrollwrap type05">
                 <ul class="tab-menu no_scroll">
-                    <!-- <li class="tab-item1 active">예치금 내역</li>
-                    <li class="tab-item1">예치금 구매</li>
-                    <li class="tab-item1">마이너스 잔고 내역</li>
-                    <li class="tab-item1">여신결제 내역</li> -->
-                    <li class="tab-item1">주문/배송 내역</li>
-                    <li class="tab-item1">취소/반품 내역</li>
-                    <li class="tab-item1">반품신청</li>
-                    <li class="tab-item1 active">거래원장</li>
+                    <li class="tab-item1 active">1:1문의 내역</li>
+                    <li class="tab-item1">1:1문의 작성</li>
                 </ul>
-                <script>
-                    $(document).ready(function () {
-                    // 4번째 탭 컨텐츠가 활성화 되어야해서 1번째 탭 컨텐츠 활성화 제거
-                    $(".tab-group").each(function () {
-                        $(this).find(".tab-item:first").removeClass("active");
-                        $(this).find(".tab-pane1:first").hide();
-                    });
-                });
-                </script>
                 <div class="tab-content">
-                    <div class="tab-pane1">탭1</div>
-                    <div class="tab-pane1">탭2</div>
-                    <div class="tab-pane1">탭3</div>
                     <div class="tab-pane1 active">
-                        <div class="bank-search">
-                            <div class="search-company">
+                        <table class="inquiry-table">
+                            <colgroup>
+                                <col style="width:15%" />
+                                <col style="width:60%;" />
+                                <col style="width:25%;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">답변</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="num-td">20</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">19</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-none">답변 준비중</td>
+                                </tr>
+                                <tr>
+                                    <td class="num-td">18</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>
+                                <tr>
+                                    <td class="num-td">17</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">16</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">15</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">14</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">13</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">12</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>  
+                                <tr>
+                                    <td class="num-td">11</td>
+                                    <td class="long-td">
+                                        <p>[분류명] 제목 최대 한 줄 노출 후 말줄...</p>
+                                        <span>2024-05-16</span>
+                                    </td>
+                                    <td class="answer-done">답변 완료</td>
+                                </tr>                                                                                                                                                                                                                                                                                                                                                                                                               
+                            </tbody>
+                        </table>
+                        <div class="pagination pos1">
+                            <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
+                            <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
+                            <a href="#">1</a>
+                            <a class="active" href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
+                            <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
+                        </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane1">
+                        <ul class="inquiry-noti">
+                            <li>문의사항에 대한 답변은 1:1문의 내역, 고객님의 메일을 통해 확인하실 수 있습니다.</li>
+                        </ul>
+                        <div class="inquiry-form">
+                            <div class="dropdown_menu_wrap inquiry-select">
+                                <button type="button" class="btn-dropdown">선택하세요.</button>
+                                <ul class="dropdown_list">
+                                    <li><button type="button" data-option="option1">option1</button></li>
+                                    <li><button type="button" data-option="option2">option2</button></li>
+                                    <li><button type="button" data-option="option3">option3</button></li>
+                                </ul>
+                            </div>
+                            <input type="text" placeholder="제목을 입력하세요." />
+                            <textarea name="inquiryInput" placeholder="내용을 입력하세요."></textarea>
+                            <div class="form-phone">
                                 <div class="dropdown_menu_wrap">
-                                    <button type="button" class="btn-dropdown">JW중외제약</button>
+                                    <button type="button" class="btn-dropdown">010</button>
                                     <ul class="dropdown_list">
-                                        <li><button type="button" data-option="JW중외제약">JW중외제약</button></li>
-                                        <li><button type="button" data-option="JW중외제약2">JW중외제약2</button></li>
-                                        <li><button type="button" data-option="JW중외제약3">JW중외제약3</button></li>
+                                        <li><button type="button" data-option="010">010</button></li>
+                                        <li><button type="button" data-option="011">011</button></li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="date-search">
-                                <div class="dropdown_menu_wrap">
-                                    <button type="button" class="btn-dropdown">직접선택</button>
-                                    <ul class="dropdown_list">
-                                        <li><button type="button" data-option="7일">7일</button></li>
-                                        <li><button type="button" data-option="1개월">1개월</button></li>
-                                        <li><button type="button" data-option="3개월">3개월</button></li>
-                                        <li><button type="button" data-option="6개월">6개월</button></li>
-                                        <li><button type="button" data-option="1년">1년</button></li>
-                                        <li><button type="button" data-option="직접선택">직접선택</button></li>
-                                    </ul>
-                                </div>
-                                <div class="inputbox">
-                                    <input name="search" type="text" placeholder="제품명 검색">
-                                    <button type="button" class="btn_search_top">
-                                        <span class="ir-text">검색</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <script>
-                                $(function() {
-                                        fn_default_datepicker();
-                                });
-                                        
-                                function fn_default_datepicker()
-                                {
-                                    var start = $( "#datepicker_start" ).datepicker({
-                                        dateFormat: 'yy-mm-dd' //Input Display Format 변경
-                                        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-                                        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-                                        ,changeYear: true //콤보박스에서 년 선택 가능
-                                        ,changeMonth: true //콤보박스에서 월 선택 가능                
-                                        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
-                                        ,buttonImage: "./img/ico/ico_calendar.png" //버튼 이미지 경로
-                                        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-                                        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-                                        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-                                        ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-                                        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-                                        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-                                        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-                                        ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-                                        ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
-                                    });
-                                        
-                                    var end = $( "#datepicker_end" ).datepicker({
-                                        dateFormat: 'yy-mm-dd' //Input Display Format 변경
-                                        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-                                        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-                                        ,changeYear: true //콤보박스에서 년 선택 가능
-                                        ,changeMonth: true //콤보박스에서 월 선택 가능                
-                                        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
-                                        ,buttonImage: "./img/ico/ico_calendar.png" //버튼 이미지 경로
-                                        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-                                        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-                                        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-                                        ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-                                        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-                                        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-                                        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-                                        ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-                                        ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
-                                           ,defaultDate: "+1w"
-                                      });
-                                    
-                                    //초기값을 오늘 날짜로 설정
-                                    $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-                                    $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-                                }
-                                 
-                                function getDate( element ) {
-                                    var date;
-                                    var dateFormat = "yy-mm-dd";
-                                    try {
-                                      date = $.datepicker.parseDate( dateFormat, element.value );
-                                    } catch( error ) {
-                                      date = null;
-                                    }
-                                    return date;
-                                 }
-                                 
-                            </script>                  
-                            <div class="data_period_picker">
-                                <input type="text" class="datepicker-input" id="datepicker_start" /> 
-                                <span>~</span>
-                                <input type="text" class="datepicker-input"  id="datepicker_end" />
-                            </div>  
-                            <div class="btn_wrap">
-                                <button class="btn btn-reset"><span>초기화</span></button>
-                                <button class="btn btn-inquiry"><span>조회</span></button>
+                                <span>-</span>
+                                <input type="text" placeholder="" />
+                                <span>-</span>
+                                <input type="text" placeholder="" />
                             </div>
                         </div>
-                        <div class="bank-cont bank-cont2">
-                            <div class="check_item_box">
-                                <span class="cs_check_box">
-                                    <input type="checkbox" checked id="check1">
-                                    <label for="check1">매출내역</label>
-                                </span>
-                                <span class="cs_check_box">
-                                    <input type="checkbox" checked id="check2">
-                                    <label for="check2">수금내역</label>
-                                </span>
-                                <span class="cs_check_box">
-                                    <input type="checkbox" checked id="check3">
-                                    <label for="check3">채권내역</label>
-                                </span>                                        
-                            </div>
-                            <div class="mypage_table_wrap">
-                                <table class="table_default">
-                                    <colgroup>
-                                        <col width="12%">
-                                        <col width="8%">
-                                        <col width="20%">
-                                        <col width="5%">
-                                        <col width="5%">
-                                        <col width="9.6%">
-                                        <col width="9.6%">
-                                        <col width="9.6%">
-                                        <col width="9.6%">
-                                        <col width="9.6%">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                        <th>날짜</th>
-                                        <th>구분</th>
-                                        <th>제품명</th>
-                                        <th>단위</th>
-                                        <th>수량</th>
-                                        <th>단가</th>
-                                        <th>금액</th>
-                                        <th>세액</th>
-                                        <th>수금금액</th>
-                                        <th>채권잔액</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>                             
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>  
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr> 
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr> 
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr> 
-                                        <tr>
-                                            <td>2024-03-05</td>
-                                            <td>매출내역</td> 
-                                            <td class="text-l">제품명 최대 한 줄 노출...</td>   
-                                            <td>CS</td>       
-                                            <td>10</td>           
-                                            <td class="text-r">0</td>  
-                                            <td class="text-r">59,891</td>  
-                                            <td class="text-r">5,989</td>  
-                                            <td class="text-r">158,250</td>  
-                                            <td class="text-r">5,989</td> 
-                                        </tr>                                                                                                                                                           
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td class="text-r">계</td>
-                                            <td class="text-r">599,891</td>  
-                                            <td class="text-r">899,891</td>  
-                                            <td class="text-r">2,587,958</td>  
-                                            <td class="text-r">1,589,124</td> 
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="pagination pos1">
-                                <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
-                                <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                                <a href="#">8</a>
-                                <a href="#">9</a>
-                                <a href="#">10</a>
-                                <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
-                                <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
+                        <div class="inquiry-radio">
+                            <p>답변 내용을 SMS로 받아보시겠습니까?</p>
+                            <div class="radio_wrap">
+                                <input type="radio" id="op1" name="option" value="yes">
+                                <label for="op1">네</label>
+                                <input type="radio" id="op2" name="option" value="no">
+                                <label for="op2">아니요</label>
                             </div>
                         </div>
-                        
+                        <div class="form-email">
+                            <input type="text" placeholder="" />
+                            <span>@</span>
+                            <input type="text" placeholder="" />
+                            <div class="dropdown_menu_wrap">
+                                <button type="button" class="btn-dropdown">직접입력</button>
+                                <ul class="dropdown_list">
+                                    <li><button type="button" data-option="naver.com">naver.com</button></li>
+                                    <li><button type="button" data-option="gmail.com">gmail.com</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="inquiry-radio">
+                            <p>답변 내용을 SMS로 받아보시겠습니까?</p>
+                            <div class="radio_wrap">
+                                <input type="radio" id="op3" name="option2" value="yes">
+                                <label for="op3">네</label>
+                                <input type="radio" id="op4" name="option2" value="no">
+                                <label for="op4">아니요</label>
+                            </div>
+                        </div>
+                        <div class="btn_wrap">
+                            <button class="btn btn-check"><span>확인</span></button>
+                        </div>
                     </div>
                 </div>
             </div>

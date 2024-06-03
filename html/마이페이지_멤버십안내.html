@@ -1163,7 +1163,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">쿠폰 내역</div>
+                    <div class="cate_tit_top">멤버십 안내</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1467,11 +1467,11 @@
         <!--// 검색 영역 레이어 -->
 
         <!-- content_wrap -->
-        <div class="content_wrap">  
+        <div class="content_wrap membership_wrap">  
             <!-- html 마크업 -->
             <div class="membership-box">
                 <div class="member-innertop">
-                    <img src="../html/img/ico/icon_memebership_family.png">
+                    <img src="../html/img/ico/icon_memebership_family.png" class="member-step">
                     <p>
                         <span class="color-blue">제이더블유중외제약주식회사</span>님,
                     </p>
@@ -1505,6 +1505,37 @@
                         </div>
                     </dl>
                 </div>
+                <div class="step-bar">
+                    <progress
+                        class="progress"
+                        id="progress"
+                        value="10"
+                        min="0"
+                        max="100"
+                    ></progress>
+                    <div class="bar-notibox">
+                        <div class="bar-noti">
+                            <img src="../html/img/ico/icon_memebership_family.png" class="member-step">
+                            <p class="active">FAMILY</p>
+                        </div>
+                        <div class="bar-noti">
+                            <img src="../html/img/ico/icon_memebership_silver.png" class="member-step">
+                            <p>SILVER</p>
+                        </div>
+                        <div class="bar-noti">
+                            <img src="../html/img/ico/icon_memebership_gold.png" class="member-step">
+                            <p>GOLD</p>
+                        </div>
+                        <div class="bar-noti">
+                            <img src="../html/img/ico/icon_memebership_diamond.png" class="member-step">
+                            <p>DIAMOND</p>
+                        </div>
+                        <div class="bar-noti">
+                            <img src="../html/img/ico/icon_memebership_vip.png" class="member-step">
+                            <p>VIP</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="bank-cont">
                 <div>
@@ -1514,8 +1545,74 @@
                         <li>멤버십 등급 기준을 충족하지 못할 경우 등급이 하향될 수 있으며, 등급별 혜택은 당사 정책에 따라 변동될 수 있습니다.</li>
                     </ul>
                 </div>
-                <div class="membership-notic">
-
+                <div class="membertype-box">
+                    <div class="member-type">
+                        <img src="../html/img/ico/icon_memebership_basic.png" class="member-step">
+                        <p>BASIC</p>
+                    </div>
+                    <div class="member-notic">
+                        <div>
+                            <p>&#60;공통혜택&#62;</p>
+                            <ul>
+                                <li>예치금 선구매 및 카드 즉시할인 제공</li>
+                                <li>기획전 및 프로모션을 통한 추가 혜택 제공</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>&#60;혜택 1&#62; 주문할인 쿠폰 총 5만원 지급</p>
+                            <ul>
+                                <li>첫 가입 축하 2만원</li>
+                                <li>첫 주문할인 2만원</li>
+                                <li>1차 재주문 할인 1만원</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>&#60;혜택 2&#62;</p>
+                            <ul>
+                                <li>무료 반품쿠폰</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>&#60;혜택 3&#62;</p>
+                            <ul>
+                                <li>예치금 선구매 정책 확정 후 내용 추가 예정</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="membertype-box">
+                    <div class="member-type">
+                        <img src="../html/img/ico/icon_memebership_family.png" class="member-step">
+                        <p>FAMILY</p>
+                    </div>
+                    <div class="member-notic">
+                        <div>
+                            <p>&#60;공통혜택&#62;</p>
+                            <ul>
+                                <li>예치금 선구매 및 카드 즉시할인 제공</li>
+                                <li>기획전 및 프로모션을 통한 추가 혜택 제공</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>&#60;혜택 1&#62; 주문할인 쿠폰 총 5만원 지급</p>
+                            <ul>
+                                <li>승급 첫 주문할인 3만원</li>
+                                <li>1차 재주문 할인 1만원</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>&#60;혜택 2&#62;</p>
+                            <ul>
+                                <li>월 1회 무료 반품 쿠폰 지급 (공급사 제품만 가능)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>&#60;혜택 3&#62;</p>
+                            <ul>
+                                <li>예치금 선구매 정책 확정 후 내용 추가 예정</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- //html 마크업 -->
