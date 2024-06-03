@@ -151,11 +151,39 @@
 .tooltip_cont{
     display:none;
     position:absolute;
-    top:30px;
-    left:-110px;
-    width:320px;
-    z-index:10;
+    width:100%;
+    z-index:10;    
 }
+.tooltip_cont .box{
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #AEB7C6;
+    background: #FFF;
+    margin:0 20px;
+}
+.tooltip_cont .tip{
+    border-radius: 40px;
+    background: #0072BC;
+    display: flex;
+    padding: 4px 8px;
+    align-items: flex-start;
+    display: inline-block;
+    color: #FFF;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 13px;
+}
+.tooltip_cont .txt{
+    margin-top:8px;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px; /* 135.714% */
+    letter-spacing: -1.12px;
+}
+
 /* 20231215 수정 */
 /* 관심상품 */
 .content_wrap .favorite_cont{
@@ -238,7 +266,7 @@
     color: #AEB7C6;
     font-size: 12px;
     font-weight: 400;
-    line-height: 12px; /* 100% */
+    line-height: 12px;
     letter-spacing: -0.72px;
     margin-top:5px;
 }
@@ -342,7 +370,7 @@
     font-family: 'GmarketSans';
     font-size: 14px;
     font-weight: 500;
-    line-height: 16px; /* 100% */
+    line-height: 16px;
     letter-spacing: -0.56px;
 }
 .find_product_cont .location_cont .location li+li:before{
@@ -351,14 +379,14 @@
     color: #222;
     font-size: 14px;
     font-weight: 500;
-    line-height: 16px; /* 100% */
+    line-height: 16px;
     letter-spacing: -0.56px;
 }
 .find_product_cont .location_cont .location li:last-child{
     color: #0072BC;
     font-size: 16px;
     font-weight: 500;
-    line-height: 16px; /* 100% */
+    line-height: 16px;
     letter-spacing: -0.64px;
 }
 .find_product_cont .category_list_cont button{
@@ -430,15 +458,23 @@
     font-family: 'GmarketSans';
     font-size: 14px;
     font-weight: 500;
-    line-height: 14px; /* 100% */
+    line-height: 14px;
     letter-spacing: -0.84px;
 }
-.recommend_tab .tab-menu .tab-item.active{
-    color: #222;
+.recommend_tab .tab-menu .tab-item.active span{
+    color: #0072BC;
 }
 .recommend_tab .tab-menu .tab-item span{
     display:inline-block;
     padding:20px 0 16px 0;
+    color:#AEB7C6;    
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 100% */
+    letter-spacing: -1.28px;
 }
 .recommend_tab .tab-menu .tab-item.active span{
     position:relative;
@@ -466,11 +502,11 @@
 .recommend_tab.line_type02 .tab-menu .tab-item.active span:after{
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 50%;
-    margin-left: -45%;
-    width: 90%;
-    border-bottom: 2px solid #0072BC;
+    margin-left: -50%;
+    width: 100%;
+    border-bottom: 4px solid #0072BC;
 }
 .medical_product_cont .tab-content{
     padding:24px 20px;
