@@ -33,8 +33,15 @@ html,body {letter-spacing: -0.04em;}
 .cs_check_box [type="checkbox"]::before {content: "";position: absolute;left: 2px;top: 2px;width: 11px;height: 11px;}
 .cs_check_box [type="checkbox"]:checked::before {background: url('../img/ico/ico_check_wt.png') no-repeat center;background-size: 10px auto;}
 
+/* 라디오 */
+.radio_box input[type="radio"] {width: 24px; height: 24px; border: 1.5px solid #E1E3E9; border-radius: 50%;vertical-align: middle;}
+.radio_box input[type="radio"]::after { background-size: contain; background-position: center; content: ''; overflow: hidden; position: absolute; left: 0; top: 0; width: 24px; height: 24px;}
+.radio_box input[type="radio"]:checked::after{background: url('../img/ico/ico_radio_checked.png') center no-repeat; background-size: contain; background-position: center; content: ''; overflow: hidden; position: absolute; left: 0; top: 0; width: 24px; height: 24px;}
+.radio_box label {font-size: 14px;font-weight: 400;line-height: 14px;color:#000;}
+
 .flex_justfy {display: flex;align-items: center;justify-content: space-between;}
 .flex_center {display: flex;align-items: center;}
+.flex_start {display: flex;align-items: center;justify-content: flex-start !important;}
 .flex_column {flex-direction: column;}
 .ir-text {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;}
 .bg_gray {background-color: #F2F5FA;}
@@ -563,6 +570,14 @@ html,body {letter-spacing: -0.04em;}
 .order_list_wrap .order_list li .price_box .unit_info span {font-family: 'Montserrat';}
 .order_list_wrap .order_list li .order_condition_info {color: #AEB7C6;display: flex;align-items: center;justify-content: space-between;margin-top:10px;font-size: 14px;font-weight: 400;line-height: 14px;}
 .order_list_wrap .order_list li .order_condition_info .order_condition {color:#000;}
+.order_list_wrap .order_list li .order_handle_bottom {display: flex;align-items: center;justify-content: space-between;border-top: 1px solid #e1e3e9;padding-top: 16px;}
+.order_list_wrap .order_list li .order_handle_bottom .radio_box {width: 48%;}
+.order_list_wrap .order_list li .oder_type {font-size: 14px;font-weight: 400;line-height: 14px;color:#FF4949;margin-left:2px;}
+.order_list_wrap .order_list li .order_number_wrap {display: flex;align-items: center;justify-content: space-between;border-bottom: 1px solid #E1E3E9;padding-bottom: 12px;}
+.order_list_wrap .order_list li .order_number_wrap .order_num {font-family: 'Montserrat';font-size: 13px;font-weight: 500;line-height: 13px;color:#717B8A;}
+.order_list_wrap .order_list li .order_number_wrap .order_num .num {color:#0072BC;border-right: 1px solid #E1E3E9;padding-right: 10px;margin-right: 10px;}
+.order_list_wrap .order_list li .order_number_wrap .btn_arrow_right {display: block;position: relative;font-family: 'Pretendard';font-size: 13px;font-weight: 400;line-height: 13px;color:#717B8A;display: flex;align-items: center;}
+.order_list_wrap .order_list li .order_number_wrap .btn_arrow_right::after {display: inline-block;margin-left:4px;content: "";background: url("../img/ico/ico_arrow_right_box.png") no-repeat center center; width: 12px;height: 12px;background-size: 100% auto;}
 
 /* 마이페이지 */
 .dropdown_menu_wrap .btn-dropdown {font-size: 13px; line-height: 13px; letter-spacing: -0.52px;}
@@ -788,3 +803,4 @@ img.member-step {width: 25px; height: 25px;}
 .inquiry_wrap input[type="radio"]:checked::after{background: url('../img/ico/ico_radio_checked.png') center no-repeat; background-size: contain; background-position: center; content: ''; overflow: hidden; position: absolute; left: 0; top: 0; width: 24px; height: 24px;}
 .inquiry_wrap .radio_wrap {display: flex; align-items: center;}
 .inquiry_wrap .radio_wrap input[type="radio"]+label {margin: 0 16px 0 8px; font-size: 14px; font-weight: 400; line-height: 14px; letter-spacing: -0.56px;}
+
