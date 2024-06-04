@@ -1566,10 +1566,225 @@
                                 </div>  
                                 <div class="tab-content">
                                     <div class="tab-pane1 active">
-11
+                                        <div class="mo_tit_bar mt32">약정 신청/변경</div>
+                                        <div class="product_table_wrap mt24">
+                                            <table>
+                                                <colgroup>
+                                                <col width="40%" />
+                                                <col width="" />
+                                                </colgroup>
+                                                <tbody>                                          
+                                                    <tr>
+                                                        <th scope="row">주거래 도매처 <span class="color-red">*</span></th>
+                                                        <td>
+                                                            <div class="dropdown_menu_wrap">
+                                                                <button type="button" class="btn-dropdown">선택하기</button>
+                                                                <ul class="dropdown_list">
+                                                                    <li><button type="button" data-option="항목1">항목1</button></li>
+                                                                    <li><button type="button" data-option="항목2">항목2</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>                     
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">약정금액 <span class="color-red">*</span></th>
+                                                        <td>
+                                                            <div class="dropdown_menu_wrap">
+                                                                <button type="button" class="btn-dropdown">선택하기</button>
+                                                                <ul class="dropdown_list">
+                                                                    <li><button type="button" data-option="항목1">항목1</button></li>
+                                                                    <li><button type="button" data-option="항목2">항목2</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>                     
+                                                    </tr>                                                    
+                                                    <tr>
+                                                        <th scope="row">약정 혜택</th>
+                                                        <td>
+                                                            1. 일반의약품, 비급여 의약품 최저가 보상<br>
+                                                            2. 약정 달성 시 주거래약정 쿠폰 지급
+                                                        </td>                      
+                                                    </tr> 
+                                                    <tr>
+                                                        <th scope="row">약정 시작일</th>
+                                                        <td>
+                                                            2024.01.01
+                                                        </td>                      
+                                                    </tr>                                                                                                                                                          
+                                                </tbody>
+                                            </table>
+                                        </div> 
+                                        <div class="product_table_wrap mt24">
+                                            <table>
+                                                <colgroup>
+                                                    <col />                                                
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>이용약관 <span class="color-red">*</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                          
+                                                    <tr>                                                        
+                                                        <td>
+                                                            <div class="cs_check_box">                                                                
+                                                                <input type="checkbox" id="check2">  
+                                                                <label for="check2">이용약관 동의하기</label>
+                                                            </div>
+                                                            <div class="yakguan_wrap">
+                                                                주거래 도매처 서비스 이용약관<br><br>
+
+                                                                제 1조(목적)<br>
+                                                                본 약관은 JWPMALL이 운영하는 주거래 도매 약관 본 약관은 JWPMALL이 운영하는 주거래 도매 약관<br>
+                                                                제 1조(목적)<br>
+                                                                본 약관은 JWPMALL이 운영하는 주거래 도매 약관 본 약관은 JWPMALL이 운영하는 주거래 도매 약관본 약관은 JWPMALL이 운영하는 주거래 도매 약관 본 약관은 JWPMALL이 운영하는 주거래 도매 약관본 약관은 JWPMALL이 운영하는 주거래 도매 약관 본 약관은 JWPMALL이 운영하는 주거래 도매 약관본 약관은 JWPMALL이 운영하는 주거래 도매 약관 본 약관은 JWPMALL이 운영하는 주거래 도매 약관
+                                                            </div>
+                                                        </td>                     
+                                                    </tr>                                                                                                                                                                                                            
+                                                </tbody>
+                                            </table>
+                                        </div> 
+                                        <div class="order_button_wrap flex_justfy mt0">
+                                            <button type="button" class="btn_blue_line">취소</button>
+                                            <button type="button" class="btn_blue">확인</button>
+                                        </div>
+                                        <div class="gray_box_round">   
+                                            <div class="mo_tit_line">이용시 주의사항</div>                 
+                                            <ol>
+                                                <li>1. 혜택은 가장 최근 선택한 약정 내용을 기반으로 제공됩니다.</li>
+                                                <li>2. 주거래 약정은 월 1회 한해 변경이 가능합니다.</li>
+                                                <li>3. 주거래 도매처를 변경하거나 약정을 철회한 경우 기존 약정 달성분은 초기화 되며 복구되지 않습니다.</li>
+                                            </ol>                                          
+                                        </div>  
+                                        <div class="mo_tit_ft16">최근 약정내역</div>
+                                        <div class="mo_tit_description">현재일 기준 3개월 이전까지의 이력만 조회됩니다.</div>
+                                        <div class="product_table_wrap mt24">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 18%;" />                                                
+                                                    <col style="width: 30%;" />                                                
+                                                    <col />                                                
+                                                    <col style="width: 25%;" />                                                
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>구분</th>
+                                                        <th>주거래도매처</th>
+                                                        <th>약정신청일</th>
+                                                        <th>약정금액</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                          
+                                                    <tr>                                                        
+                                                        <td class="text-c">
+                                                            변경
+                                                        </td>  
+                                                        <td class="text-c">
+                                                            XX약품 
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            2024-03-05
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            <div class="price">
+                                                                <strong>000</strong> 만원
+                                                            </div>
+                                                        </td>
+                                                    </tr>  
+                                                    <tr>                                                        
+                                                        <td class="text-c">
+                                                            변경
+                                                        </td>  
+                                                        <td class="text-c">
+                                                            XX약품 
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            2024-03-05
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            <div class="price">
+                                                                <strong>000</strong> 만원
+                                                            </div>
+                                                        </td>
+                                                    </tr>  
+                                                    <tr>                                                        
+                                                        <td class="text-c">
+                                                            변경
+                                                        </td>  
+                                                        <td class="text-c">
+                                                            XX약품 
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            2024-03-05
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            <div class="price">
+                                                                <strong>000</strong> 만원
+                                                            </div>
+                                                        </td>
+                                                    </tr>                                                                                                                                                                                                                                                                                                                     
+                                                </tbody>
+                                            </table>
+                                        </div> 
                                     </div>
                                     <div class="tab-pane1">
-22
+                                        <div class="mo_tit_bar mt32">약정 현황/혜택안내</div>
+                                        <div class="mo_tit_ft16 mt32">약정 현황</div>                                        
+                                        <div class="product_table_wrap mt24">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width: 25%;" />                                                
+                                                    <col style="width: 25%;" />                                                
+                                                    <col />                                                
+                                                    <col style="width: 25%;" />                                                
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-c">구분</th>
+                                                        <th class="text-c">월<br>약정금액</th>
+                                                        <th class="text-c">월<br>최종결제금액</th>
+                                                        <th class="text-c">미달성<br>금액</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                          
+                                                    <tr>                                                        
+                                                        <td class="text-c">
+                                                            <div class="price">
+                                                                <strong>000</strong> 만원
+                                                            </div>                                                            
+                                                        </td>  
+                                                        <td class="text-c">
+                                                            <div class="price">
+                                                                <strong>000</strong> 만원
+                                                            </div>                                                            
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            <div class="price">
+                                                                <strong>000</strong> 만원
+                                                            </div>                                                            
+                                                        </td> 
+                                                        <td class="text-c">
+                                                            <div class="price color-red">
+                                                                <strong>000</strong> 만원
+                                                            </div>
+                                                        </td>
+                                                    </tr> 
+                                                </tbody>
+                                            </table>
+                                        </div>     
+                                        <div class="gray_box_round">   
+                                            <ol>
+                                                <li>1. 월 최종결제금액은 당월 주거래 도매의 총 주문 금액입니다.</li>
+                                                <li>2. 혜택은 가장 최근 수정된 약정 내용을 기반으로 제공됩니다.</li>
+                                                <li>3. 내용은 직접 수정 및 철회 가능합니다.</li>
+                                                <li>4. 약정내용을 직접 수정/철회하지 않는 경우 약정은 매월 자동 연장됩니다.</li>
+                                                <li>5. 약정을 철회하시는 경우 기존 신청한 주거래 약정 도매처의주문금액은 초기화 되며 복구되지 않습니다.</li>
+                                            </ol>                                          
+                                        </div>   
+                                        <div class="mo_tit_ft16">약정 금액별 혜택 안내</div>     
+                                        <div class="gray_box_round mt12">   
+                                            혜택안내 내용 미정                                     
+                                        </div>                                                                                                                
                                     </div>
                                     <div class="tab-pane1">
                                         233
@@ -1591,160 +1806,6 @@
                     </div>
                 </div>
 
-
-                <div class="mo_tit_ft18">주문정보</div>
-                <div class="product_table_wrap">
-                    <table>
-                        <colgroup>
-                        <col width="40%" />
-                        <col width="" />
-                        </colgroup>
-                        <tbody>                                          
-                            <tr>
-                                <th scope="row">거래처</th>
-                                <td>OO약국</td>                     
-                            </tr>
-                            <tr>
-                                <th scope="row">주문경로</th>
-                                <td>-</td>                      
-                            </tr> 
-                            <tr>
-                                <th scope="row">결제금액</th>
-                                <td>
-                                    <div class="price">
-                                        <strong>000,000</strong> 원
-                                    </div>
-                                </td>                      
-                            </tr>
-                            <tr>
-                                <th scope="row">결제수단</th>
-                                <td>신용카드</td>                      
-                            </tr>                                                                                                                                                           
-                        </tbody>
-                    </table>
-                </div>                
-                <div class="mo_tit_ft18">환불계좌정보</div>
-                <div class="product_table_wrap">
-                    <table>
-                        <colgroup>
-                        <col width="40%" />
-                        <col width="" />
-                        </colgroup>
-                        <tbody>                                          
-                            <tr>
-                                <th scope="row">은행</th>
-                                <td>
-                                    <div class="dropdown_menu_wrap">
-                                        <button type="button" class="btn-dropdown">은행선택</button>
-                                        <ul class="dropdown_list">
-                                            <li><button type="button" data-option="기업은행">기업은행</button></li>
-                                            <li><button type="button" data-option="우리은행">우리은행</button></li>
-                                        </ul>
-                                    </div>
-                                </td>                     
-                            </tr>
-                            <tr>
-                                <th scope="row">계좌번호</th>
-                                <td>
-                                    <input type="text" placeholder="계좌번호를 입력하세요." />
-                                </td>                      
-                            </tr> 
-                            <tr>
-                                <th scope="row">예금주</th>
-                                <td>
-                                    <input type="text" placeholder="예금주를 입력하세요." />
-                                </td>                      
-                            </tr>                                                                                                                                                          
-                        </tbody>
-                    </table>
-                </div> 
-
-                <div class="flex_justfy">
-                    <div class="mo_tit_ft18">상품정보</div>
-                    <span class="cs_check_box">
-                        <label for="check1">반품상품 전체 선택</label>
-                        <input type="checkbox" checked="" id="check1">                        
-                    </span>                    
-                </div>
-                <div class="order_list_wrap no_padding">
-                    <ul class="product_list_wrap type_list order_list">
-                        <li class="flex_column">
-                            <div class="promotion_top">
-                                <div class="product_thumb">
-                                    <a href="#"><img src="./img/sample/product_image_sample2.png" alt="" /></a>
-                                </div>
-                                <div class="product_info">                                        
-                                    <div class="product_name">
-                                        <a href="#">피톤케어 뉴컬러 라벤더 피톤치드 차량용 천연 방향제</a>
-                                    </div>  
-                                    <div class="price_box">
-                                        <div class="price"><strong>23,000</strong> 원</div>
-                                        <div class="unit_info"><span>10</span> 개</div>
-                                    </div>                                    
-                                    <div class="order_condition_info flex_start order_return_counter">                                                
-                                        <div class="order_condition">신청수량</div>
-                                        <div class="order_condition_data">
-                                            <input type="text" placeholder="입력하세요" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                                                                                                                                
-                    </ul>
-                </div>                   
-                <div class="mo_tit_ft18">반품사유 선택</div>
-                <div class="inquiry-form">
-                    <div class="dropdown_menu_wrap inquiry-select">
-                        <button type="button" class="btn-dropdown">선택하세요.</button>
-                        <ul class="dropdown_list">
-                            <li><button type="button" data-option="option1">option1</button></li>
-                            <li><button type="button" data-option="option2">option2</button></li>
-                            <li><button type="button" data-option="option3">option3</button></li>
-                        </ul>
-                    </div>                    
-                    <textarea name="inquiryInput" placeholder="내용을 입력하세요."></textarea>
-                </div>             
-                <div class="mo_tit_ft18">환불금액 정보</div>     
-                <div class="product_table_wrap">
-                    <table>
-                        <colgroup>
-                        <col width="40%" />
-                        <col width="" />
-                        </colgroup>
-                        <tbody>                                          
-                            <tr>
-                                <th scope="row">반품상품금액</th>
-                                <td>
-                                    <div class="price">
-                                        <span>000,000</span> 원
-                                    </div>                                    
-                                </td>                     
-                            </tr>
-                            <tr class="retun_price">
-                                <th scope="row">총 환불예정금액</th>
-                                <td>
-                                    <div class="price">
-                                        <strong>000,000</strong> 원
-                                    </div>                                    
-                                </td>                      
-                            </tr> 
-                            <tr>
-                                <th scope="row">반환 마일리지</th>
-                                <td>
-                                    <div class="price">
-                                        <span>000,000</span> 원
-                                    </div>
-                                </td>                      
-                            </tr>                                                                                                                                                          
-                        </tbody>
-                    </table>
-                </div>                               
-            </div>
-            <div class="order_button_wrap flex_justfy mt0">
-                <button type="button" class="btn_blue_line">신청취소</button>
-                <button type="button" class="btn_blue">바로신청</button>
-            </div> 
             <!-- //html 마크업 -->
         </div>
 
