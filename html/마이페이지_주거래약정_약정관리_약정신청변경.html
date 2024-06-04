@@ -1549,6 +1549,49 @@
                     </table>
                 </div>
 
+                <div class="content_tab_wrap tab-group">
+                    <div class="content_tab tab-menu">
+                        <button type="button" go="go_agreement" class="active" onclick="detailtab(this)">약정관리</button> 
+                        <button type="button" go="go_wholesaler" onclick="detailtab(this)">도매처 상품</button> 
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="go_agreement">
+                            <div class="tab-group">
+                                <div class="agreeMent_gray_box">
+                                    <ul class="tab-menu">
+                                        <li class="tab-item1 active">약정 신청/변경</li>
+                                        <li class="tab-item1">약정현황</li>
+                                        <li class="tab-item1">약정철회</li>
+                                    </ul>
+                                </div>  
+                                <div class="tab-content">
+                                    <div class="tab-pane1 active">
+11
+                                    </div>
+                                    <div class="tab-pane1">
+22
+                                    </div>
+                                    <div class="tab-pane1">
+                                        233
+                                    </div> 
+                                </div>                                                                    
+                        </div>
+                        <div class="tab-pane" id="go_wholesaler">
+2                            
+                        </div>   
+                        <script>
+                            function detailtab(target){
+                                var id = $(target).attr('go');
+                                $('.content_tab_wrap .content_tab button').removeClass('active');
+                                $('.content_tab_wrap .tab-pane').removeClass('active');
+                                $(target).addClass('active');
+                                $('#'+id).addClass('active');
+                            }
+                        </script>                                             
+                    </div>
+                </div>
+
+
                 <div class="mo_tit_ft18">주문정보</div>
                 <div class="product_table_wrap">
                     <table>
