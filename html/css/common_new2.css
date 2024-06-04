@@ -27,7 +27,7 @@ html,body {letter-spacing: -0.04em;}
 
 /* 체크박스 */
 .cs_check_box {position: relative;font-size: 14px;font-weight: 400;line-height: 14px;color:#000;}
-.cs_check_box  label {padding:0;margin:0;color:#000;margin-left: 5px;}
+.cs_check_box  label {padding:0;margin:0;color:#000;margin-left: 5px;overflow: hidden;  white-space: nowrap;  text-overflow: ellipsis; word-break: break-all;}
 .cs_check_box  label::before {display: none !important;}
 .cs_check_box [type="checkbox"]{appearance: none;position: relative;background: #D8DDE9;border: 2px solid #CCCCCC;border-radius: 2px;width: 18px;height: 18px;opacity: 1;font-size: 14px;padding:0;margin:0;}
 .cs_check_box [type="checkbox"]::before {content: "";position: absolute;left: 2px;top: 2px;width: 11px;height: 11px;}
@@ -593,12 +593,12 @@ html,body {letter-spacing: -0.04em;}
 .order_list_wrap.no_padding .product_list_wrap {padding:0;margin-bottom:34px;}
 .order_list_wrap.no_padding {min-height: auto;margin-bottom:0;}
 .order_list_wrap.no_padding .order_list li {margin-bottom: 0;}
-.order_list_wrap .order_list li {border:1px solid #E1E3E9;border-radius: 8px;padding: 16px;margin-bottom: 22px;}
+.order_list_wrap .order_list > li {border:1px solid #E1E3E9;border-radius: 8px;padding: 16px;margin-bottom: 22px;}
 .order_list_wrap .order_list li .price_box {justify-content: flex-start;gap: 10px;}
 .order_list_wrap .order_list li .price_box .unit_info {font-size: 14px;font-weight: 400;line-height: 14px;color:#717B8A;border-left: 1px solid #E1E3E9;padding-left:10px;}
 .order_list_wrap .order_list li .price_box .unit_info span {font-family: 'Montserrat';}
 .order_list_wrap .order_list li .order_condition_info {color: #AEB7C6;display: flex;align-items: center;justify-content: space-between;margin-top:10px;font-size: 14px;font-weight: 400;line-height: 14px;}
-.order_list_wrap .order_list li .order_condition_info .order_condition {color:#000;}
+.order_list_wrap .order_list li .order_condition_info .order_condition {color:#000;margin-right:4px;}
 .order_list_wrap .order_list li .order_condition_info.order_return_counter {border-top: 1px solid #E1E3E9;padding-top:12px;}
 .order_list_wrap .order_list li .order_condition_info.order_return_counter .order_condition {width: 80px;margin-right: 4px;}
 .order_list_wrap .order_list li .order_condition_info.order_return_counter .order_condition_data input {max-width: 70%;}
@@ -655,6 +655,10 @@ html,body {letter-spacing: -0.04em;}
 .bank-top .moneybox a{padding: 7px 12px; border: 1px solid #FF4949; border-radius: 16px; color: #FF4949; font-size: 13px; font-weight: 400; line-height: 13px; letter-spacing: -0.52px;}
 .bank-search {padding: 16px; background-color: #F2F5FA;}
 .bank-search .date-search {display: flex; gap: 8px; width: calc(100% - 8px); margin-bottom: 16px;}
+.bank-search .date-search.has_title {align-items: center; width: 100%;}
+.bank-search .date-search.has_title .dropdown_menu_wrap {flex:1;}
+.bank-search .date-search.has_title .dropdown_menu_wrap .btn-dropdown {width: 100%;}
+.bank-search .date-search .cate_name {width: 45px;font-size: 13px;font-weight: 400;line-height: 13px;color:#000;}
 .bank-search .inputbox {position: relative; flex: 0 0 calc(100% - 31.1111vw);}
 .bank-search .inputbox input {height: 36px; border-radius: 6px;}
 .bank-search .inputbox input::placeholder {font-size: 13px;font-weight: 400;line-height: 13px;letter-spacing: -0.52px;}
@@ -865,3 +869,20 @@ img.member-step {width: 25px; height: 25px;}
 .gray_box_round ol {margin-top: 20px;}
 .gray_box_round ol li {font-size: 13px;font-weight: 400;line-height: 16px;color: #717B8A;}
 .gray_box_round ol li+li {margin-top: 8px;}
+.wholesaler_product_wrap {margin: 0;padding: 0;}
+.wholesaler_product_wrap .tab-group.type03 { margin: 24px 0px 0 0px;}
+.wholesaler_product_wrap .tab-group.type03 .tab-menu {padding:0;}
+.wholesaler_product_wrap .search_result_option {padding: 24px 0 18px;}
+.wholesaler_product_wrap .product_list_wrap {margin: 0;padding: 0;border-bottom: 1px solid #F7F8FA;}
+.wholesaler_product_wrap .product_list_wrap li {border-bottom: 1px solid #F7F8FA;}
+.wholesaler_product_wrap .product_list_wrap li .product_info {display: flex; align-items: center; justify-content: space-between;}
+.wholesaler_product_wrap .product_list_wrap li .product_info .price_box {flex:1;}
+.wholesaler_product_wrap .count_controller_wrap .order_cout_text {text-align: center;line-height: 18px;margin-top: 8px;}
+
+.total_price_box {border-top: 1px solid #E1E3E9;padding-top: 20px;}
+.total_price_box.only_total {border-top: 0px solid #E1E3E9;padding: 0px 16px;}
+.total_price_box li {display: flex;align-items: center;justify-content: space-between;font-size: 15px;font-weight: 400;line-height: 15px;color:#717B8A;}
+.total_price_box li+li {margin-top: 16px;}
+.total_price_box li.total {border-top: 1px solid #E1E3E9;padding: 22px 0;font-size: 18px;line-height: 18px;color:000;}
+.total_price_box li.total .item_price {color:#0072BC;font-size: 22px;line-height: 22px;}
+.total_price_box li.total .item_price strong {font-weight: 700;font-family: 'Montserrat';}
