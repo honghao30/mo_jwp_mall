@@ -21,9 +21,8 @@
     <!-- 추가 -->
     <link rel="stylesheet" type="text/css" href="css/common_new.css">
     <link rel="stylesheet" type="text/css" href="css/main_new.css">
-    <link rel="stylesheet" type="text/css" href="css/mypage.css">
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-    
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <!--// 추가 -->
 
     <script type="text/javascript" src="js/misc.js"></script>
@@ -34,6 +33,7 @@
     <script type="text/javascript" src="js/jquery.gaessamzie.flick.min.js"></script>
     <script type="text/javascript" src="js/jquery.laybox.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
+    <script src="js/jquery-ui.js"></script>
 
     <script type="text/javascript" src="js/common.js"></script>
 
@@ -1162,7 +1162,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">마이페이지</div>
+                    <div class="cate_tit_top">주문상품 재구매</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1468,125 +1468,204 @@
         <!-- content_wrap -->
         <div class="content_wrap">  
             <!-- html 마크업 -->
-            <div class="tab-group touchscrollwrap type04">
-                <ul class="tab-menu no_scroll">
-                    <li class="tab-item1 active">예치금 내역</li>
-                    <li class="tab-item1">예치금 구매</li>
-                    <li class="tab-item1">마이너스 잔고 내역</li>
-                    <li class="tab-item1">여신결제 내역</li>
-                    <!-- <li class="tab-item1">주문/배송 내역</li>
-                    <li class="tab-item1">취소/반품 내역</li>
-                    <li class="tab-item1">반품신청</li>
-                    <li class="tab-item1">거래원장</li> -->
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane1 active">
-                        <div class="bank-top">
-                            <p>사용 가능한 예치금</p>
-                            <div class="moneybox">
-                                <p><strong>4,900,000</strong>원</p>
-                                <a href="#">예치금 구매</a> <!--예치금 구매화면으로 -->
-                            </div>
-                        </div>
-                        <div class="bank-search">
-                            <div class="date-search">
-                                <div class="dropdown_menu_wrap">
-                                    <button type="button" class="btn-dropdown">1개월</button>
-                                    <ul class="dropdown_list">
-                                        <li><button type="button" data-option="7일">7일</button></li>
-                                        <li><button type="button" data-option="1개월">1개월</button></li>
-                                        <li><button type="button" data-option="3개월">3개월</button></li>
-                                        <li><button type="button" data-option="6개월">6개월</button></li>
-                                        <li><button type="button" data-option="1년">1년</button></li>
-                                        <li><button type="button" data-option="직접입력">직접입력</button></li>
-                                    </ul>
-                                </div>
-                                <div class="inputbox">
-                                    <input name="search" type="text" placeholder="구매번호 및 구매내용 검색">
-                                    <button type="button" class="btn_search_top">
-                                        <span class="ir-text">검색</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="btn_wrap">
-                                <button class="btn btn-reset"><span>초기화</span></button>
-                                <button class="btn btn-inquiry"><span>조회</span></button>
-                            </div>
-                        </div>
-                        <div class="bank-cont">
-                            <div>
-                                <p class="cont-tit">상세내역</p>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                            <p>A1234567</p>
-                                            <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="blue-dt">구매</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                        <p>A1234567</p>
-                                        <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="red-dt">사용</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                        <p>A1234567</p>
-                                        <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="gray-dt">취소</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div class="pagination pos1">
-                                <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
-                                <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                                <a href="#">8</a>
-                                <a href="#">9</a>
-                                <a href="#">10</a>
-                                <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
-                                <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane1">탭2</div>
-                    <div class="tab-pane1">탭3</div>
+            <div class="bank-search">
+                <div class="date-search">
+                    <div class="dropdown_menu_wrap">
+                        <button type="button" class="btn-dropdown">직접입력</button>
+                        <ul class="dropdown_list">
+                            <li><button type="button" data-option="7일">7일</button></li>
+                            <li><button type="button" data-option="1개월">1개월</button></li>
+                            <li><button type="button" data-option="3개월">3개월</button></li>
+                            <li><button type="button" data-option="6개월">6개월</button></li>
+                            <li><button type="button" data-option="1년">1년</button></li>
+                            <li><button type="button" data-option="직접입력">직접입력</button></li>
+                        </ul>
+                    </div>                    
+                    <div class="inputbox">
+                        <input name="search" type="text" placeholder="입력 하세요.">
+                        <button type="button" class="btn_search_top">
+                            <span class="ir-text">검색</span>
+                        </button>
+                    </div>                    
+                </div>      
+                <div class="data_period_picker ">
+                    <input type="text" class="datepicker-input" id="datepicker_start" /> 
+                    <span>~</span>
+                    <input type="text" class="datepicker-input"  id="datepicker_end" />
+                    <script>
+                        $(function() {
+                                fn_default_datepicker();
+                        });
+                                
+                        function fn_default_datepicker()
+                        {
+                            var start = $( "#datepicker_start" ).datepicker({
+                                dateFormat: 'yy-mm-dd' //Input Display Format 변경
+                                ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+                                ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+                                ,changeYear: true //콤보박스에서 년 선택 가능
+                                ,changeMonth: true //콤보박스에서 월 선택 가능                
+                                ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+                                ,buttonImage: "./img/ico/ico_calendar.png" //버튼 이미지 경로
+                                ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+                                ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+                                ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+                                ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+                                ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+                                ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+                                ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+                                ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+                                ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+                            });
+                                
+                            var end = $( "#datepicker_end" ).datepicker({
+                                dateFormat: 'yy-mm-dd' //Input Display Format 변경
+                                ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+                                ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+                                ,changeYear: true //콤보박스에서 년 선택 가능
+                                ,changeMonth: true //콤보박스에서 월 선택 가능                
+                                ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+                                ,buttonImage: "./img/ico/ico_calendar.png" //버튼 이미지 경로
+                                ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+                                ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+                                ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+                                ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+                                ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+                                ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+                                ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+                                ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+                                ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+                                   ,defaultDate: "+1w"
+                              });
+                            
+                            //초기값을 오늘 날짜로 설정
+                            $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+                            $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+                        }
+                         
+                        function getDate( element ) {
+                            var date;
+                            var dateFormat = "yy-mm-dd";
+                            try {
+                              date = $.datepicker.parseDate( dateFormat, element.value );
+                            } catch( error ) {
+                              date = null;
+                            }
+                            return date;
+                         }
+                         
+                    </script> 
+                </div> 
+                <div class="date-search has_title mt14">
+                    <div class="cate_name">입점업체</div>
+                    <div class="dropdown_menu_wrap">
+                        <button type="button" class="btn-dropdown">선택</button>
+                        <ul class="dropdown_list">
+                            <li><button type="button" data-option="업체명1">업체명1</button></li>
+                            <li><button type="button" data-option="업체명2">업체명2</button></li>
+                        </ul>
+                    </div>                                                        
+                </div>  
+                                                                       
+                <div class="btn_wrap">
+                    <button class="btn btn-reset"><span>초기화</span></button>
+                    <button class="btn btn-inquiry"><span>조회</span></button>
                 </div>
             </div>
+            <div class="price_reduction_wrap">
+                <div class="product_table_wrap table_x_scroll mt24">
+                    <table>
+                        <colgroup>
+                            <col style="width: 50px;" />                                                
+                            <col style="width: 100px;" />   
+                            <col style="width: 100px;" />    
+                            <col style="width: 150px;" />                   
+                            <col style="width: 110px;" />  
+                            <col style="width: 110px;" />                                             
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-c">구분</th>
+                                <th class="text-c">주문정보</th>
+                                <th class="text-c">일시</th>
+                                <th class="text-c">상품명</th>
+                                <th class="text-c">주문금액</th>
+                                <th class="text-c">반품금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>                                          
+                            <tr>                                                        
+                                <td class="text-c">
+                                    주문                                                           
+                                </td>  
+                                <td class="text-c">
+                                    A00000000                                                           
+                                </td> 
+                                <td class="text-c">
+                                    2024-03-05<br>
+                                    00:00:00
+                                </td>
+                                <td><a href="#">리버로징</a></td>
+                                <td class="text-c">
+                                    <div class="price">
+                                        <strong>000</strong> 만원
+                                    </div>                                                            
+                                </td> 
+                                <td class="text-c">
+                                    <div class="price color-red">
+                                        <strong>000</strong> 만원
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>                                                        
+                                <td class="text-c">
+                                    주문                                                           
+                                </td>  
+                                <td class="text-c">
+                                    A00000000                                                           
+                                </td> 
+                                <td class="text-c">
+                                    2024-03-05<br>
+                                    00:00:00
+                                </td>
+                                <td><a href="#">리버로징</a></td>
+                                <td class="text-c">
+                                    <div class="price">
+                                        <strong>000</strong> 만원
+                                    </div>                                                            
+                                </td> 
+                                <td class="text-c">
+                                    <div class="price color-red">
+                                        <strong>000</strong> 만원
+                                    </div>
+                                </td>
+                            </tr>                         
+                        </tbody>
+                    </table>
+                </div>                 
+               <div class="order_list_wrap">
+                    <div class="pagination pos1">
+                        <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
+                        <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
+                        <a href="#">1</a>
+                        <a class="active" href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
+                        <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
+                    </div>
+               </div>
+            </div>
+           <div class="order_button_wrap flex_justfy mb50">
+            <button type="button" class="btn_blue_line">목록</button>
+        </div> 
+       
             <!-- //html 마크업 -->
         </div>
 
@@ -1677,8 +1756,8 @@
     <ul id="fixedMenu">
         <li><a href="javascript:left();">카테고리</a></li>
         <li class="search"><a href="javascript:searchLayer(this);">검색</a></li>
-        <li><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
-        <li class="active"><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
+        <li class="active"><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
+        <li><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
         <li><a href="https://m.jwpmall.co.kr/mw/order/cart.do">장바구니</a></li>
     </ul>
     <!--div id="dim" onclick="leftClose()">

@@ -658,7 +658,7 @@ html,body {letter-spacing: -0.04em;}
 .bank-search .date-search.has_title {align-items: center; width: 100%;}
 .bank-search .date-search.has_title .dropdown_menu_wrap {flex:1;}
 .bank-search .date-search.has_title .dropdown_menu_wrap .btn-dropdown {width: 100%;}
-.bank-search .date-search .cate_name {width: 45px;font-size: 13px;font-weight: 400;line-height: 13px;color:#000;}
+.bank-search .date-search .cate_name {width: 55px;font-size: 13px;font-weight: 400;line-height: 13px;color:#000;}
 .bank-search .inputbox {position: relative; flex: 0 0 calc(100% - 31.1111vw);}
 .bank-search .inputbox input {height: 36px; border-radius: 6px;}
 .bank-search .inputbox input::placeholder {font-size: 13px;font-weight: 400;line-height: 13px;letter-spacing: -0.52px;}
@@ -847,6 +847,7 @@ img.member-step {width: 25px; height: 25px;}
 .inquiry_wrap .radio_wrap {display: flex; align-items: center;}
 .inquiry_wrap .radio_wrap input[type="radio"]+label {margin: 0 16px 0 8px; font-size: 14px; font-weight: 400; line-height: 14px; letter-spacing: -0.56px;}
 
+.mt12{margin-top: 12px;}
 .mt14 {margin-top: 14px;}
 .mt24 {margin-top: 24px;}
 .mt32 {margin-top: 32px;}
@@ -886,3 +887,8 @@ img.member-step {width: 25px; height: 25px;}
 .total_price_box li.total {border-top: 1px solid #E1E3E9;padding: 22px 0;font-size: 18px;line-height: 18px;color:000;}
 .total_price_box li.total .item_price {color:#0072BC;font-size: 22px;line-height: 22px;}
 .total_price_box li.total .item_price strong {font-weight: 700;font-family: 'Montserrat';}
+
+/* 약가인하보상 */
+.price_reduction_wrap {padding: 0 16px;}
+.product_table_wrap.table_x_scroll {width: auto;overflow-x: scroll;margin: 32px 0px 0;}
+.product_table_wrap.table_x_scroll table {table-layout: fixed;}

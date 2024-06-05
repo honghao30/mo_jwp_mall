@@ -21,9 +21,8 @@
     <!-- 추가 -->
     <link rel="stylesheet" type="text/css" href="css/common_new.css">
     <link rel="stylesheet" type="text/css" href="css/main_new.css">
-    <link rel="stylesheet" type="text/css" href="css/mypage.css">
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-    
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <!--// 추가 -->
 
     <script type="text/javascript" src="js/misc.js"></script>
@@ -34,6 +33,7 @@
     <script type="text/javascript" src="js/jquery.gaessamzie.flick.min.js"></script>
     <script type="text/javascript" src="js/jquery.laybox.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
+    <script src="js/jquery-ui.js"></script>
 
     <script type="text/javascript" src="js/common.js"></script>
 
@@ -1162,7 +1162,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">마이페이지</div>
+                    <div class="cate_tit_top">주문상품 재구매</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1468,125 +1468,141 @@
         <!-- content_wrap -->
         <div class="content_wrap">  
             <!-- html 마크업 -->
-            <div class="tab-group touchscrollwrap type04">
-                <ul class="tab-menu no_scroll">
-                    <li class="tab-item1 active">예치금 내역</li>
-                    <li class="tab-item1">예치금 구매</li>
-                    <li class="tab-item1">마이너스 잔고 내역</li>
-                    <li class="tab-item1">여신결제 내역</li>
-                    <!-- <li class="tab-item1">주문/배송 내역</li>
-                    <li class="tab-item1">취소/반품 내역</li>
-                    <li class="tab-item1">반품신청</li>
-                    <li class="tab-item1">거래원장</li> -->
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane1 active">
-                        <div class="bank-top">
-                            <p>사용 가능한 예치금</p>
-                            <div class="moneybox">
-                                <p><strong>4,900,000</strong>원</p>
-                                <a href="#">예치금 구매</a> <!--예치금 구매화면으로 -->
-                            </div>
-                        </div>
-                        <div class="bank-search">
-                            <div class="date-search">
-                                <div class="dropdown_menu_wrap">
-                                    <button type="button" class="btn-dropdown">1개월</button>
-                                    <ul class="dropdown_list">
-                                        <li><button type="button" data-option="7일">7일</button></li>
-                                        <li><button type="button" data-option="1개월">1개월</button></li>
-                                        <li><button type="button" data-option="3개월">3개월</button></li>
-                                        <li><button type="button" data-option="6개월">6개월</button></li>
-                                        <li><button type="button" data-option="1년">1년</button></li>
-                                        <li><button type="button" data-option="직접입력">직접입력</button></li>
-                                    </ul>
-                                </div>
-                                <div class="inputbox">
-                                    <input name="search" type="text" placeholder="구매번호 및 구매내용 검색">
-                                    <button type="button" class="btn_search_top">
-                                        <span class="ir-text">검색</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="btn_wrap">
-                                <button class="btn btn-reset"><span>초기화</span></button>
-                                <button class="btn btn-inquiry"><span>조회</span></button>
-                            </div>
-                        </div>
-                        <div class="bank-cont">
-                            <div>
-                                <p class="cont-tit">상세내역</p>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                            <p>A1234567</p>
-                                            <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="blue-dt">구매</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                        <p>A1234567</p>
-                                        <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="red-dt">사용</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                                <div class="cont-inner">
-                                    <div class="inner-top">
-                                        <p>A1234567</p>
-                                        <p class="gray-date">2024-05-02 14:00</p>
-                                    </div> 
-                                    <dl>
-                                        <div>
-                                            <dt class="gray-dt">취소</dt>
-                                            <dd><strong>5,000,000</strong>원</dd>
-                                        </div>
-                                        <div>
-                                            <dt class="gray-dt">잔액</dt>
-                                            <dd><strong>5,400,000</strong>원</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div class="pagination pos1">
-                                <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
-                                <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                                <a href="#">8</a>
-                                <a href="#">9</a>
-                                <a href="#">10</a>
-                                <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
-                                <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane1">탭2</div>
-                    <div class="tab-pane1">탭3</div>
+            <div class="price_reduction_wrap">
+                <div class="mo_tit_ft18 mt32">약가인하 상세</div>
+                <div class="mo_tit_ft16 mt32">OO약품</div>
+                <div class="product_table_wrap">
+                    <table>
+                        <colgroup>
+                        <col width="40%">
+                        <col width="">
+                        </colgroup>
+                        <tbody>                                          
+                            <tr>
+                                <th scope="row">주문금액</th>
+                                <td>OO약국</td>                     
+                            </tr>
+                            <tr>
+                                <th scope="row">대상금액</th>
+                                <td>
+                                    <div class="price">
+                                        <strong>000,000</strong> 원
+                                    </div>
+                                </td>                      
+                            </tr>   
+                            <tr>
+                                <th scope="row">반품금액</th>
+                                <td>
+                                    <div class="price color-red">
+                                        <strong>000,000</strong> 원
+                                    </div>
+                                </td>                      
+                            </tr>     
+                            <tr>
+                                <th scope="row">보상금액</th>
+                                <td>
+                                    <div class="price">
+                                        <strong>000,000</strong> 원
+                                    </div>
+                                </td>                      
+                            </tr>                                                                                                                                                                                                            
+                        </tbody>
+                    </table>
                 </div>
+                <div class="product_table_wrap table_x_scroll mt24">
+                    <table>
+                        <colgroup>
+                            <col style="width: 50px;" />                                                
+                            <col style="width: 100px;" />   
+                            <col style="width: 100px;" />    
+                            <col style="width: 150px;" />                   
+                            <col style="width: 110px;" />  
+                            <col style="width: 110px;" />                                             
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-c">구분</th>
+                                <th class="text-c">주문정보</th>
+                                <th class="text-c">일시</th>
+                                <th class="text-c">상품명</th>
+                                <th class="text-c">주문금액</th>
+                                <th class="text-c">반품금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>                                          
+                            <tr>                                                        
+                                <td class="text-c">
+                                    주문                                                           
+                                </td>  
+                                <td class="text-c">
+                                    A00000000                                                           
+                                </td> 
+                                <td class="text-c">
+                                    2024-03-05<br>
+                                    00:00:00
+                                </td>
+                                <td><a href="#">리버로징</a></td>
+                                <td class="text-c">
+                                    <div class="price">
+                                        <strong>000</strong> 만원
+                                    </div>                                                            
+                                </td> 
+                                <td class="text-c">
+                                    <div class="price color-red">
+                                        <strong>000</strong> 만원
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>                                                        
+                                <td class="text-c">
+                                    주문                                                           
+                                </td>  
+                                <td class="text-c">
+                                    A00000000                                                           
+                                </td> 
+                                <td class="text-c">
+                                    2024-03-05<br>
+                                    00:00:00
+                                </td>
+                                <td><a href="#">리버로징</a></td>
+                                <td class="text-c">
+                                    <div class="price">
+                                        <strong>000</strong> 만원
+                                    </div>                                                            
+                                </td> 
+                                <td class="text-c">
+                                    <div class="price color-red">
+                                        <strong>000</strong> 만원
+                                    </div>
+                                </td>
+                            </tr>                         
+                        </tbody>
+                    </table>
+                </div>                 
+               <div class="order_list_wrap">
+                    <div class="pagination pos1">
+                        <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
+                        <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
+                        <a href="#">1</a>
+                        <a class="active" href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
+                        <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
+                    </div>
+               </div>
             </div>
+
+           <div class="order_button_wrap flex_justfy mb50">
+            <button type="button" class="btn_blue_line">목록</button>
+        </div> 
+       
             <!-- //html 마크업 -->
         </div>
 
@@ -1677,8 +1693,8 @@
     <ul id="fixedMenu">
         <li><a href="javascript:left();">카테고리</a></li>
         <li class="search"><a href="javascript:searchLayer(this);">검색</a></li>
-        <li><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
-        <li class="active"><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
+        <li class="active"><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
+        <li><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
         <li><a href="https://m.jwpmall.co.kr/mw/order/cart.do">장바구니</a></li>
     </ul>
     <!--div id="dim" onclick="leftClose()">
