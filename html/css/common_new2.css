@@ -87,6 +87,7 @@ html,body {letter-spacing: -0.04em;}
 .top_header_left,
 .top_header_right {display: flex;align-items: center;gap: 8px;}
 .cate_tit_top {font-size: 18px;font-weight: 400;line-height: 18px;color:#000;font-family: 'NotoSans';}
+.cate_tit_top.type_center {text-align: center;width: calc(100% - 112px);margin: 0 auto;padding-right: 40px;}
 .btn_basket_top {position: relative;}
 .btn_basket_top img {width: 50%;}
 .btn_go_back {width:24px;height: 24px;}
