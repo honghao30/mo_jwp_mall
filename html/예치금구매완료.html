@@ -1,0 +1,1890 @@
+<!-- saved from url=(0040)https://m.jwpmall.co.kr/mw/main/index.do -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <script type="text/javascript" async="" src="js/analytics.js"></script> -->
+    
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi"><!--화면 확대비율 고정 -->
+    <title>JW중외제약 온라인몰</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Imagetoolbar" content="no">
+
+
+    <link rel="SHORTCUT ICON" href="https://m.jwpmall.co.kr/data/base/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    <!-- 추가 -->
+    <link rel="stylesheet" type="text/css" href="css/common_new.css">
+    <link rel="stylesheet" type="text/css" href="css/main_new.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
+    <!--// 추가 -->
+
+    <script type="text/javascript" src="js/misc.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.rollover.js"></script>
+    <script type="text/javascript" src="js/jquery.gaessamzie.flick.min.js"></script>
+    <script type="text/javascript" src="js/jquery.laybox.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <!-- 메인리뉴얼 - 수정 추가 -->
+    <script type="text/javascript" src="js/common_new.js"></script>
+    <script type="text/javascript" src="js/common_new2.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <!--// 메인리뉴얼 - 수정 추가 -->
+
+
+</head>
+
+<body class="" style="">
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        function validTopSearch(f) {
+            if (isEmpty(f.sword)) {
+                alert("검색어를 입력해 주세요.");
+                f.sword.focus();
+                return false;
+            }
+            return true;
+        }
+
+        function validTopLink(url) {
+            location.href = url;
+            return false;
+        }
+
+        function cateView(a) {
+            if ($(a).closest('li').find('ul').is(':animated')) {
+                return false;
+            }
+            if ($(a).closest('li').hasClass('active')) {
+                $(a).closest('li').removeClass('active').find('ul').stop().slideUp(200);
+            } else {
+                $(a).closest('li').addClass('active').find('ul').stop().slideDown(200);
+            }
+        }
+
+        $(function() {
+            $('#left .banner').gaessamzieFlick({
+                loop: true,
+                number: true
+            });
+            leftNumberNone();
+        });
+
+        function leftNumberNone() {
+            $('#left .banner').each(function() {
+                var n = $(this).find('.gaessamzieFlickNumber p span').text();
+                if (n == 1) {
+                    $(this).find('.gaessamzieFlickNumber').hide();
+                }
+            });
+        }
+
+        function deleteKeyword(keyword) {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "/mw/member/member_keyword_delete_ajax.do",
+                data: {
+                    keyword: keyword
+                },
+                error: function(request, status, error) {
+                    alert(request.responseText)
+                },
+                success: function(data) {
+                    selectKeywordList();
+                    //alert("삭제되었습니다.");
+                    //f.submit();
+                }
+            });
+
+        }
+
+        function selectKeywordList(keyword) {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "/mw/member/member_keyword_list_ajax.do",
+                data: {
+                    keyword: keyword
+                },
+                error: function(request, status, error) {
+                    alert(request.responseText)
+                },
+                success: function(data) {
+                    //alert(data.keywordList);
+                    $("#keywordList").html("");
+                    var listHtml = '<div class="title">최근 검색어<a href="javascript:;" onclick="deleteKeyword(\'ALL\')">전체삭제</a></div>';
+                    //alert(data.keywordList.length);
+
+                    listHtml = listHtml + "<ul>";
+                    if (data.keywordList.length == 0) {
+                        listHtml = listHtml + '<li class="none">검색 내역이 없습니다.</li>';
+                    } else {
+                        for (var i = 0; i < data.keywordList.length; i++) {
+                            listHtml = listHtml + '<li><a href="javascript:;" onclick="setKeyword(\'' + data.keywordList[i].KEYWORD + '\')">' + data.keywordList[i].KEYWORD + '</a><button type="button" class="delete" onclick="deleteKeyword(\'' + data.keywordList[i].KEYWORD + '\')">삭제</button></li>';
+                        }
+                    }
+                    listHtml = listHtml + "</ul>";
+                    $("#keywordList").html(listHtml)
+                }
+            });
+
+        }
+
+        function setKeyword(keyword) {
+            var f = document.topSearchFrm;
+
+            f.sword.value = keyword;
+
+            f.submit();
+
+        }
+
+
+        //]]>
+    </script>
+
+    <div id="left">
+        <div class="name">
+            <!-- 메인리뉴얼 - 수정 -->
+            <h2><span>한국병원 고객님,</span> 안녕하세요.
+                <!-- <a href="javascript:goLogout();">로그아웃</a> -->
+            </h2>
+            <!--// 메인리뉴얼 - 수정 -->
+            <button type="button" class="close" onclick="leftClose();">Close</button>
+        </div>
+        <!-- 메인리뉴얼 - 수정 -->
+        <div class="barCont"></div>
+        <!-- <div class="infobox">
+            <ul>
+                <li>
+                    <a href="https://m.jwpmall.co.kr/mw/mypage/order_delivery.do">
+                        <span class="title">11월 주문금액</span>
+                        <strong>0<span>원</span></strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://m.jwpmall.co.kr/mw/mypage/point.do">
+                        <span class="title">예치금</span>
+                        <strong>112,070<span>원</span></strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <ul class="menu">
+            <li><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
+            <li><a href="https://m.jwpmall.co.kr/mw/mypage/order_delivery.do">주문배송조회</a></li>
+            <li><a href="https://m.jwpmall.co.kr/mw/mypage/wish.do">관심상품</a></li>
+        </ul> -->
+        <!--// 메인리뉴얼 - 수정 -->
+
+        <!-- 20231205 수정 -->
+        <div class="categorybox">
+            <h3>의료용폼</h3>
+            <ul>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">원내제품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2225">체스트메이트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1637">철분주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2273">영양수액 비급여(리피드)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2274">영양수액 비급여(리피드F)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2247">영양수액(비급여 S)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2248">영양수액(비급여 F)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2249">영양수액(비급여 T)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2250">영양수액(비급여TF)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2251">영양수액(비급여FF)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2257">영양수액 비급여(BS)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2262">영양수액 비급여(TS)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2261">영양수액 비급여(A)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1639">영양수액(비급여)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1642">영양수액(급여)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2130">일반수액(비급여)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1638">일반수액(급여)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1640">기타제제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1641">기타주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1643">항생제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1644">항암제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1645">향정신성</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1850">백신류</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2220">전문의약품(etc)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2259">백신류1</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">JW중외제약 OTC</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2100">일반의약품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2101">의약외상품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2103">건강식품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2127">화장품</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">JW중외제약 ETC</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2264">ETC</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">JW신약</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2268">원내제품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2270">영양수액</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2269">기초수액</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1855">백신</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2277">백신류1</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2271">진단기기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2272">미용기타</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2275">체스트메이트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2276">영양수액류</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2279">백신류</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">내시경처치구</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2131">Core-Forcep</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2132">Core-Snare</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2133">Core-Injector</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2134">Core-Knife</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2135">Core-Hotbiopsy</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2136">Core-Clip</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1852">Cleaning Brushes</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1853">Slicone Mouthpiece</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1652">Mouthpiece</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">피부/미용/성형</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2091">필러</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2092">미용기타</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2093">스킨부스터</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">산부인과제품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2254">질건조증 케어</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">비케이헬스케어</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1876">순환기계질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1877">근골격계/결합조직질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1878">기타 약물</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1879">비타민 및 영양제류</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1880">피부/피하조직질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1894">감염성질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1895">혈액및조혈기관질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1896">호르몬&amp;대사관련질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1897">통증질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1898">신경계질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1899">호흡계질환</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">에스이인터내셔널</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1902">비경구제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1917">국소마취제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1919">진통소염제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1920">항히스타민제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1921">진경제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1922">항생제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1923">해독제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1924">골다공증치료제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1925">비타민C</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1926">단백아미노산제제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1927">비타민B제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1928">글루타치온</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1929">전해질제제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1930">치옥트산</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1931">근골격계</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">기영약품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1936">급여</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2216">비급여</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">비케이헬스케어(택배배송)</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1906">순환기계질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1907">근골격계/결합조직질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1908">기타 약물</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1909">비타민 및 영양제류</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1910">피부/피하조직질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1911">감염성질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1912">혈액및조혈기관질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1913">호르몬&amp;대사관련질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1914">통증질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1915">신경계질환</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1916">호흡계질환</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">CMG제약</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2238">대장하제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2239">해열진통소염 주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2240">관절염 치료 주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2241">항생제 주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2242">골다공증치료 주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2243">기타 주사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2244">의료기기</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">엘스타</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1938">급여</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1939">비급여</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">남양약품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1940">급여</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1941">비급여</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">해성약품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1942">급여</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1943">비급여</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">복산나이스</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1944">급여</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1945">비급여</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">키트</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2138">코로나 진단키트</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 메인리뉴얼 - 수정 -->
+        <div class="barCont mt-1"></div>
+        <div class="categorybox">
+            <h3>의료소모품</h3>
+            <ul>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">체스트메이트 필터</a></button>
+                    <ul>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">주사기/주사침/나비침/IV카테터/니들</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1686">주사기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1687">주사침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1688">인슐린주사기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1689">인슐린주사침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1690">채혈용주사기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1691">IV 카테터</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1692">관장기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1693">나비바늘</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1694">란셋침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1695">루어락주사기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1696">스파이날 니들</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1697">안전/필터 주사기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1698">에디듀랄 니들</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1699">주사기캡</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1700">토니켓</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">수액관련[수액세트,연결줄,3way,수액조절기]</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1701">3way</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1702">수액셋트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1703">수액조절기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1704">수혈세트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1705">연결줄</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">면/솜/거즈/붕대류</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1706">거즈붕대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1707">롤거즈</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1708">면봉</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1709">멸균거즈</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1710">솜붕대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1711">스타키넷</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1712">외과용패드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1713">절단거즈</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1714">접은거즈</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1715">코반</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1716">코튼볼</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1717">탄력붕대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1718">탈지면</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1719">팩거즈</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">반창고/테이프/흉터관리</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1720">근육테이프</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1721">드레싱밴드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1722">면반창고</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1723">부직반창고</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1724">소독테이프</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1725">스테리드랩</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1726">스테리스트립</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1727">실크반창고</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1728">아이오반</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1729">일회용밴드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1730">종이반창고</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1731">플라스틱반창고</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1732">흉터관리[창상피복재]</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">글러브/콘돔</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1733">멸균글러브</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1734">초음파콘돔</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1735">포리글러브</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">봉합사/봉합침</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1736">내복용환침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1737">내장용환침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1738">바이크릴</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1739">부인과용환침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1740">비흡수성-천연 봉합사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1741">비흡수성-합성 봉합사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1742">스킨스태플러</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1743">안과용각침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1744">외과용각,직침</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1745">흡수성-천연 봉합사</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1746">흡수성-합성 봉합사</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">기록용품[X-ray,EKG,내시경]</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1747">EKG 관련</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1748">감열 페이퍼</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1749">내시경 관련</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">린넨/보호대/복대</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1750">공포</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1751">마스크,모자</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1752">베개</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1753">보호대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1754">복대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1755">쇄골밴드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1756">수술복</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1757">수술포/기구포</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1758">시트커버</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1759">팔걸이</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1760">환자복</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">산소/마취 관련</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1761">산소연결줄</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1762">앰부백</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1763">에어웨이</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1764">후두경</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1765">기타 관련 제품</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">소독제/세척제</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1766">과산화수소수</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1767">세척제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1768">소독제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1769">손소독제</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1770">알콜</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">수술기구</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1771">겸자(핀셋)</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1772">니들홀더</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">실버용품류</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1773">변기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1774">보조용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1775">휠체어</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">약 조제 용품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1776">약조제용구</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1777">연고곽</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1778">투약병</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">진찰용품/처치용품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1779">내시경용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1780">라미나리아</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1781">바로박</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1782">소독봉투</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1783">와이어스텐만핀</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1784">일렉트로이드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1785">진찰용품</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">질경</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1786">스텐질경</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1787">일회용질경</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">찜질팩/핫팩/통증용 젤리</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1788">찜질팩</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1789">파라핀왁스</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1790">핫백</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1791">핫백카바</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">초음파페이퍼/초음파관련용품</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1792">SONY PAPER</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1793">초음파젤리</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">카테타/튜브/드레인/Bag[foley, nelaton등]</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1794">Bag[유린백, 피딩백 등]</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1801">Central vein catheter</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1802">Chest tube</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1803">Drain tube</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1804">Endotracheal tube</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1805">Foley catheter</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1806">French catheter</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1807">Levin tube</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1808">Nelaton catheter</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1809">Rectal tube</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1810">Suction catheter</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1811">Tracheostomy tube</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1812">석션 연결 튜브</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1813">카테터 튜브 관련 소모품</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">캐스트/스프린트/목발</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1814">목발</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1815">석고신발</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1816">스프린트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1817">알미늄스프린트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1818">합성캐스트</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">캔/밧드/드레싱카/링겔대</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1819">개무밧드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1820">개부밧드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1821">농반</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1822">드레싱밧드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1823">드레싱카</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1824">바울</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1825">소독밧드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1826">소독캔</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1827">스폰지캔</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1828">주사기,카테타밧드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1829">챠트판</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1830">포셉자</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">필름/현상/정착</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1831">정착액</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1832">필름</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1833">현상액</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">화장지</a></button>
+                    <ul>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">기타 소모품</a></button>
+                    <ul>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">이팜</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2152">반창고/밴드/파스</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2153">거즈/붕대/탈지면</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2178">건강식품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2179">눈/코/입/귀</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2180">마스크/방한대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2181">물리치료/재활용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2182">생활용품/여성/유소아</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2183">의료용구/약국용품/측정기기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2151">기타</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">헬스인팜</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2165">의약외상품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2166">건강식품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2202">반창고/거즈/붕대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2203">구강용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2204">마스크</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2205">보호대/패드</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2206">일반의약품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2207">의료소모품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2208">의료용품/측정기기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2209">스킨/바디</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2210">기타</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">유케이인터팜</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2157">유소아/수유용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2229">건강기능식품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2159">마스크</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2228">보호대</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2233">화장품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2158">여성용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2177">실버용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2227">구강용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2211">의료용품/측정기기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2221">거즈/붕대/밴드/파스</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2232">위생용품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2200">성인</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2169">건강음료/숙취해소</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2171">마스크/팩</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2173">발관리/시트</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2174">비타민/유소아</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2175">선케어</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2199">브랜드관</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2201">생활용품</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="depth1">
+                    <button type="button" onclick="cateView(this);"><a href="#">메디칼현대</a></button>
+                    <ul>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2160">소모품</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2164">시럽병</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2162">소형약포장기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2163">분쇄기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2195">분할기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2196">온장고</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2197">집진기</a></li>
+
+                        <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=2198">자동약포장기</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+            
+            <!-- 메인리뉴얼 - 수정 -->
+            <div class="noti_cont">
+                <p class="txt">고객센터</p>
+                <span class="num">02.840.6907</span>
+                <div class="txt_time">
+                  <p>(평일 9:00 ~ 18:00 )</p>
+                </div>
+                <div class="link_btns">
+                    <a href="#" class="btn_ask"><span class="hidden">1:1 문의</span></a>
+                    <a href="#" class="btn_kakao"><span class="hidden">카카오톡</span></a>
+                </div>
+            </div>
+            <!--// 메인리뉴얼 - 수정 -->
+        </div>
+        <!--// 20231205 수정 -->
+
+
+    </div>
+
+<!-- 컨텐츠 마크업 하는곳 -->    
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+
+        <div id="wrap">
+
+        <script type="text/javascript">
+            //<![CDATA[
+            $(function() {
+                $('.topbanner').gaessamzieFlick({
+                    loop: true,
+                    number: true
+                });
+            });
+            //]]>
+        </script>
+
+
+        <!-- 메인리뉴얼 - 수정 -->
+		<header id="header">
+            <!-- 메인리뉴얼 - 수정 -->  
+			<div class="search_wrap flex_justfy">
+                <div class="top_header_left">
+                    <button type="button" class="btn_go_back">
+                        <span class="ir-text">뒤로가기</span>
+                    </button>
+                    <div class="cate_tit_top">예치금 구매</div>
+                </div>
+                <div class="top_header_right">
+                    <button type="button" class="btn_search_top" onclick="searchLayer(this);">
+                        <span class="ir-text">검색</span>
+                    </button>
+                    <button class="btn_basket_top">
+                        <div class="counter">24</div>
+                        <span class="ir-text">장바구니</span>
+                    </button>
+                </div>
+			</div>
+			<!--// 메인리뉴얼 - 수정 -->
+        </header>
+		<!--// 메인리뉴얼 - 수정 -->
+
+        <!-- 검색 영역 레이어 -->
+        <script type="text/javascript">
+            //<![CDATA[
+            $(function() {
+                var timerSr = null;
+
+                $('input[name="sword"]', '#frm_top_search').on('keyup', function() {
+                    clearTimeout(timerSr);
+
+                    if (isEmpty(this)) {
+                        $('#topSearchRealList').hide()
+                            .find('div.title span').text(0).end()
+                            .find('ul li').remove();
+
+                        $('#keywordList').show();
+                        return false;
+                    }
+
+                    var self = this;
+                    timerSr = setTimeout(function() {
+                        $.ajax({
+                            type: 'post',
+                            url: "/mw/common/search_real_ajax.do",
+                            data: {
+                                q: self.value
+                            },
+                            success: function(result) {
+                                var $obj = $(result);
+
+                                $('#keywordList').hide();
+
+                                $('#topSearchRealList').show()
+                                    .find('div.title span').text($obj.attr('totals')).end()
+                                    .find('ul').empty().append($obj.children());
+
+                                $obj = null;
+                            }
+                        });
+                    }, 300);
+                });
+            });
+            //]]>
+        </script>
+
+        <div class="searchlayer">
+            <div class="inputbox">
+                <form name="topSearchFrm" id="frm_top_search" method="get" action="https://m.jwpmall.co.kr/mw/goods/search.do" onsubmit="return validTopSearch(this)">
+                    <button type="button" class="closebtn" onclick="searchClose();">닫기</button>
+                    <input name="sword" type="text" placeholder="검색어를 입력해주세요">
+                    <button type="submit" class="btn">검색</button>
+                </form>
+            </div>
+            <div class="recent" id="keywordList">
+                <div class="title">최근 검색어<a href="javascript:;" onclick="deleteKeyword(&#39;ALL&#39;)">전체삭제</a></div>
+                <ul>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;프렌즈&#39;)">프렌즈</a><button type="button" class="delete" onclick="deleteKeyword(&#39;프렌즈&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;플루엔페라&#39;)">플루엔페라</a><button type="button" class="delete" onclick="deleteKeyword(&#39;플루엔페라&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;플루에페라&#39;)">플루에페라</a><button type="button" class="delete" onclick="deleteKeyword(&#39;플루에페라&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;제이헤파민&#39;)">제이헤파민</a><button type="button" class="delete" onclick="deleteKeyword(&#39;제이헤파민&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;엔에스&#39;)">엔에스</a><button type="button" class="delete" onclick="deleteKeyword(&#39;엔에스&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;엔커버&#39;)">엔커버</a><button type="button" class="delete" onclick="deleteKeyword(&#39;엔커버&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;점안액&#39;)">점안액</a><button type="button" class="delete" onclick="deleteKeyword(&#39;점안액&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;플루엔&#39;)">플루엔</a><button type="button" class="delete" onclick="deleteKeyword(&#39;플루엔&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;프렌즈아이드&#39;)">프렌즈아이드</a><button type="button" class="delete" onclick="deleteKeyword(&#39;프렌즈아이드&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;아이드&#39;)">아이드</a><button type="button" class="delete" onclick="deleteKeyword(&#39;아이드&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;크린클&#39;)">크린클</a><button type="button" class="delete" onclick="deleteKeyword(&#39;크린클&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;비급여&#39;)">비급여</a><button type="button" class="delete" onclick="deleteKeyword(&#39;비급여&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;콤비플렉스&#39;)">콤비플렉스</a><button type="button" class="delete" onclick="deleteKeyword(&#39;콤비플렉스&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;스카이조스터&#39;)">스카이조스터</a><button type="button" class="delete" onclick="deleteKeyword(&#39;스카이조스터&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;브레핀&#39;)">브레핀</a><button type="button" class="delete" onclick="deleteKeyword(&#39;브레핀&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;콤비&#39;)">콤비</a><button type="button" class="delete" onclick="deleteKeyword(&#39;콤비&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;위너프&#39;)">위너프</a><button type="button" class="delete" onclick="deleteKeyword(&#39;위너프&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;제이트롤&#39;)">제이트롤</a><button type="button" class="delete" onclick="deleteKeyword(&#39;제이트롤&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;injec&#39;)">injec</a><button type="button" class="delete" onclick="deleteKeyword(&#39;injec&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;injet&#39;)">injet</a><button type="button" class="delete" onclick="deleteKeyword(&#39;injet&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;스카이&#39;)">스카이</a><button type="button" class="delete" onclick="deleteKeyword(&#39;스카이&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;제이블루&#39;)">제이블루</a><button type="button" class="delete" onclick="deleteKeyword(&#39;제이블루&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;포도당&#39;)">포도당</a><button type="button" class="delete" onclick="deleteKeyword(&#39;포도당&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;바이타솔&#39;)">바이타솔</a><button type="button" class="delete" onclick="deleteKeyword(&#39;바이타솔&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;종이반창고&#39;)">종이반창고</a><button type="button" class="delete" onclick="deleteKeyword(&#39;종이반창고&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;라바로겟&#39;)">라바로겟</a><button type="button" class="delete" onclick="deleteKeyword(&#39;라바로겟&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;페인엔젤&#39;)">페인엔젤</a><button type="button" class="delete" onclick="deleteKeyword(&#39;페인엔젤&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;티슈필&#39;)">티슈필</a><button type="button" class="delete" onclick="deleteKeyword(&#39;티슈필&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;플루&#39;)">플루</a><button type="button" class="delete" onclick="deleteKeyword(&#39;플루&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;하이맘밴드 방수탄력&#39;)">하이맘밴드 방수탄력</a><button type="button" class="delete" onclick="deleteKeyword(&#39;하이맘밴드 방수탄력&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;하이맘밴드 반수탄력 기본형&#39;)">하이맘밴드 반수탄력 기본형</a><button type="button" class="delete" onclick="deleteKeyword(&#39;하이맘밴드 반수탄력 기본형&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;하이맘밴드&#39;)">하이맘밴드</a><button type="button" class="delete" onclick="deleteKeyword(&#39;하이맘밴드&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;가네톡액&#39;)">가네톡액</a><button type="button" class="delete" onclick="deleteKeyword(&#39;가네톡액&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;크린클-1000ML&#39;)">크린클-1000ML</a><button type="button" class="delete" onclick="deleteKeyword(&#39;크린클-1000ML&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;mou&#39;)">mou</a><button type="button" class="delete" onclick="deleteKeyword(&#39;mou&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;내시경&#39;)">내시경</a><button type="button" class="delete" onclick="deleteKeyword(&#39;내시경&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;플루엔페&#39;)">플루엔페</a><button type="button" class="delete" onclick="deleteKeyword(&#39;플루엔페&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;후루&#39;)">후루</a><button type="button" class="delete" onclick="deleteKeyword(&#39;후루&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;뉴플럭스&#39;)">뉴플럭스</a><button type="button" class="delete" onclick="deleteKeyword(&#39;뉴플럭스&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;흉터&#39;)">흉터</a><button type="button" class="delete" onclick="deleteKeyword(&#39;흉터&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;듀락칸&#39;)">듀락칸</a><button type="button" class="delete" onclick="deleteKeyword(&#39;듀락칸&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;후리아민&#39;)">후리아민</a><button type="button" class="delete" onclick="deleteKeyword(&#39;후리아민&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;페린젝트&#39;)">페린젝트</a><button type="button" class="delete" onclick="deleteKeyword(&#39;페린젝트&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;듀락&#39;)">듀락</a><button type="button" class="delete" onclick="deleteKeyword(&#39;듀락&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;듀라칸&#39;)">듀라칸</a><button type="button" class="delete" onclick="deleteKeyword(&#39;듀라칸&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;엔커&#39;)">엔커</a><button type="button" class="delete" onclick="deleteKeyword(&#39;엔커&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;하이맘&#39;)">하이맘</a><button type="button" class="delete" onclick="deleteKeyword(&#39;하이맘&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;하이맘폼&#39;)">하이맘폼</a><button type="button" class="delete" onclick="deleteKeyword(&#39;하이맘폼&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;리피드&#39;)">리피드</a><button type="button" class="delete" onclick="deleteKeyword(&#39;리피드&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;중외엔에스&#39;)">중외엔에스</a><button type="button" class="delete" onclick="deleteKeyword(&#39;중외엔에스&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;가나칸&#39;)">가나칸</a><button type="button" class="delete" onclick="deleteKeyword(&#39;가나칸&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;가나&#39;)">가나</a><button type="button" class="delete" onclick="deleteKeyword(&#39;가나&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;리베칸&#39;)">리베칸</a><button type="button" class="delete" onclick="deleteKeyword(&#39;리베칸&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;에스로반&#39;)">에스로반</a><button type="button" class="delete" onclick="deleteKeyword(&#39;에스로반&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;라베칸&#39;)">라베칸</a><button type="button" class="delete" onclick="deleteKeyword(&#39;라베칸&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;아이드롭&#39;)">아이드롭</a><button type="button" class="delete" onclick="deleteKeyword(&#39;아이드롭&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;50%&#39;)">50%</a><button type="button" class="delete" onclick="deleteKeyword(&#39;50%&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;원터치 블레이드&#39;)">원터치 블레이드</a><button type="button" class="delete" onclick="deleteKeyword(&#39;원터치 블레이드&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;바이오사이&#39;)">바이오사이</a><button type="button" class="delete" onclick="deleteKeyword(&#39;바이오사이&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;주식회사 에스더불유헬스케어&#39;)">주식회사 에스더불유헬스케어</a><button type="button" class="delete" onclick="deleteKeyword(&#39;주식회사 에스더불유헬스케어&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;마스크&#39;)">마스크</a><button type="button" class="delete" onclick="deleteKeyword(&#39;마스크&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;노펜&#39;)">노펜</a><button type="button" class="delete" onclick="deleteKeyword(&#39;노펜&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;엠시티&#39;)">엠시티</a><button type="button" class="delete" onclick="deleteKeyword(&#39;엠시티&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;베노훼럼&#39;)">베노훼럼</a><button type="button" class="delete" onclick="deleteKeyword(&#39;베노훼럼&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;아세탚ㄴ&#39;)">아세탚ㄴ</a><button type="button" class="delete" onclick="deleteKeyword(&#39;아세탚ㄴ&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;cmg&#39;)">cmg</a><button type="button" class="delete" onclick="deleteKeyword(&#39;cmg&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;오딘&#39;)">오딘</a><button type="button" class="delete" onclick="deleteKeyword(&#39;오딘&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;위너프페리&#39;)">위너프페리</a><button type="button" class="delete" onclick="deleteKeyword(&#39;위너프페리&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;ferinject&#39;)">ferinject</a><button type="button" class="delete" onclick="deleteKeyword(&#39;ferinject&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;하이맘 밴드&#39;)">하이맘 밴드</a><button type="button" class="delete" onclick="deleteKeyword(&#39;하이맘 밴드&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;중화제&#39;)">중화제</a><button type="button" class="delete" onclick="deleteKeyword(&#39;중화제&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;GA 30%&#39;)">GA 30%</a><button type="button" class="delete" onclick="deleteKeyword(&#39;GA 30%&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;항생제&#39;)">항생제</a><button type="button" class="delete" onclick="deleteKeyword(&#39;항생제&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;일회용주사기&#39;)">일회용주사기</a><button type="button" class="delete" onclick="deleteKeyword(&#39;일회용주사기&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;콤비플러스&#39;)">콤비플러스</a><button type="button" class="delete" onclick="deleteKeyword(&#39;콤비플러스&#39;)">삭제</button></li>
+
+                    <li><a href="javascript:;" onclick="setKeyword(&#39;멸균&#39;)">멸균</a><button type="button" class="delete" onclick="deleteKeyword(&#39;멸균&#39;)">삭제</button></li>
+
+                    <!--li><a href="#">붕대</a><button type="button" class="delete">삭제</button></li>
+				<li><a href="#">거즈</a><button type="button" class="delete">삭제</button></li>
+				< <li class="none">검색 내역이 없습니다.</li> -->
+
+                </ul>
+
+                <!-- 메인리뉴얼 - 수정 -->
+                <div class="banner_cont">
+                    <!-- 20231207 수정 -->
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper search_banner_bottom">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                            <a href="#">
+                                <img src="img/banner_01.png" alt="">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                            <a href="#">
+                                <img src="img/banner_01.png" alt="">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                            <a href="#">
+                                <img src="img/banner_01.png" alt="">
+                            </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img_box">
+                            <a href="#">
+                                <img src="img/banner_01.png" alt="">
+                            </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <script>
+                        // 우측 side 최근 본 상품 스와이프
+                        var swiper1 = new Swiper(".search_banner_bottom.swiper", {
+                        slidesPerView: 1,
+                        slidesPerGroup: 1,
+                        // spaceBetween: 4,
+                        navigation: {
+                            nextEl: ".search_banner_bottom .swiper-button-next",
+                            prevEl: ".search_banner_bottom .swiper-button-prev",
+                        }
+                        });
+                    </script>
+                    <!--// 20231207 수정 -->
+                </div>
+                <!--// 메인리뉴얼 - 수정 -->
+            </div>
+            <!-- 2022.09.06 수정-->
+            <div class="recent" id="topSearchRealList" style="display:none">
+                <!-- 검색결과 text 필요하지 않을시 삭제 -->
+                <div class="title">검색결과 : <span>0</span>개</div>
+                <ul>
+                </ul>
+            </div>
+            <!-- //2022.09.06 수정 -->
+        </div>
+        <!--// 검색 영역 레이어 -->
+
+        <!-- content_wrap -->
+        <div class="content_wrap">  
+            <!-- html 마크업 -->
+            <div class="balance_area">
+                <!-- Swiper -->
+                <div class="swiper_wrap type01">
+                    <div class="swiper category_banner">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                        </div>
+                        <div class="control_box">
+                            <div class="swiper-pagination type01"></div>
+                            <div class="swiper-pagination type01" style="display:none"></div>
+                            <!-- <div class="swiper-button-prev"><img src="img/common/btn_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/common/btn_right.png" alt=""></div> -->
+                            <div class="swiper-autoplay-button">
+                                <img src="img/common/btn_pause.png" alt="" class="pause">
+                                <img src="img/common/btn_play.png" alt="" class="play">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var category_banner = new Swiper(".category_banner.swiper", {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 4,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "fraction",
+                    },
+                    loop: true,
+                    navigation: {
+                        nextEl: ".category_banner .swiper-button-next",
+                        prevEl: ".category_banner .swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 2000, // Autoplay delay in milliseconds
+                        disableOnInteraction: false, // Autoplay continues after user interaction
+                    },
+                    });
+                
+                    // Pause/Play button functionality
+                    $(".category_banner .swiper-autoplay-button").click(function(){
+                    $(this).toggleClass("paused");
+                    if( $(this).is(".paused") ){
+                        category_banner.autoplay.stop();
+                    }
+                    else{
+                        category_banner.autoplay.start();
+                    };
+                    });
+                </script>
+                <div class="inner">
+                    <div class="tit_cont">
+                        <strong class="m_tit">구매금액 선택</strong>
+                        <p class="m_txt">예치금은 1,000원 단위로<br>
+                            1만원 ~ 1,000만원까지 구매가 가능합니다.</p>
+                    </div>
+                    <ul class="balance_list">
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>1</strong><span>만원</span></p>
+                            </div> 
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>3</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>5</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>10</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>20</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>30</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>50</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>100</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>150</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>200</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>300</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>500</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                    </ul>
+                    
+                    <!-- 결제수단 -->
+                    <div class="pay_cont">
+                        <div class="tit_cont">
+                            <strong class="m_tit">결제수단</strong>
+                            <label class="checkbox txt right">
+                            <input type="checkbox" class="type03">
+                                결제방법 저장
+                            </label>
+                        </div>
+                        <ul class="pay_list">
+                            <li class="ico_pay_naver">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>네이버페이</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_kakao">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>카카오페이</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_sspay">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>삼성페이</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_payco">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>페이코</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_simple">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>간편결제</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_card">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>신용카드</span>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- 유의사항 -->
+                    <div class="warning_cont">
+                        <span class="tit">유의사항</span>
+                        <ul class="list">
+                            <li>예치금은 결제완료 이후 취소가 불가능하며, 예치금의 현금 전환은 불가능합니다.</li>
+                            <li>예치금은 결제완료 즉시 적립되며, 바로 사용이 가능합니다</li>
+                            <li>예치금은 ‘마이페이지 > 예치금 내역’에서 확인이 가능합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order_floating_bottom">
+                <div class="order_util_area">
+                    <button class="btn_arrow"></button>
+                    <div class="info_detail">
+                        <dl>
+                          <dt>보유 예치금</dt>
+                          <dd><strong class="">0</strong> 원</dd>
+                        </dl>
+                        <dl>
+                          <dt>구매 예치금</dt>
+                          <dd><strong class="">10,000</strong> 원</dd>
+                        </dl>
+                        <dl>
+                          <dt>즉시할인 금액</dt>
+                          <dd><strong class="colorR">-10,000</strong> 원</dd>
+                        </dl>
+                        <dl>
+                          <dt>구매 후 예치금</dt>
+                          <dd><strong class="">10,000</strong> 원</dd>
+                        </dl>
+                    </div>
+                    <div class="order_counter_control">
+                        <div class="txt">최종 결제 금액</div>
+                        <div class="total_price">
+                            <strong>1,586,000</strong> 원
+                        </div>
+                    </div>
+                </div>
+                <div class="order_button_wrap flex_justfy">
+                    <button type="button" class="btn_blue">예치금 구매하기</button>
+                </div>
+            </div>
+            
+            <!-- 필터 모달 -->
+            <section class="modal_new modal_overlay" id="">
+                <div class="filter-layer active layer_wrap">
+                    <div class="filter_layer_inner">
+                        <div class="filter_layer_title">
+                            예치금 구매완료
+                        </div>
+                        <div class="filter_store_result">
+                            <div class="tag_list_wap">
+                                <div class="tit">예치금 구매가 완료되었습니다.</div>
+                                <div class="info_detail">
+                                    <dl>
+                                        <dt>구매일시</dt>
+                                        <dd>2024-03-25 00:00</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>구매번호</dt>
+                                        <dd>A2408008534534:00</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>구매금액</dt>
+                                        <dd><strong>5,000,000</strong> 원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>구매 후 잔액</dt>
+                                        <dd><strong>5,250,000</strong> 원</dd>
+                                    </dl>
+                                </div>                                
+                            </div> 
+                            <div class="order_button_wrap flex_justfy">                        
+                                <button type="button" class="btn_blue_line">예치금 구매내역 보기</button>
+                            </div>                 
+                        </div>
+                        <button type="button" class="btn_close" onclick="modalControl('c')">
+                            <span class="ir-text">닫기</span>
+                        </button>
+                    </div>         
+                </div>
+            </section>
+            <!-- //html 마크업 -->
+        </div>
+
+
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+<!-- //컨텐츠 마크업 하는곳 -->
+
+<footer id="footer" class="footer_cont">
+    <!-- 고객센터 -->
+    <div class="user_cont">
+        <p class="txt">고객센터</p>
+        <p class="tel_cont"><a href="tel:02-840-6907"><strong>02-840-6907</strong></a>(유료)</p>
+        <p class="time_cont">
+           평일 <span class="time">09:00 ~ 1800</span><br>
+           점심시간 <span class="time">12:00 ~ 13:00</span><br>
+           <span class="colorGray">토, 일, 공휴일 휴무</span>
+        </p>
+    </div>
+    <div class="menu_cont top_line">
+        <ul>
+            <li class="bar"><a href="#none">회사소개</a></li>
+            <li class="bar"><a href="#none">이용안내</a></li>
+            <li class="bar"><a href="#none">배송/결제안내</a></li>
+            <li class="bar"><a href="#none">1:1문의</a></li>
+            <li class="bar"><a href="#none">이용약관</a></li>
+            <li class="bar"><a href="#none" class="colorG">개인정보처리방침</a></li>
+            <li class="bar"><a href="#none">FAQ</a></li>
+            <li><a href="#none">공지사항</a></li>
+        </ul>
+    </div>
+    <div class="address_cont top_line">
+        <a href="#none"><img src="imgs/global/footerlogo.png" alt="jw 중외제약"></a>
+        <div class="info">
+            <ul>
+                <li class="bar">대표자명 : 신영섭</li>
+                <li class="bar"><a href="tel:028406907">TEL : 02-840-6907</a></li>
+                <li>사업자등록번호 : 118-81-02477</li>
+            </ul>
+            <address>주소 : (13840) 경기도 과천시 과천대로7길 38 (갈현동) JW과천사옥</address>
+            <p>통신판매업신고 : 제2012-서울서초-1380호</p>
+            <ul>
+                <li class="bar">건강식품판매신고 : 동작 제00008호</li>
+                <li>의료기기판매업신고 : 동작 제166호</li>
+            </ul>
+            <p class="copylight">ⓒ 2020 JW중외제약 All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    </wrap><!-- //wrap -->
+    <!-- <a href="#header" id="top">맨위로</a> -->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+
+    <script type="text/javascript">
+        function _e(id) {
+            return document.getElementById(id);
+        }
+
+        $(function() {
+            $('.mainlayer .banner').gaessamzieFlick({
+                indicator: true,
+                loop: true,
+                play: true,
+                delay: 5
+            });
+            
+        });
+
+        function mainLayerClose(a) {
+            $(a).closest('.mainlayer').hide();
+        }
+
+        function mainLayerCookieClose(a) {
+
+
+            $(a).closest('.mainlayer').hide();
+        }
+    </script>
+
+<!-- 메인리뉴얼 - 수정 -->
+<div class="mainlayer" style="display: none;">
+	<div class="layerdim"></div>
+	<div class="layercont">
+		<div class="banner">
+			<ul class="gaessamzieFlickStage">
+				<li class="gaessamzieFlickItem"><a href='https://ko.research.net/r/JWPMALL'><img src="https://m.jwpmall.co.kr/data/base/popup/온라인몰_이용자_(1)_수정_2.jpg" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="" /></a></li>
+				<li class="gaessamzieFlickItem"><a href='/board/content.do?board=notice&pidx=723'><img src="https://m.jwpmall.co.kr/data/base/popup/Untitled-2_0.png" onerror="this.src='https://m.jwpmall.co.kr/data/base/imgs/goods/no.gif'" alt="" /></a></li>
+			</ul>
+		</div>
+		<ul class="buttonbox">
+			<li><button type="button" onclick="mainLayerCookieClose(this);">오늘은 그만보기</button></li>
+			<li><button type="button" onclick="mainLayerClose(this);">닫기</button></li>
+		</ul>
+	</div>
+</div>
+<!--// 메인리뉴얼 - 수정 -->
+
+
+    <ul id="fixedMenu">
+        <li><a href="javascript:left();">카테고리</a></li>
+        <li class="search"><a href="javascript:searchLayer(this);">검색</a></li>
+        <li class="active"><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
+        <li><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
+        <li><a href="https://m.jwpmall.co.kr/mw/order/cart.do">장바구니</a></li>
+    </ul>
+    <!--div id="dim" onclick="leftClose()">
+</div>
+<div id="dim_mask" onclick="areaClose()">
+</div-->
+    <div id="layerPopup"></div>
+    <!-- <img src="chrome-extension://lplhclpeegjedapdliokcacmphgcnlnd/img/error_128.png" title="Some errors occurred on this page. Click to see details." style="opacity: 1; position: fixed !important; bottom: 10px !important; right: 10px !important; cursor: pointer !important; z-index: 2147483647 !important; width: 38px !important; height: 38px !important; min-height: 38px !important; min-width: 38px !important; max-height: 38px !important; max-width: 38px !important;"> -->
+</body>
+</html>

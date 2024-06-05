@@ -473,7 +473,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 16px; /* 100% */
+    line-height: 16px;
     letter-spacing: -1.28px;
 }
 .recommend_tab .tab-menu .tab-item.active span{
@@ -622,101 +622,3 @@
     font-size: 13px;
     font-weight: 400;
 }
-
-/* 영업담당자, 고객센터 */
-.info_cont{
-    padding:40px 20px;
-}
-.info_cont .gray_box{
-    margin-top:16px;
-    padding:16px 20px;
-    border-radius: 12px;
-    background: #F7F8FA;
-}
-.info_cont .gray_box .tit{
-    width:80px;
-    color: #717B8A;
-    font-size: 14px;
-    font-weight: 400;
-}
-.info_cont .gray_box .name{
-    color: #222;
-    font-family: 'GmarketSans';
-    font-size: 14px;
-    font-weight: 500;
-}
-.info_cont .gray_box li+li{
-    border-top:1px solid #E1E3E9;
-    margin-top:16px;
-    padding-top:16px;
-}
-.info_cont .border_top{
-    border-top:1px solid #E1E3E9;
-    margin-top:32px;
-    padding-top:32px;
-}
-.info_cont .info_time .num{
-    display:block;
-    margin-top:12px;
-    padding-top:20px;
-    position:relative;
-    color: #222;
-    font-family: 'GmarketSans';
-    font-size: 20px;
-    font-weight: 500;
-}
-.info_cont .info_time .num:after{
-    content:'';
-    width:24px;
-    height:1px;
-    background: #E1E3E9;
-    position:absolute;
-    top:0;
-    left:0;
-}
-.info_cont .info_time ul{
-    margin-top:16px;
-}
-.info_cont .info_time ul li+li{
-    margin-top:5px;
-}
-.info_cont .info_time .tit{
-    color: #222;
-    font-size: 14px;
-    font-weight: 400;
-    width:60px;
-    display:inline-block;
-}
-.info_cont .info_time .time{
-    color: #717B8A;
-    font-size: 14px;
-    font-weight: 400;
-}
-/* 카카오톡 채널 1:1 상담하기  */
-.link_kakao a{
-    display: flex;
-    height: 64px;
-    padding: 0px 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    align-self: stretch;
-    background: #371C1D;
-}
-.link_kakao a span{
-    padding-left:50px;
-    color:#fff;
-    background:url(../img/img_logokakao.png) 0 50% no-repeat;
-    height:50px;
-    line-height:50px;
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: -0.9px;
-}
-.link_kakao a span strong{
-    font-weight:700;
-}
-.mainlayer .layercont .banner .gaessamzieFlickStage li img{
-    width:100%;
-}
-.swiper-wrapper{height:auto !important;}
