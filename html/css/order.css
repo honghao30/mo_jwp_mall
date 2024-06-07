@@ -228,3 +228,20 @@
 .productboxcart input[type="checkbox"]+label {vertical-align: middle;}
 .productboxcart input[type="checkbox"]:checked:after {background: url(../imgs/global/checkboxico.png) no-repeat center center;background-size: 12px auto;}
 .discount_badge {border-radius: 12px;background: #FF4949;font-size: 12px;line-height: 12px;color:#fff;font-weight: 400;padding: 6px 8px 5px;}
+
+/* 모달 */
+body.modal-open {height: 100%;overflow: hidden;}
+.modal__wrap--bg {background-color: rgba(0, 0, 0, 0.7);display:none;width: 100%;height: 100%;position: fixed;left: 0;top: 0;transition: opacity 0.3s ease;z-index: 105;}
+.modal__wrap--bg.fade-out {opacity: 0;}
+.modal__wrap--bg.is-active {background-color: rgba(0, 0, 0, 0.7);display: block;opacity: 1;transition: opacity 0.3s ease;}
+.modal__wrap--bg .modal__wrap {background-color: #fff;position: fixed;left: 50%;top: 50%;transform: translate(-50%,-50%);z-index: 2;border-radius: 8px;overflow: hidden;z-index: 105;}
+.modal__wrap--bg .modal__wrap.size-default {width: 100%;max-width: calc(100% - 32px);}
+.modal__wrap--bg .modal__wrap .modal-cont {background-color: #fff;padding: 0;height: 160px;position: relative;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list {padding: 48px 16px 16px;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list li {border: 1px solid #E1E3E9;padding: 24px 16px;border-radius: 12px;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list li .tit {font-size: 15px;font-weight: 500;line-height: 15px;color: #222222;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list li .tit strong {color: #0072BC;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list li .text {color: #717B8A;font-size: 14px;font-weight: 400;line-height: 18px;margin-top: 8px;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list li .text p {position: relative;padding-left: 7px;}
+.modal__wrap--bg .modal__wrap .modal-cont .promotion_list li .text p::before {content: '';width:3px;height: 3px;background: #717B8A;display: block;position: absolute;left:0;top: 50%;transform: translateY(-50%);}
+.modal__wrap--bg .modal__wrap .btn-icon-close.close-modal {border:0;border-radius: 0; position: absolute;right: 6px;top: 16px;width: 24px;height: 24px;background: url('../img/ico/ico_close_x48.png') no-repeat center;background-size: 24px auto;}

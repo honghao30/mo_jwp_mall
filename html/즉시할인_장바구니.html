@@ -1482,7 +1482,7 @@
                                         <label for="cb_dealer_0_2"><strong>JW중외제약</strong>
                                             (<strong class="label-goods-dealer-size">7</strong>개)
                                         </label>
-                                        <button type="button" class="discount_badge">즉시할인</button>
+                                        <button type="button" class="discount_badge open-modal" modal-id="discount_tip" onclick="openModal(event)">즉시할인</button>
                                         <div class="deliverytype direct">직접배송</div>
                                     </div>
                     
@@ -3415,9 +3415,48 @@
                         </div>
                     </div>
                 </div>
-        
-        
             </form>
+
+            <!-- // 툴팁 -->
+            <div class="modal__wrap--bg" id="discount_tip">
+                <div class="modal__wrap size-default ">
+                    <div class="modal-cont">
+                        <ul class="promotion_list">
+                            <li>
+                                <div class="tit"><strong>삼성카드</strong> 즉시할인 프로모션이 진행 중입니다.</div>
+                                <div class="text">
+                                    <p>적용방법 : PG 결제 화면에서 할인 쿠폰 선택</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <button type="button" class="btn btn-icon-close close-modal" onclick="closeModal(event)">
+                            <span class="ir-text">닫기</span>
+                        </button>
+                    </div>
+                </div>
+            </div>   
+            <script>
+                //modal 열기
+                const openModal = event => {
+                    _this = event.target;
+                    modalId = _this.getAttribute('modal-id');
+                    openTarget = document.getElementById(modalId);
+                    document.body.classList.add('modal-open');
+                    openTarget.classList.add('is-active'); 
+                }
+                // modal 닫기
+                const closeModal = event => {
+                    _this = event.target;
+                    activeModel = _this.closest('.modal__wrap--bg');
+                    activeModel.classList.add('fade-out');
+                    setTimeout(() => {
+                        activeModel.classList.remove('is-active');
+                        activeModel.classList.remove('fade-out');
+                        document.body.classList.remove('modal-open');
+                    },300);    
+                }
+            </script>
             <!-- //html 마크업 -->
         </div>
 
