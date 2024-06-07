@@ -114,8 +114,8 @@ textarea {width:100%;padding:10px;font-size:14px;line-height:24px;color:#909090;
 }
 
 #left .name .close {position:absolute;right:8px;top:0;width:32px;height:49px;font-size:0;text-indent:-9999em;}
-#left .name .close:after {content:'';position:absolute;left:50%;top:50%;width:22px;height:2px;margin:-2px 0 0 -11px;background:#000;transform:rotate(45deg);}
-#left .name .close:before {content:'';position:absolute;left:50%;top:50%;width:22px;height:2px;margin:-2px 0 0 -11px;background:#000;transform:rotate(-45deg);}
+#left .name .close:after {content:'';position:absolute;left:50%;top:50%;width:22px;height:1px;margin:-2px 0 0 -11px;background:#000;transform:rotate(45deg);}
+#left .name .close:before {content:'';position:absolute;left:50%;top:50%;width:22px;height:1px;margin:-2px 0 0 -11px;background:#000;transform:rotate(-45deg);}
 #left .infobox {overflow:hidden;position:relative;height:81px;margin:25px 15px 0;border:1px solid #059ad9;border-top:2px solid #059ad9;background:#fff;border-radius:4px;z-index:2;}
 #left .infobox ul {overflow:hidden;}
 #left .infobox ul:after {content:'';position:absolute;left:50%;top:22px;width:1px;height:38px;background:#e8e8e8;}
@@ -248,10 +248,19 @@ footer .cscenter span {display:block;margin:7px 0 0;font-size:12px;line-height:2
 #fixedMenu li {float:left;width:20%;text-align:center;box-sizing:border-box;}
 #fixedMenu li a {display:block;font-size:11px;color:#272727;}
 #fixedMenu li a:before {content:'';display:block;width:24px;height:24px;margin:6px auto 3px;background:url(../imgs/global/fixedmenu01.png) no-repeat left top;background-size:24px 48px;}
-#fixedMenu li:nth-child(2) a:before {background-image:url(../imgs/global/fixedmenu02.png);}
+/* #fixedMenu li:nth-child(2) a:before {background-image:url(../imgs/global/fixedmenu02.png);}
 #fixedMenu li:nth-child(3) a:before {background-image:url(../imgs/global/fixedmenu03.png);}
 #fixedMenu li:nth-child(4) a:before {background-image:url(../imgs/global/fixedmenu04.png);}
-#fixedMenu li:nth-child(5) a:before {background-image:url(../imgs/global/fixedmenu05.png);}
+#fixedMenu li:nth-child(5) a:before {background-image:url(../imgs/global/fixedmenu05.png);} */
+
+#fixedMenu li.ico_category a:before {background-image:url(../imgs/global/fixedmenu01.png);}
+#fixedMenu li.ico_search a:before {background-image:url(../imgs/global/fixedmenu02.png);}
+#fixedMenu li.ico_home a:before {background-image:url(../imgs/global/fixedmenu03.png);}
+#fixedMenu li.ico_mypage a:before {background-image:url(../imgs/global/fixedmenu04.png);}
+#fixedMenu li.ico_basket a:before {background-image:url(../imgs/global/fixedmenu05.png);}
+#fixedMenu li.ico_book a:before {background-image:url(../imgs/global/fixedmenu06.png);}
+#fixedMenu li.ico_interest a:before {background-image:url(../imgs/global/fixedmenu07.png);}
+
 #fixedMenu li.active a {color:#207ec0;}
 #fixedMenu li.active a:before {background-position:left -24px;}
 

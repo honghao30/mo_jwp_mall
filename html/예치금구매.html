@@ -21,9 +21,7 @@
     <!-- 추가 -->
     <link rel="stylesheet" type="text/css" href="css/common_new.css">
     <link rel="stylesheet" type="text/css" href="css/main_new.css">
-
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css">
     <!--// 추가 -->
 
     <script type="text/javascript" src="js/misc.js"></script>
@@ -34,7 +32,6 @@
     <script type="text/javascript" src="js/jquery.gaessamzie.flick.min.js"></script>
     <script type="text/javascript" src="js/jquery.laybox.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
-    <script src="js/jquery-ui.js"></script>
 
     <script type="text/javascript" src="js/common.js"></script>
 
@@ -1163,7 +1160,7 @@
                     <button type="button" class="btn_go_back">
                         <span class="ir-text">뒤로가기</span>
                     </button>
-                    <div class="cate_tit_top">쿠폰 내역</div>
+                    <div class="cate_tit_top">예치금 구매</div>
                 </div>
                 <div class="top_header_right">
                     <button type="button" class="btn_search_top" onclick="searchLayer(this);">
@@ -1176,16 +1173,6 @@
                 </div>
 			</div>
 			<!--// 메인리뉴얼 - 수정 -->
-
-            <div class="gnbmenu touchscrollwrap">
-                <ul>
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/goods/search.do?sword=%EB%B9%84%EA%B8%89%EC%97%AC" target="">영양수액(비급여)</a></li class="bar">
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1637" target="">철분주사제</a></li class="bar">
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/event/special.do?idx=331" target="">체스트메이트</a></li class="bar">
-                    <li class="bar"><a href="https://m.jwpmall.co.kr/mw/goods/search.do?sword=%EC%9C%84%EB%84%88%ED%94%84" target="">위너프페리</a></li>
-                    <li><a href="https://m.jwpmall.co.kr/mw/goods/category.do?cate=1638" target="">일반수액(급여)</a></li>
-                </ul>
-            </div>
         </header>
 		<!--// 메인리뉴얼 - 수정 -->
 
@@ -1469,146 +1456,279 @@
         <!-- content_wrap -->
         <div class="content_wrap">  
             <!-- html 마크업 -->
-            <div class="bank-search">
-                <div class="date-search">
-                    <div class="dropdown_menu_wrap">
-                        <button type="button" class="btn-dropdown">직접입력</button>
-                        <ul class="dropdown_list">
-                            <li><button type="button" data-option="7일">7일</button></li>
-                            <li><button type="button" data-option="1개월">1개월</button></li>
-                            <li><button type="button" data-option="3개월">3개월</button></li>
-                            <li><button type="button" data-option="6개월">6개월</button></li>
-                            <li><button type="button" data-option="1년">1년</button></li>
-                            <li><button type="button" data-option="직접입력">직접입력</button></li>
+            <div class="balance_area">
+                <!-- Swiper -->
+                <div class="swiper_wrap type01">
+                    <div class="swiper category_banner">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/banner/banner_mid_02.png" alt=""></a></div>
+                        </div>
+                        <div class="control_box">
+                            <div class="swiper-pagination type01"></div>
+                            <div class="swiper-pagination type01" style="display:none"></div>
+                            <!-- <div class="swiper-button-prev"><img src="img/common/btn_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/common/btn_right.png" alt=""></div> -->
+                            <div class="swiper-autoplay-button">
+                                <img src="img/common/btn_pause.png" alt="" class="pause">
+                                <img src="img/common/btn_play.png" alt="" class="play">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var category_banner = new Swiper(".category_banner.swiper", {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    spaceBetween: 4,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "fraction",
+                    },
+                    loop: true,
+                    navigation: {
+                        nextEl: ".category_banner .swiper-button-next",
+                        prevEl: ".category_banner .swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 2000, // Autoplay delay in milliseconds
+                        disableOnInteraction: false, // Autoplay continues after user interaction
+                    },
+                    });
+                
+                    // Pause/Play button functionality
+                    $(".category_banner .swiper-autoplay-button").click(function(){
+                    $(this).toggleClass("paused");
+                    if( $(this).is(".paused") ){
+                        category_banner.autoplay.stop();
+                    }
+                    else{
+                        category_banner.autoplay.start();
+                    };
+                    });
+                </script>
+                <div class="inner">
+                    <div class="tit_cont">
+                        <strong class="m_tit">구매금액 선택</strong>
+                        <p class="m_txt">예치금은 1,000원 단위로<br>
+                            1만원 ~ 1,000만원까지 구매가 가능합니다.</p>
+                    </div>
+                    <ul class="balance_list">
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>1</strong><span>만원</span></p>
+                            </div> 
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>3</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>5</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>10</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>20</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>30</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>50</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>100</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>150</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>200</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>300</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                            <input type="radio" name="product">
+                            <div>
+                                <span class="tit">예치금</span>
+                                <p class="txt"><strong>500</strong><span>만원</span></p>
+                            </div>
+                            </label>
+                        </li>
+                    </ul>
+                    
+                    <!-- 결제수단 -->
+                    <div class="pay_cont">
+                        <div class="tit_cont">
+                            <strong class="m_tit">결제수단</strong>
+                            <label class="checkbox txt right">
+                            <input type="checkbox" class="type03">
+                                결제방법 저장
+                            </label>
+                        </div>
+                        <ul class="pay_list">
+                            <li class="ico_pay_naver">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>네이버페이</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_kakao">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>카카오페이</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_sspay">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>삼성페이</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_payco">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>페이코</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_simple">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>간편결제</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li class="ico_pay_card">
+                                <label>
+                                    <input type="radio" name="pay">
+                                    <div>
+                                    <span>신용카드</span>
+                                    </div>
+                                </label>
+                            </li>
                         </ul>
                     </div>
-                    <div class="inputbox">
-                        <input name="search" type="text" placeholder="쿠폰명 검색">
-                        <button type="button" class="btn_search_top">
-                            <span class="ir-text">검색</span>
-                        </button>
+    
+                    <!-- 유의사항 -->
+                    <div class="warning_cont">
+                        <span class="tit">유의사항</span>
+                        <ul class="list">
+                            <li>예치금은 결제완료 이후 취소가 불가능하며, 예치금의 현금 전환은 불가능합니다.</li>
+                            <li>예치금은 결제완료 즉시 적립되며, 바로 사용이 가능합니다</li>
+                            <li>예치금은 ‘마이페이지 > 예치금 내역’에서 확인이 가능합니다.</li>
+                        </ul>
                     </div>
-                </div>
-                <!-- <script>
-                    $(function() {
-                            fn_default_datepicker();
-                    });
-                            
-                    function fn_default_datepicker()
-                    {
-                        var start = $( "#datepicker_start" ).datepicker({
-                            dateFormat: 'yy-mm-dd' //Input Display Format 변경
-                            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-                            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-                            ,changeYear: true //콤보박스에서 년 선택 가능
-                            ,changeMonth: true //콤보박스에서 월 선택 가능                
-                            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
-                            ,buttonImage: "./img/ico/ico_calendar.png" //버튼 이미지 경로
-                            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-                            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-                            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-                            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-                            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-                            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-                            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-                            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-                            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
-                        });
-                            
-                        var end = $( "#datepicker_end" ).datepicker({
-                            dateFormat: 'yy-mm-dd' //Input Display Format 변경
-                            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-                            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-                            ,changeYear: true //콤보박스에서 년 선택 가능
-                            ,changeMonth: true //콤보박스에서 월 선택 가능                
-                            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
-                            ,buttonImage: "./img/ico/ico_calendar.png" //버튼 이미지 경로
-                            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-                            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-                            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-                            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-                            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-                            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-                            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-                            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-                            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
-                               ,defaultDate: "+1w"
-                          });
-                        
-                        //초기값을 오늘 날짜로 설정
-                        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-                        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-                    }
-                     
-                    function getDate( element ) {
-                        var date;
-                        var dateFormat = "yy-mm-dd";
-                        try {
-                          date = $.datepicker.parseDate( dateFormat, element.value );
-                        } catch( error ) {
-                          date = null;
-                        }
-                        return date;
-                     }
-                     
-                </script>                  
-                <div class="data_period_picker">
-                    <input type="text" class="datepicker-input" id="datepicker_start" /> 
-                    <span>~</span>
-                    <input type="text" class="datepicker-input"  id="datepicker_end" />
-                </div>   -->
-                <div class="btn_wrap">
-                    <button class="btn btn-reset"><span>초기화</span></button>
-                    <button class="btn btn-inquiry"><span>조회</span></button>
                 </div>
             </div>
-            <div class="bank-cont">
-                <p class="cont-tit">상세내역</p>
-                <div class="coupon_cont">
-                    <div class="coupon_innerbox">
-                        <div class="coupon_top">
-                            <p class="coupon_date">2024-05-02</p>
-                            <p class="coupon_use">
-                                사용완료
-                                <span class="use_date">(2024-05-02)</span>
-                            </p>
-                        </div>
-                        <div class="coupon_btm">
-                            <p class="coupon_btm-tit">주문할인</p>
-                            <p class="coupon_btm-des">첫 주문할인 2만원 쿠폰</p>
-                            <p class="coupon_btm-des">할인금액 20,000원</p>
-                        </div>
+
+            <div class="order_floating_bottom">
+                <div class="order_util_area">
+                    <button class="btn_arrow"></button>
+                    <div class="info_detail">
+                        <dl>
+                          <dt>보유 예치금</dt>
+                          <dd><strong class="">0</strong> 원</dd>
+                        </dl>
+                        <dl>
+                          <dt>구매 예치금</dt>
+                          <dd><strong class="">10,000</strong> 원</dd>
+                        </dl>
+                        <dl>
+                          <dt>즉시할인 금액</dt>
+                          <dd><strong class="colorR">-10,000</strong> 원</dd>
+                        </dl>
+                        <dl>
+                          <dt>구매 후 예치금</dt>
+                          <dd><strong class="">10,000</strong> 원</dd>
+                        </dl>
                     </div>
-                    <div class="coupon_innerbox">
-                        <div class="coupon_top">
-                            <p class="coupon_date">2024-05-02</p>
-                            <p class="coupon_unuse">
-                                미사용
-                                <span class="use_date">(2024-05-02)</span>
-                            </p>
-                        </div>
-                        <div class="coupon_btm">
-                            <p class="coupon_btm-tit">주문할인</p>
-                            <p class="coupon_btm-des">첫 주문할인 2만원 쿠폰</p>
-                            <p class="coupon_btm-des">할인금액 20,000원</p>
+                    <div class="order_counter_control">
+                        <div class="txt">최종 결제 금액</div>
+                        <div class="total_price">
+                            <strong>1,586,000</strong> 원
                         </div>
                     </div>
                 </div>
-                <div class="pagination pos1">
-                    <a href="#" class="btn_pagination_first"><span class="ir-text">처음으로</span></a>
-                    <a href="#" class="btn_pagination_prev"><span class="ir-text">이전페이지</span></a>
-                    <a href="#">1</a>
-                    <a class="active" href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#" class="btn_pagination_next"><span class="ir-text">다음으로</span></a>
-                    <a href="#" class="btn_pagination_last"><span class="ir-text">마지막페이지</span></a>                                    
+                <div class="order_button_wrap flex_justfy">
+                    <button type="button" class="btn_blue">예치금 구매하기</button>
                 </div>
             </div>
             <!-- //html 마크업 -->
@@ -1622,47 +1742,47 @@
 <!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
 <!-- //컨텐츠 마크업 하는곳 -->
 
-    <footer id="footer" class="footer_cont">
-        <!-- 고객센터 -->
-        <div class="user_cont">
-            <p class="txt">고객센터</p>
-            <p class="tel_cont"><a href="tel:02-840-6907"><strong>02-840-6907</strong></a>(유료)</p>
-            <p class="time_cont">
-            평일 <span class="time">09:00 ~ 1800</span><br>
-            점심시간 <span class="time">12:00 ~ 13:00</span><br>
-            <span class="colorGray">토, 일, 공휴일 휴무</span>
-            </p>
-        </div>
-        <div class="menu_cont top_line">
+<footer id="footer" class="footer_cont">
+    <!-- 고객센터 -->
+    <div class="user_cont">
+        <p class="txt">고객센터</p>
+        <p class="tel_cont"><a href="tel:02-840-6907"><strong>02-840-6907</strong></a>(유료)</p>
+        <p class="time_cont">
+           평일 <span class="time">09:00 ~ 1800</span><br>
+           점심시간 <span class="time">12:00 ~ 13:00</span><br>
+           <span class="colorGray">토, 일, 공휴일 휴무</span>
+        </p>
+    </div>
+    <div class="menu_cont top_line">
+        <ul>
+            <li class="bar"><a href="#none">회사소개</a></li>
+            <li class="bar"><a href="#none">이용안내</a></li>
+            <li class="bar"><a href="#none">배송/결제안내</a></li>
+            <li class="bar"><a href="#none">1:1문의</a></li>
+            <li class="bar"><a href="#none">이용약관</a></li>
+            <li class="bar"><a href="#none" class="colorG">개인정보처리방침</a></li>
+            <li class="bar"><a href="#none">FAQ</a></li>
+            <li><a href="#none">공지사항</a></li>
+        </ul>
+    </div>
+    <div class="address_cont top_line">
+        <a href="#none"><img src="imgs/global/footerlogo.png" alt="jw 중외제약"></a>
+        <div class="info">
             <ul>
-                <li class="bar"><a href="#none">회사소개</a></li>
-                <li class="bar"><a href="#none">이용안내</a></li>
-                <li class="bar"><a href="#none">배송/결제안내</a></li>
-                <li class="bar"><a href="#none">1:1문의</a></li>
-                <li class="bar"><a href="#none">이용약관</a></li>
-                <li class="bar"><a href="#none" class="colorG">개인정보처리방침</a></li>
-                <li class="bar"><a href="#none">FAQ</a></li>
-                <li><a href="#none">공지사항</a></li>
+                <li class="bar">대표자명 : 신영섭</li>
+                <li class="bar"><a href="tel:028406907">TEL : 02-840-6907</a></li>
+                <li>사업자등록번호 : 118-81-02477</li>
             </ul>
+            <address>주소 : (13840) 경기도 과천시 과천대로7길 38 (갈현동) JW과천사옥</address>
+            <p>통신판매업신고 : 제2012-서울서초-1380호</p>
+            <ul>
+                <li class="bar">건강식품판매신고 : 동작 제00008호</li>
+                <li>의료기기판매업신고 : 동작 제166호</li>
+            </ul>
+            <p class="copylight">ⓒ 2020 JW중외제약 All rights reserved.</p>
         </div>
-        <div class="address_cont top_line">
-            <a href="#none"><img src="imgs/global/footerlogo.png" alt="jw 중외제약"></a>
-            <div class="info">
-                <ul>
-                    <li class="bar">대표자명 : 신영섭</li>
-                    <li class="bar"><a href="tel:028406907">TEL : 02-840-6907</a></li>
-                    <li>사업자등록번호 : 118-81-02477</li>
-                </ul>
-                <address>주소 : (13840) 경기도 과천시 과천대로7길 38 (갈현동) JW과천사옥</address>
-                <p>통신판매업신고 : 제2012-서울서초-1380호</p>
-                <ul>
-                    <li class="bar">건강식품판매신고 : 동작 제00008호</li>
-                    <li>의료기기판매업신고 : 동작 제166호</li>
-                </ul>
-                <p class="copylight">ⓒ 2020 JW중외제약 All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    </div>
+</footer>
     </wrap><!-- //wrap -->
     <!-- <a href="#header" id="top">맨위로</a> -->
     <script type="text/javascript" src="js/common.js"></script>
@@ -1716,8 +1836,8 @@
     <ul id="fixedMenu">
         <li><a href="javascript:left();">카테고리</a></li>
         <li class="search"><a href="javascript:searchLayer(this);">검색</a></li>
-        <li><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
-        <li class="active"><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
+        <li class="active"><a href="https://m.jwpmall.co.kr/mw/">홈</a></li>
+        <li><a href="https://m.jwpmall.co.kr/mw/mypage">마이페이지</a></li>
         <li><a href="https://m.jwpmall.co.kr/mw/order/cart.do">장바구니</a></li>
     </ul>
     <!--div id="dim" onclick="leftClose()">
