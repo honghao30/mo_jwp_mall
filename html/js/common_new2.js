@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
       });
+
       // cat list toggle
       const addCartButton = document.querySelector('.btn_toggle_add_list')
       addCartButton && addCartButton.addEventListener('click', function(){
