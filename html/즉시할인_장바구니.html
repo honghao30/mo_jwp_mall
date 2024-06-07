@@ -3401,13 +3401,18 @@
         
         
                 <div class="orderbutton">
-                    <dl>
-                        <dt>총 결제예상금액</dt>
-                        <dd><strong class="label-settle-price">7,838,764</strong>원</dd>
-                    </dl>
-                    <div class="order_select_wrap">
-                        <button type="button" id="btn_order_select" class="orderbtn order-discount">즉시할인(<strong class="label-order-size">24</strong>)</button>
-                        <button type="button" id="btn_order_select2" class="orderbtn order-discount-payu">PAYU할인(<strong class="label-order-size">24</strong>)</button>
+                    <div class="viewbtn">
+                        <button type="button" onclick="productView(this);" class="active"></button>
+                    </div>                    
+                    <div class="orderbutton_bottom">
+                        <dl>
+                            <dt>총 결제예상금액</dt>
+                            <dd><strong class="label-settle-price">7,838,764</strong>원</dd>
+                        </dl>
+                        <div class="order_select_wrap">
+                            <button type="button" id="btn_order_select" class="orderbtn order-discount">즉시할인(<strong class="label-order-size">24</strong>)</button>
+                            <button type="button" id="btn_order_select2" class="orderbtn order-discount-payu">PAYU할인(<strong class="label-order-size">24</strong>)</button>
+                        </div>
                     </div>
                 </div>
         
